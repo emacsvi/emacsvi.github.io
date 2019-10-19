@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>redis on 李伟的博客</title>
+    <link>http://emacsvi.com/tags/redis/</link>
+    <description>Recent content in redis on 李伟的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 13 Mar 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://emacsvi.com/tags/redis/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>codis替代redis使用</title>
+      <link>http://emacsvi.com/post/codis-replace-redis-protocol/</link>
+      <pubDate>Wed, 13 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/post/codis-replace-redis-protocol/</guid>
+      <description>概念 参考文献 切片的本质 数组和切片 slice go array slices array and slice</description>
+    </item>
+    
+    <item>
+      <title>深入理解redis原理</title>
+      <link>http://emacsvi.com/post/redis-notes-deeply/</link>
+      <pubDate>Wed, 13 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/post/redis-notes-deeply/</guid>
+      <description>概念 参考文献 切片的本质 数组和切片 slice go array slices array and slice</description>
+    </item>
+    
+  </channel>
+</rss>

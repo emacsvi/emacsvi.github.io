@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Travels on 李伟的博客</title>
+    <link>http://emacsvi.com/travel/</link>
+    <description>Recent content in Travels on 李伟的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 21 Mar 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://emacsvi.com/travel/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>30岁我人生的一个转折点</title>
+      <link>http://emacsvi.com/travel/travel-life-30/</link>
+      <pubDate>Thu, 21 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/travel/travel-life-30/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;30&lt;/strong&gt;岁，我人生的一个转折点&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>2019.3月生活内容</title>
+      <link>http://emacsvi.com/travel/travel-life-2019-03/</link>
+      <pubDate>Thu, 14 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/travel/travel-life-2019-03/</guid>
+      <description>&lt;p&gt;2019年3月每日计划。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>喜欢吉姆尼</title>
+      <link>http://emacsvi.com/travel/travel-life-jimny/</link>
+      <pubDate>Wed, 13 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/travel/travel-life-jimny/</guid>
+      <description>&lt;p&gt;有和我一样喜欢吉姆尼的吗？&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>旅行相关的</title>
+      <link>http://emacsvi.com/travel/travel-life-go/</link>
+      <pubDate>Wed, 13 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/travel/travel-life-go/</guid>
+      <description>&lt;p&gt;摘要有必要写一点吗？&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

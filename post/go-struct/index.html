@@ -1,0 +1,908 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.54.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>go-struct | 李伟的博客</title>
+    <meta property="og:title" content="go-struct - 李伟的博客">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content="2018-11-23T01:00:17&#43;08:00">
+        
+        
+    <meta property="article:modified_time" content="2018-11-23T01:00:17&#43;08:00">
+        
+    <meta name="Keywords" content="golang,go语言,go语言笔记,区块链,博客,项目管理,python,软件架构">
+    <meta name="description" content="go-struct">
+        
+    <meta name="author" content="emacsvi">
+    <meta property="og:url" content="http://emacsvi.com/post/go-struct/">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="/css/normalize.css">
+    
+        <link rel="stylesheet" href="/css/prism.css">
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-129687838-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-129687838-1');
+    </script>
+
+
+    
+
+
+    
+    
+</head>
+
+<body>
+<header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="http://emacsvi.com">
+                        李伟的博客
+                    </a>
+                
+                <p class="description">主要专注于区块链、Go语言(golang)、Python、C语言、后端服务架构</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="http://emacsvi.com">首页</a>
+                    
+                    <a  href="http://emacsvi.com/archives/" title="归档">归档</a>
+                    
+                    <a  href="http://emacsvi.com/about/" title="关于">关于</a>
+                    
+                    <a  href="http://emacsvi.com/travel/" title="旅行">旅行</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<div id="body">
+    <div class="container">
+        <div class="col-group">
+
+            <div class="col-8" id="main">
+                <div class="res-cons">
+                    <article class="post">
+                        <header>
+                            <h1 class="post-title">go-struct</h1>
+                        </header>
+                        <date class="post-meta meta-date">
+                            2018年11月23日
+                        </date>
+                        
+                        <div class="post-meta">
+                            <span>|</span>
+                            
+                                <span class="meta-category"><a href="http://emacsvi.com/categories/go">go</a></span>
+                            
+                        </div>
+                        
+                        
+                        <div class="post-content">
+                            
+
+<h2 id="struct">struct</h2>
+
+<p>Go语言中，也和C或者其他语言一样，我们可以声明新的类型，作为其它类型的属性或字段的容器。例如，我们可以创建一个自定义类型<code>person</code>代表一个人的实体。这个实体拥有属性：姓名和年龄。这样的类型我们称之<code>struct</code>。如下代码所示:</p>
+
+<pre><code class="language-go">type person struct {
+	name string
+	age int
+}
+```	
+看到了吗？声明一个struct如此简单，上面的类型包含有两个字段
+- 一个string类型的字段name，用来保存用户名称这个属性
+- 一个int类型的字段age,用来保存用户年龄这个属性
+
+如何使用struct呢？请看下面的代码
+```go
+type person struct {
+	name string
+	age int
+}
+var P person  // P现在就是person类型的变量了
+P.name = &quot;Astaxie&quot;  // 赋值&quot;Astaxie&quot;给P的name属性.
+P.age = 25  // 赋值&quot;25&quot;给变量P的age属性
+fmt.Printf(&quot;The person's name is %s&quot;, P.name)  // 访问P的name属性.
+```	
+除了上面这种P的声明使用之外，还有另外几种声明使用方式：
+
+- 1.按照顺序提供初始化值
+```go
+	P := person{&quot;Tom&quot;, 25}
+</code></pre>
+
+<ul>
+<li>2.通过<code>field:value</code>的方式初始化，这样可以任意顺序
+<code>go
+	P := person{age:24, name:&quot;Tom&quot;}
+</code></li>
+<li>3.当然也可以通过<code>new</code>函数分配一个指针，此处P的类型为*person
+<code>go	
+	P := new(person)
+</code></li>
+</ul>
+
+<p>下面我们看一个完整的使用struct的例子</p>
+
+<pre><code class="language-go">package main
+import &quot;fmt&quot;
+// 声明一个新的类型
+type person struct {
+	name string
+	age int
+}
+
+// 比较两个人的年龄，返回年龄大的那个人，并且返回年龄差
+// struct也是传值的
+func Older(p1, p2 person) (person, int) {
+	if p1.age&gt;p2.age {  // 比较p1和p2这两个人的年龄
+		return p1, p1.age-p2.age
+	}
+	return p2, p2.age-p1.age
+}
+
+func main() {
+	var tom person
+	// 赋值初始化
+	tom.name, tom.age = &quot;Tom&quot;, 18
+	// 两个字段都写清楚的初始化
+	bob := person{age:25, name:&quot;Bob&quot;}
+	// 按照struct定义顺序初始化值
+	paul := person{&quot;Paul&quot;, 43}
+
+	tb_Older, tb_diff := Older(tom, bob)
+	tp_Older, tp_diff := Older(tom, paul)
+	bp_Older, bp_diff := Older(bob, paul)
+
+	fmt.Printf(&quot;Of %s and %s, %s is older by %d years\n&quot;,
+		tom.name, bob.name, tb_Older.name, tb_diff)
+
+	fmt.Printf(&quot;Of %s and %s, %s is older by %d years\n&quot;,
+		tom.name, paul.name, tp_Older.name, tp_diff)
+
+	fmt.Printf(&quot;Of %s and %s, %s is older by %d years\n&quot;,
+		bob.name, paul.name, bp_Older.name, bp_diff)
+}
+</code></pre>
+
+<p>缩写定义一个结构体：</p>
+
+<pre><code class="language-go">type Employee struct {  
+    firstName string
+    lastName  string
+    age       int
+}
+</code></pre>
+
+<p>相同字段可以进行缩写：</p>
+
+<pre><code class="language-go">type Employee struct {  
+    firstName, lastName string
+    age, salary         int
+}
+</code></pre>
+
+<h2 id="anymouse-struct">anymouse struct</h2>
+
+<p>It is possible to declare structures without declaring a new type and these type of structures are called <strong>anonymous structures</strong>.</p>
+
+<pre><code class="language-go">var employee struct {  
+        firstName, lastName string
+        age int
+}
+</code></pre>
+
+<p>The above snippet creates a anonymous structure <strong>employee</strong>.</p>
+
+<p><strong>Creating anonymous structures</strong></p>
+
+<pre><code class="language-go">func main() {  
+    emp3 := struct {
+        firstName, lastName string
+        age, salary         int
+    }{
+        firstName: &quot;Andreah&quot;,
+        lastName:  &quot;Nikola&quot;,
+        age:       31,
+        salary:    5000,
+    }
+
+    fmt.Println(&quot;Employee 3&quot;, emp3)
+}
+</code></pre>
+
+<h2 id="struct的匿名字段">struct的匿名字段</h2>
+
+<p>我们上面介绍了如何定义一个struct，定义的时候是字段名与其类型一一对应，实际上Go支持只提供类型，而不写字段名的方式，也就是匿名字段，也称为嵌入字段。</p>
+
+<p>当匿名字段是一个struct的时候，那么这个struct所拥有的全部字段都被隐式地引入了当前定义的这个struct。</p>
+
+<p>让我们来看一个例子，让上面说的这些更具体化</p>
+
+<pre><code class="language-go">package main
+
+import &quot;fmt&quot;
+
+type Human struct {
+	name string
+	age int
+	weight int
+}
+
+type Student struct {
+	Human  // 匿名字段，那么默认Student就包含了Human的所有字段
+	speciality string
+}
+
+func main() {
+	// 我们初始化一个学生
+	mark := Student{Human{&quot;Mark&quot;, 25, 120}, &quot;Computer Science&quot;}
+
+	// 我们访问相应的字段
+	fmt.Println(&quot;His name is &quot;, mark.name)
+	fmt.Println(&quot;His age is &quot;, mark.age)
+	fmt.Println(&quot;His weight is &quot;, mark.weight)
+	fmt.Println(&quot;His speciality is &quot;, mark.speciality)
+	// 修改对应的备注信息
+	mark.speciality = &quot;AI&quot;
+	fmt.Println(&quot;Mark changed his speciality&quot;)
+	fmt.Println(&quot;His speciality is &quot;, mark.speciality)
+	// 修改他的年龄信息
+	fmt.Println(&quot;Mark become old&quot;)
+	mark.age = 46
+	fmt.Println(&quot;His age is&quot;, mark.age)
+	// 修改他的体重信息
+	fmt.Println(&quot;Mark is not an athlet anymore&quot;)
+	mark.weight += 60
+	fmt.Println(&quot;His weight is&quot;, mark.weight)
+}
+</code></pre>
+
+<p>struct组合，Student组合了Human struct和string基本类型</p>
+
+<p>我们看到Student访问属性age和name的时候，就像访问自己所有用的字段一样，对，匿名字段就是这样，能够实现字段的继承。是不是很酷啊？还有比这个更酷的呢，那就是student还能访问Human这个字段作为字段名。请看下面的代码，是不是更酷了。</p>
+
+<pre><code class="language-go">mark.Human = Human{&quot;Marcus&quot;, 55, 220}
+mark.Human.age -= 1
+</code></pre>
+
+<p>通过匿名访问和修改字段相当的有用，但是不仅仅是struct字段哦，所有的内置类型和自定义类型都是可以作为匿名字段的。请看下面的例子</p>
+
+<pre><code class="language-go">package main
+import &quot;fmt&quot;
+type Skills []string
+
+type Human struct {
+	name string
+	age int
+	weight int
+}
+
+type Student struct {
+	Human  // 匿名字段，struct
+	Skills // 匿名字段，自定义的类型string slice
+	int    // 内置类型作为匿名字段
+	speciality string
+}
+
+func main() {
+	// 初始化学生Jane
+	jane := Student{Human:Human{&quot;Jane&quot;, 35, 100}, speciality:&quot;Biology&quot;}
+	// 现在我们来访问相应的字段
+	fmt.Println(&quot;Her name is &quot;, jane.name)
+	fmt.Println(&quot;Her age is &quot;, jane.age)
+	fmt.Println(&quot;Her weight is &quot;, jane.weight)
+	fmt.Println(&quot;Her speciality is &quot;, jane.speciality)
+	// 我们来修改他的skill技能字段
+	jane.Skills = []string{&quot;anatomy&quot;}
+	fmt.Println(&quot;Her skills are &quot;, jane.Skills)
+	fmt.Println(&quot;She acquired two new ones &quot;)
+	jane.Skills = append(jane.Skills, &quot;physics&quot;, &quot;golang&quot;)
+	fmt.Println(&quot;Her skills now are &quot;, jane.Skills)
+	// 修改匿名内置类型字段
+	jane.int = 3
+	fmt.Println(&quot;Her preferred number is&quot;, jane.int)
+}
+</code></pre>
+
+<p>从上面例子我们看出来struct不仅仅能够将struct作为匿名字段，自定义类型、内置类型都可以作为匿名字段，而且可以在相应的字段上面进行函数操作（如例子中的append）。</p>
+
+<p>这里有一个问题：如果human里面有一个字段叫做phone，而student也有一个字段叫做phone，那么该怎么办呢？</p>
+
+<p>Go里面很简单的解决了这个问题，最外层的优先访问，也就是当你通过<code>student.phone</code>访问的时候，是访问student里面的字段，而不是human里面的字段。</p>
+
+<p>这样就允许我们去重载通过匿名字段继承的一些字段，当然如果我们想访问重载后对应匿名类型里面的字段，可以通过匿名字段名来访问。请看下面的例子</p>
+
+<pre><code class="language-go">package main
+import &quot;fmt&quot;
+
+type Human struct {
+	name string
+	age int
+	phone string  // Human类型拥有的字段
+}
+type Employee struct {
+	Human  // 匿名字段Human
+	speciality string
+	phone string  // 雇员的phone字段
+}
+
+func main() {
+	Bob := Employee{Human{&quot;Bob&quot;, 34, &quot;777-444-XXXX&quot;}, &quot;Designer&quot;, &quot;333-222&quot;}
+	fmt.Println(&quot;Bob's work phone is:&quot;, Bob.phone)
+	// 如果我们要访问Human的phone字段
+	fmt.Println(&quot;Bob's personal phone is:&quot;, Bob.Human.phone)
+}
+</code></pre>
+
+<h2 id="struct继承测试">struct继承测试</h2>
+
+<pre><code class="language-go">package main
+import (
+	&quot;fmt&quot;
+)
+
+func main() {
+	testDerive()
+}
+
+type A struct {
+	aa int
+	BB string
+}
+
+type B struct {
+	A
+	aa int
+	CC string
+}
+
+func (a *A) aFunc() {
+	fmt.Println(&quot;A.aFunc&quot;)
+}
+
+func (a *A) BFunc() {
+	fmt.Println(&quot;A.BFunc&quot;)
+}
+
+func (b *B) aFunc() {
+	fmt.Println(&quot;B.aFunc&quot;)
+}
+
+func (b *B) CFunc() {
+	fmt.Println(&quot;B.CFunc&quot;)
+}
+
+func testDerive() {
+	var tb B
+	//变量测试
+	fmt.Println(tb.aa)
+	fmt.Println(tb.A.aa)
+	fmt.Println(tb.BB)
+	fmt.Println(tb.A.BB)
+	fmt.Println(tb.CC)
+	tb.aa = 9
+	tb.A.aa = 8
+	tb.BB = &quot;A.BB&quot;
+	tb.CC = &quot;B.CC&quot;
+	fmt.Println(tb.aa)
+	fmt.Println(tb.A.aa)
+	fmt.Println(tb.BB)
+	fmt.Println(tb.A.BB)
+	fmt.Println(tb.CC)
+
+	//函数测试
+	tb.aFunc()
+	tb.A.aFunc()
+	tb.BFunc()
+	tb.A.BFunc()
+	tb.CFunc()
+}
+</code></pre>
+
+<p>结果：</p>
+
+<pre><code class="language-shell">0
+0
+
+
+
+9
+8
+A.BB
+A.BB
+B.CC
+B.aFunc
+A.aFunc
+A.BFunc
+A.BFunc
+B.CFunc
+</code></pre>
+
+<p>由以上测试可以看出来：
+1. golang的继承是继承父结构体的所有属性和方法，包括大小写开头的变量和函数。
+2. 如果子结构体和父结构体有同名的变量或者函数，并不会产生覆盖，可以通过“父结构名字.变量或函数名”的方式调用父结构体的同名变量或函数</p>
+
+<h2 id="nested-struct-initialize">Nested Struct Initialize</h2>
+
+<p>内嵌结构体的初始化方式, 先看下面这个会报错的例子：<code>missing type in composite literal</code></p>
+
+<pre><code class="language-go">package main
+
+type Configuration struct {
+    Val   string
+    Proxy struct {
+        Address string
+        Port    string
+    }
+}
+
+func main() {
+    c := &amp;Configuration{
+        Val: &quot;test&quot;,
+        Proxy: {
+            Address: &quot;addr&quot;,
+            Port:    &quot;80&quot;,
+        },
+    }
+}
+</code></pre>
+
+<p>有<strong>三种方式</strong>定义嵌套结构体并初始化它</p>
+
+<ul>
+<li>1.第一种最直接的方式，需要提供每一个字段显示定义:</li>
+</ul>
+
+<pre><code class="language-go">type Configuration struct {
+    Val string
+    Proxy
+}
+
+type Proxy struct {
+    Address string
+    Port    string
+}
+
+func main() {
+    c := &amp;Configuration{
+        Val: &quot;test&quot;,
+        Proxy: Proxy{
+            Address: &quot;addr&quot;,
+            Port:    &quot;port&quot;,
+        },
+    }
+    fmt.Println(c)
+}
+</code></pre>
+
+<ul>
+<li>2.第二种很<strong>ugly</strong>的方式, 利用<strong>anymouse struct</strong>特征：</li>
+</ul>
+
+<pre><code class="language-go">c := &amp;Configuration{
+    Val: &quot;test&quot;,
+    Proxy: struct {
+        Address string
+        Port    string
+    }{
+        Address: &quot;addr&quot;,
+        Port:    &quot;80&quot;,
+    },
+}
+</code></pre>
+
+<ul>
+<li>3.分开对其赋值，最方便的是第三种方式：</li>
+</ul>
+
+<pre><code class="language-go">package main
+import &quot;fmt&quot;
+type Configuration struct {
+    Val   string
+    Proxy struct {
+        Address string
+        Port    string
+    }
+}
+
+func main() {
+    c := &amp;Configuration{
+        Val: &quot;test&quot;,
+    }
+
+    c.Proxy.Address = `127.0.0.1`
+    c.Proxy.Port = `8080`
+}
+</code></pre>
+
+<p>网上的例子：
+&gt; 问题:</p>
+
+<p>golang 嵌套struct如何直接初始化？
+如下</p>
+
+<pre><code class="language-go"> type Account struct {
+    Id uint32
+    Name string
+     Nested struct {
+          Age uint8
+     }
+}
+</code></pre>
+
+<p>如何直接初始化(非 对象.属性 = 初始化 形式)？ 形如：</p>
+
+<pre><code class="language-go"> account := &amp;Account{ Id : 10, Name : &quot;jim&quot;, Nested : ??????? }
+</code></pre>
+
+<p>问号部分如何初始化？</p>
+
+<blockquote>
+<p>回答：</p>
+</blockquote>
+
+<p>如果你一定要这么干……</p>
+
+<pre><code class="language-go">account := Account{
+  Id:10, Name:&quot;jim&quot;,
+  Nesed: struct{Age unit8}{Age: 20},
+}
+</code></pre>
+
+<p><strong>没错，匿名struct直接初始化的时候是需要给出它的结构的。</strong></p>
+
+<p>不过不建议使用上面坑爹的方式，这样分开写不是很清楚么：</p>
+
+<pre><code class="language-go">acc := Account{Id:10, Name:&quot;jim&quot;}
+acc.Nested.Age = 20
+</code></pre>
+
+<h2 id="参考文献">参考文献</h2>
+
+<ul>
+<li><a href="https://github.com/astaxie/build-web-application-with-golang/blob/master/zh/02.4.md">struct</a></li>
+<li><a href="https://blog.csdn.net/nature19862001/article/details/72858243">struct 继承</a></li>
+<li><a href="https://golangbot.com/structs/">go struct very detail contain nested struct and anymouse structure</a></li>
+<li><a href="https://www.zhihu.com/question/22746100">nested初始化</a></li>
+</ul>
+
+                        </div>
+
+                        
+
+
+                        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/post/go-map/">go-map</a></li>
+        
+        <li><a href="/post/go-ipfs-compile/">ipfs编译问题</a></li>
+        
+        <li><a href="/post/jetbrain%E5%AE%B6%E6%97%8Fgoland-pycharm-webstorm%E9%85%8D%E7%BD%AE/">jetbrains</a></li>
+        
+        <li><a href="/post/emacsvi-awesome-go/">备忘go语言常用的库</a></li>
+        
+        <li><a href="/post/go-time-after/">go-time.After释放</a></li>
+        
+    </ul>
+</div>
+
+
+                        <div class="post-meta meta-tags">
+                            
+                            <ul class="clearfix">
+                                
+                                <li><a href="http://emacsvi.com/tags/go">go</a></li>
+                                
+                            </ul>
+                            
+                        </div>
+                    </article>
+                    
+    
+
+    
+    
+                </div>
+            </div>
+            <div id="secondary">
+    <section class="widget">
+        <form id="search" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="http://emacsvi.com">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="http://emacsvi.com/post/kubeadm-kubernetes/" title="利用kubeadm部署kubernetes">利用kubeadm部署kubernetes</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/post/centos7-system-notes/" title="centos7系统配置">centos7系统配置</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/post/vagrant-notes/" title="vagrant相关配置命令">vagrant相关配置命令</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/post/heling-go-36-notes/" title="赫林老师go语言36讲">赫林老师go语言36讲</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/post/frp/" title="frp内网穿透">frp内网穿透</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/post/harbor-image-notes/" title="harbor镜像仓库搭建">harbor镜像仓库搭建</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/post/dynamic-json-in-go/" title="Dynamic Json In Go">Dynamic Json In Go</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/post/my-go-codes/" title="go常用的一些代码备忘">go常用的一些代码备忘</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/post/go-keng-notes/" title="go语言编码过程中常见的坑总结">go语言编码过程中常见的坑总结</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/post/go-websocket-practice/" title="websocket实践">websocket实践</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">分类</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="http://emacsvi.com/categories/blockchain/">blockchain(1)</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/categories/consul/">consul(1)</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/categories/db/">db(1)</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/categories/docker/">docker(2)</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/categories/etcd/">etcd(1)</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/categories/ethereum/">ethereum(1)</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/categories/go/">go(30)</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/categories/kubernetes/">kubernetes(2)</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/categories/linux/">linux(4)</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/categories/mac/">mac(1)</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/categories/markdown/">markdown(1)</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/categories/nodejs/">nodejs(1)</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/categories/python/">python(10)</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/categories/react/">react(1)</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/categories/redis/">redis(2)</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/categories/%E6%8A%80%E6%9C%AF/">技术(1)</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/categories/%E6%97%85%E8%A1%8C/">旅行(4)</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/categories/%E6%B5%81%E9%87%91%E5%B2%81%E6%9C%88/">流金岁月(1)</a>
+    </li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">标签</h3>
+<div class="tagcloud">
+    
+    <a href="http://emacsvi.com/tags/Istio/">Istio</a>
+    
+    <a href="http://emacsvi.com/tags/blockchain/">blockchain</a>
+    
+    <a href="http://emacsvi.com/tags/cmds/">cmds</a>
+    
+    <a href="http://emacsvi.com/tags/codis/">codis</a>
+    
+    <a href="http://emacsvi.com/tags/consul/">consul</a>
+    
+    <a href="http://emacsvi.com/tags/curl/">curl</a>
+    
+    <a href="http://emacsvi.com/tags/db/">db</a>
+    
+    <a href="http://emacsvi.com/tags/django/">django</a>
+    
+    <a href="http://emacsvi.com/tags/docker/">docker</a>
+    
+    <a href="http://emacsvi.com/tags/docker-compose/">docker-compose</a>
+    
+    <a href="http://emacsvi.com/tags/etcd/">etcd</a>
+    
+    <a href="http://emacsvi.com/tags/ethereum/">ethereum</a>
+    
+    <a href="http://emacsvi.com/tags/go/">go</a>
+    
+    <a href="http://emacsvi.com/tags/javascript/">javascript</a>
+    
+    <a href="http://emacsvi.com/tags/kubernetes/">kubernetes</a>
+    
+    <a href="http://emacsvi.com/tags/linux/">linux</a>
+    
+    <a href="http://emacsvi.com/tags/mac/">mac</a>
+    
+    <a href="http://emacsvi.com/tags/markdown/">markdown</a>
+    
+    <a href="http://emacsvi.com/tags/mongodb/">mongodb</a>
+    
+    <a href="http://emacsvi.com/tags/mysql/">mysql</a>
+    
+    <a href="http://emacsvi.com/tags/nodejs/">nodejs</a>
+    
+    <a href="http://emacsvi.com/tags/python/">python</a>
+    
+    <a href="http://emacsvi.com/tags/react/">react</a>
+    
+    <a href="http://emacsvi.com/tags/redis/">redis</a>
+    
+    <a href="http://emacsvi.com/tags/selenium/">selenium</a>
+    
+    <a href="http://emacsvi.com/tags/sql/">sql</a>
+    
+    <a href="http://emacsvi.com/tags/supervisord/">supervisord</a>
+    
+    <a href="http://emacsvi.com/tags/vagrant/">vagrant</a>
+    
+    <a href="http://emacsvi.com/tags/websocket/">websocket</a>
+    
+    <a href="http://emacsvi.com/tags/%E5%A4%87%E5%BF%98/">备忘</a>
+    
+    <a href="http://emacsvi.com/tags/%E6%8A%80%E6%9C%AF/">技术</a>
+    
+    <a href="http://emacsvi.com/tags/%E6%97%85%E8%A1%8C/">旅行</a>
+    
+    <a href="http://emacsvi.com/tags/%E7%88%AC%E8%99%AB/">爬虫</a>
+    
+</div>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a target="_blank" href="#" title="Android Gradle权威指南">Android Gradle权威指南</a>
+        </li>
+        
+        <li>
+            <a target="_blank" href="#" title="常用开发工具CDN镜像">常用开发工具CDN镜像</a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="http://emacsvi.com/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+        </div>
+    </div>
+</div>
+<footer id="footer">
+    <div class="container">
+        &copy; 2019 <a href="http://emacsvi.com">李伟的博客 By emacsvi</a>.
+        Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
+        <a href="https://www.emacsvi.com/" target="_blank">Theme</a> based on <a href="https://emacsvi.com" target="_blank">maupassant</a>.
+        
+    </div>
+</footer>
+
+
+    <script type="text/javascript">
+    
+    (function(){
+        $("pre code").parent().addClass("line-numbers")
+    }())
+
+    window.MathJax = {
+        tex2jax: {
+            inlineMath: [ ['$','$'] ],
+            processEscapes: true
+        }
+    };
+    </script>
+    <script type="text/javascript" src="/js/prism.js" async="true"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src="/js/totop.js?v=0.0.0" async=""></script>
+
+
+
+
+
+
+
+</body>
+</html>

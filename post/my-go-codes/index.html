@@ -1,0 +1,651 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.54.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>go常用的一些代码备忘 | 李伟的博客</title>
+    <meta property="og:title" content="go常用的一些代码备忘 - 李伟的博客">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content="2019-03-18T00:00:00&#43;08:00">
+        
+        
+    <meta property="article:modified_time" content="2019-03-18T00:00:00&#43;08:00">
+        
+    <meta name="Keywords" content="golang,go语言,go语言笔记,区块链,博客,项目管理,python,软件架构">
+    <meta name="description" content="自己常用的一些代码汇总">
+        
+    <meta name="author" content="emacsvi">
+    <meta property="og:url" content="http://emacsvi.com/post/my-go-codes/">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="/css/normalize.css">
+    
+        <link rel="stylesheet" href="/css/prism.css">
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-129687838-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-129687838-1');
+    </script>
+
+
+    
+
+
+    
+    
+</head>
+
+<body>
+<header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="http://emacsvi.com">
+                        李伟的博客
+                    </a>
+                
+                <p class="description">主要专注于区块链、Go语言(golang)、Python、C语言、后端服务架构</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="http://emacsvi.com">首页</a>
+                    
+                    <a  href="http://emacsvi.com/archives/" title="归档">归档</a>
+                    
+                    <a  href="http://emacsvi.com/about/" title="关于">关于</a>
+                    
+                    <a  href="http://emacsvi.com/travel/" title="旅行">旅行</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<div id="body">
+    <div class="container">
+        <div class="col-group">
+
+            <div class="col-8" id="main">
+                <div class="res-cons">
+                    <article class="post">
+                        <header>
+                            <h1 class="post-title">go常用的一些代码备忘</h1>
+                        </header>
+                        <date class="post-meta meta-date">
+                            2019年3月18日
+                        </date>
+                        
+                        <div class="post-meta">
+                            <span>|</span>
+                            
+                                <span class="meta-category"><a href="http://emacsvi.com/categories/go">go</a></span>
+                            
+                        </div>
+                        
+                        
+                        <div class="post-content">
+                            <p>go常用的一些代码备忘汇总。</p>
+
+<h4 id="字符串与数字相互转换">字符串与数字相互转换</h4>
+
+<p>利用<strong>strconv</strong>进行转换:</p>
+
+<ul>
+<li>主要利用<strong>ParseXXX(str, &hellip;)</strong>将字符串转化成其他类型，</li>
+<li>利用<strong>FormatXXX</strong>转其他类型转化为字符串</li>
+</ul>
+
+<pre><code class="language-go">func strConvNumber() {
+	var (
+		myInt int
+		str string
+		myInt64 int64
+		err error
+	)
+	// string 转 int
+	str = &quot;999&quot;
+	// atoi
+	// Array to Integer
+	// 字符数组(字符串)转化为整数。
+
+	// Atoi is equivalent to ParseInt(s, 10, 0), converted to type int.
+	// func Atoi(s string) (int, error)
+	if myInt, err = strconv.Atoi(str); err == nil {
+		fmt.Println(myInt)
+	}
+
+	// string 转 int64
+	// base 进制
+	// bitSize 长度 是32，64 等
+	// If base == 0, the base is implied by the string's prefix:
+	// base 16 for &quot;0x&quot;, base 8 for &quot;0&quot;, and base 10 otherwise.
+	// For bases 1, below 0 or above 36 an error is returned.
+	if myInt64, err = strconv.ParseInt(str, 10, 64); err == nil {
+		fmt.Println(myInt64)
+	}
+
+	myInt = 12306
+	str = &quot;&quot;
+	// itoa
+	// Integer to Array
+	// 整数转化为字符串。golang标准库与C++标准库均有
+	// int 转 string
+	// Itoa is equivalent to FormatInt(int64(i), 10).
+	// func Itoa(i int) string
+	str = strconv.Itoa(myInt)
+	if str != &quot;&quot; {
+		fmt.Println(str)
+	}
+
+	myInt64 = 12306000000
+	str = &quot;&quot;
+	// int64 转 string
+	str = strconv.FormatInt(myInt64, 10)
+	if str != &quot;&quot; {
+		fmt.Println(str)
+	}
+
+	// format xxx 转化成字符串
+	// FormatBool
+	// func FormatBool(b bool) string
+
+	// FormatFloat
+	// func FormatFloat(f float64, fmt byte, prec, bitSize int) string
+
+	// FormatInt
+	// func FormatInt(i int64, base int) string
+
+	// FormatUint
+	// func FormatUint(i uint64, base int) string
+
+	// 转换成bool类型.
+	b, err := strconv.ParseBool(&quot;true&quot;)
+	fmt.Println(b) // true
+
+	// 转换成Float类型
+	f, err := strconv.ParseFloat(&quot;3.1415&quot;, 64)
+	fmt.Println(f) // 3.1415
+
+	// 转换成int类型
+	i, err := strconv.ParseInt(&quot;-42&quot;, 10, 64)
+	fmt.Println(i)
+
+	// 转成uint类型
+	u, err := strconv.ParseUint(&quot;42&quot;, 10, 64)
+	fmt.Println(u)
+}
+</code></pre>
+
+<h4 id="时间相互转化">时间相互转化</h4>
+
+<pre><code class="language-go">// 时间日期处理
+func ParseFormatTime() {
+	// 时间戳
+	fmt.Println(time.Now().Unix()) // 1552967613
+
+	// 格式化当时时间
+	// 这是个奇葩,必须是这个时间点, 据说是go诞生之日, 记忆方法:6-1-2-3-4-5
+	fmt.Println(time.Now().Format(&quot;2006-01-02 15:04:05&quot;)) // 2019-03-19 11:54:23
+
+	// 时间戳转str格式化时间
+	str_time := time.Unix(1552967613, 0).Format(&quot;2006-01-02 15:04:05&quot;)
+	fmt.Println(str_time) // 2019-03-19 11:53:33
+
+	// 格式化的时间转unix时间
+	// func Parse(layout, value string) (Time, error)
+	the_time, err := time.Parse(&quot;2006-01-02 15:04:05&quot;, &quot;2019-03-18 05:50:30&quot;)
+	if err == nil {
+		unix_time := the_time.Unix()
+		fmt.Println(unix_time) // 1552888230
+	}
+}
+</code></pre>
+
+<h4 id="随机数">随机数</h4>
+
+<pre><code class="language-go">func RandNumber() {
+	// 产生种子
+	rand.Seed(time.Now().Unix())
+	fmt.Println(rand.Intn(100)) // 产生0-100的随机整数
+	fmt.Println(rand.Float64()) // 产生0.0-1.0的随机浮点点
+
+	// 聪明的办法
+	// 如果要产生负数到正数的随机值，只需要将生成的随机数减去相应数值即可
+	fmt.Println(rand.Intn(100) - 50) // [-50, 50)的随机值
+
+	// 另外一种创建种子的方式
+	// 创建一个以seed为种子的源，注意该源不是协程安全的
+	// func NewSource(seed int64) Source
+	// 以src为源创建随机对象
+	// func New(src Source) *Rand
+	// 设置或重置种子，注意该函数不是协程安全的
+	// func (r *Rand) Seed(seed int64)
+	var (
+		mySource rand.Source
+		myRand *rand.Rand
+	)
+	mySource = rand.NewSource(time.Now().Unix() + 100)
+	myRand = rand.New(mySource)
+	fmt.Println(myRand.Int63n(99999999)) // 70202487
+  }
+</code></pre>
+
+<h4 id="随机字符串">随机字符串</h4>
+
+<p>这样实现比较高效，具体看这篇文章<a href="https://colobu.com/2018/09/02/generate-random-string-in-Go/">随机字符串加强版</a></p>
+
+<pre><code class="language-go">const letterBytes = &quot;abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;
+const (
+	letterIdxBits = 6                    // 6 bits to represent a letter index
+	letterIdxMask = 1&lt;&lt;letterIdxBits - 1 // All 1-bits, as many as letterIdxBits
+	letterIdxMax  = 63 / letterIdxBits   // # of letter indices fitting in 63 bits
+)
+func RandStringBytesMaskImpr(n int) string {
+	b := make([]byte, n)
+	// A rand.Int63() generates 63 random bits, enough for letterIdxMax letters!
+	for i, cache, remain := n-1, rand.Int63(), letterIdxMax; i &gt;= 0; {
+		if remain == 0 {
+			cache, remain = rand.Int63(), letterIdxMax
+		}
+		if idx := int(cache &amp; letterIdxMask); idx &lt; len(letterBytes) {
+			b[i] = letterBytes[idx]
+			i--
+		}
+		cache &gt;&gt;= letterIdxBits
+		remain--
+	}
+	return string(b)
+  }
+</code></pre>
+
+<h4 id="遍历目录下的文件">遍历目录下的文件</h4>
+
+<p><a href="https://blog.csdn.net/sylar_d/article/details/51965408">请参考这篇文章</a></p>
+
+<pre><code class="language-go">// 遍历目录
+func getListPath(root string) (result []string) {
+	var (
+		f func(string, os.FileInfo, error) error
+		ok bool // 判断过滤用的
+		name string // 打印用的
+	)
+	f = func (p string, f os.FileInfo, err error) error {
+		// p == path
+		// Walk函数在遍历文件时调用。调用时将参数传递给path，这是一个绝对路径，也就是Walk函数中的root作为前缀。
+		// 将root + 文件名作为path传递给WalkFunc函数。
+		if f == nil {
+			return err
+		}
+		if f.IsDir() {
+			// return filepath.SkipDir 如果要路过目录则可以使用 SkipDir这个变量进行
+			return nil
+		}
+
+		result = append(result, p)
+
+		// 用strings.HasSuffix(src, suffix) 判断src中是否包含suffix结尾
+		ok = strings.HasSuffix(p, &quot;.go&quot;)
+		if ok {
+			// 如果要过滤一些指定的文件 可以这样匹配
+			fmt.Println(&quot;this is go file&quot;)
+		}
+		return nil
+	}
+
+	filepath.Walk(root, f)
+
+	fmt.Println(&quot;打印结果：&quot;)
+	for _, name = range result {
+		fmt.Println(name)
+	}
+
+	return
+}
+</code></pre>
+
+<h4 id="读文件">读文件</h4>
+
+<h4 id="写文件">写文件</h4>
+
+<h4 id="读配置">读配置</h4>
+
+<h4 id="控制协程">控制协程</h4>
+
+<h4 id="控制并发">控制并发</h4>
+
+<h4 id="channel使用">channel使用</h4>
+
+<h4 id="context使用">context使用</h4>
+                        </div>
+
+                        
+
+
+                        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/post/dynamic-json-in-go/">Dynamic Json In Go</a></li>
+        
+        <li><a href="/post/go-keng-notes/">go语言编码过程中常见的坑总结</a></li>
+        
+        <li><a href="/post/go-websocket-practice/">websocket实践</a></li>
+        
+        <li><a href="/post/go-dep/">dep教程</a></li>
+        
+        <li><a href="/post/TiDB-notes/">TiDB分布式数据库</a></li>
+        
+    </ul>
+</div>
+
+
+                        <div class="post-meta meta-tags">
+                            
+                            <ul class="clearfix">
+                                
+                                <li><a href="http://emacsvi.com/tags/go">go</a></li>
+                                
+                            </ul>
+                            
+                        </div>
+                    </article>
+                    
+    
+
+    
+    
+                </div>
+            </div>
+            <div id="secondary">
+    <section class="widget">
+        <form id="search" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="http://emacsvi.com">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="http://emacsvi.com/post/kubeadm-kubernetes/" title="利用kubeadm部署kubernetes">利用kubeadm部署kubernetes</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/post/centos7-system-notes/" title="centos7系统配置">centos7系统配置</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/post/vagrant-notes/" title="vagrant相关配置命令">vagrant相关配置命令</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/post/heling-go-36-notes/" title="赫林老师go语言36讲">赫林老师go语言36讲</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/post/frp/" title="frp内网穿透">frp内网穿透</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/post/harbor-image-notes/" title="harbor镜像仓库搭建">harbor镜像仓库搭建</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/post/dynamic-json-in-go/" title="Dynamic Json In Go">Dynamic Json In Go</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/post/my-go-codes/" title="go常用的一些代码备忘">go常用的一些代码备忘</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/post/go-keng-notes/" title="go语言编码过程中常见的坑总结">go语言编码过程中常见的坑总结</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/post/go-websocket-practice/" title="websocket实践">websocket实践</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">分类</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="http://emacsvi.com/categories/blockchain/">blockchain(1)</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/categories/consul/">consul(1)</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/categories/db/">db(1)</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/categories/docker/">docker(2)</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/categories/etcd/">etcd(1)</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/categories/ethereum/">ethereum(1)</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/categories/go/">go(30)</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/categories/kubernetes/">kubernetes(2)</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/categories/linux/">linux(4)</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/categories/mac/">mac(1)</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/categories/markdown/">markdown(1)</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/categories/nodejs/">nodejs(1)</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/categories/python/">python(10)</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/categories/react/">react(1)</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/categories/redis/">redis(2)</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/categories/%E6%8A%80%E6%9C%AF/">技术(1)</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/categories/%E6%97%85%E8%A1%8C/">旅行(4)</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/categories/%E6%B5%81%E9%87%91%E5%B2%81%E6%9C%88/">流金岁月(1)</a>
+    </li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">标签</h3>
+<div class="tagcloud">
+    
+    <a href="http://emacsvi.com/tags/Istio/">Istio</a>
+    
+    <a href="http://emacsvi.com/tags/blockchain/">blockchain</a>
+    
+    <a href="http://emacsvi.com/tags/cmds/">cmds</a>
+    
+    <a href="http://emacsvi.com/tags/codis/">codis</a>
+    
+    <a href="http://emacsvi.com/tags/consul/">consul</a>
+    
+    <a href="http://emacsvi.com/tags/curl/">curl</a>
+    
+    <a href="http://emacsvi.com/tags/db/">db</a>
+    
+    <a href="http://emacsvi.com/tags/django/">django</a>
+    
+    <a href="http://emacsvi.com/tags/docker/">docker</a>
+    
+    <a href="http://emacsvi.com/tags/docker-compose/">docker-compose</a>
+    
+    <a href="http://emacsvi.com/tags/etcd/">etcd</a>
+    
+    <a href="http://emacsvi.com/tags/ethereum/">ethereum</a>
+    
+    <a href="http://emacsvi.com/tags/go/">go</a>
+    
+    <a href="http://emacsvi.com/tags/javascript/">javascript</a>
+    
+    <a href="http://emacsvi.com/tags/kubernetes/">kubernetes</a>
+    
+    <a href="http://emacsvi.com/tags/linux/">linux</a>
+    
+    <a href="http://emacsvi.com/tags/mac/">mac</a>
+    
+    <a href="http://emacsvi.com/tags/markdown/">markdown</a>
+    
+    <a href="http://emacsvi.com/tags/mongodb/">mongodb</a>
+    
+    <a href="http://emacsvi.com/tags/mysql/">mysql</a>
+    
+    <a href="http://emacsvi.com/tags/nodejs/">nodejs</a>
+    
+    <a href="http://emacsvi.com/tags/python/">python</a>
+    
+    <a href="http://emacsvi.com/tags/react/">react</a>
+    
+    <a href="http://emacsvi.com/tags/redis/">redis</a>
+    
+    <a href="http://emacsvi.com/tags/selenium/">selenium</a>
+    
+    <a href="http://emacsvi.com/tags/sql/">sql</a>
+    
+    <a href="http://emacsvi.com/tags/supervisord/">supervisord</a>
+    
+    <a href="http://emacsvi.com/tags/vagrant/">vagrant</a>
+    
+    <a href="http://emacsvi.com/tags/websocket/">websocket</a>
+    
+    <a href="http://emacsvi.com/tags/%E5%A4%87%E5%BF%98/">备忘</a>
+    
+    <a href="http://emacsvi.com/tags/%E6%8A%80%E6%9C%AF/">技术</a>
+    
+    <a href="http://emacsvi.com/tags/%E6%97%85%E8%A1%8C/">旅行</a>
+    
+    <a href="http://emacsvi.com/tags/%E7%88%AC%E8%99%AB/">爬虫</a>
+    
+</div>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a target="_blank" href="#" title="Android Gradle权威指南">Android Gradle权威指南</a>
+        </li>
+        
+        <li>
+            <a target="_blank" href="#" title="常用开发工具CDN镜像">常用开发工具CDN镜像</a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="http://emacsvi.com/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+        </div>
+    </div>
+</div>
+<footer id="footer">
+    <div class="container">
+        &copy; 2019 <a href="http://emacsvi.com">李伟的博客 By emacsvi</a>.
+        Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
+        <a href="https://www.emacsvi.com/" target="_blank">Theme</a> based on <a href="https://emacsvi.com" target="_blank">maupassant</a>.
+        
+    </div>
+</footer>
+
+
+    <script type="text/javascript">
+    
+    (function(){
+        $("pre code").parent().addClass("line-numbers")
+    }())
+
+    window.MathJax = {
+        tex2jax: {
+            inlineMath: [ ['$','$'] ],
+            processEscapes: true
+        }
+    };
+    </script>
+    <script type="text/javascript" src="/js/prism.js" async="true"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src="/js/totop.js?v=0.0.0" async=""></script>
+
+
+
+
+
+
+
+</body>
+</html>

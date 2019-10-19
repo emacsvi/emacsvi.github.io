@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>python on 李伟的博客</title>
+    <link>http://emacsvi.com/categories/python/</link>
+    <description>Recent content in python on 李伟的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 12 Dec 2018 01:00:01 +0000</lastBuildDate>
+    
+	<atom:link href="http://emacsvi.com/categories/python/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>docker部署python应用</title>
+      <link>http://emacsvi.com/post/docker-for-python-app/</link>
+      <pubDate>Wed, 12 Dec 2018 01:00:01 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/post/docker-for-python-app/</guid>
+      <description>部署python单应用 利用docker来部署python单应用的环境。有如下几点需要确认： 利用pip freeze &amp;gt; requirements.txt导出</description>
+    </item>
+    
+    <item>
+      <title>django框架学习</title>
+      <link>http://emacsvi.com/post/python-django-framework-study/</link>
+      <pubDate>Tue, 27 Nov 2018 01:00:01 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/post/python-django-framework-study/</guid>
+      <description>django框架学习 django是一个mvt框架，与传统的mvc框架是一样的。 M:model模型，和数据库进行交互 T:Template模板，</description>
+    </item>
+    
+    <item>
+      <title>python-env虚拟环境使用</title>
+      <link>http://emacsvi.com/post/python-virtualenv/</link>
+      <pubDate>Sun, 25 Nov 2018 01:00:01 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/post/python-virtualenv/</guid>
+      <description>虚拟环境 python虚拟环境很实用。尤其在做多个py2,py3开发的时候，或者做一个全新的项目的时候需要一个干净的环境。 虚拟环境是真实pyt</description>
+    </item>
+    
+    <item>
+      <title>python常用方法</title>
+      <link>http://emacsvi.com/post/python-funs/</link>
+      <pubDate>Sun, 25 Nov 2018 01:00:01 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/post/python-funs/</guid>
+      <description>常用 string与list互转 因为python的read和write方法的操作对象都是string。而操作二进制的时候会把string转换成</description>
+    </item>
+    
+    <item>
+      <title>python&#43;selenium教程</title>
+      <link>http://emacsvi.com/post/python-selenium/</link>
+      <pubDate>Sat, 24 Nov 2018 01:00:01 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/post/python-selenium/</guid>
+      <description>selenium安装 pip3 install selenium brew tap homebrew/cask brew cask install chromedriver selenium保存cookie 保存cookie # You can save the current cookies as a python object using pickle. For example: import pickle import selenium.webdriver driver = selenium.webdriver.Firefox() driver.get(&amp;quot;http://www.google.com&amp;quot;) pickle.dump( driver.get_cookies() ,</description>
+    </item>
+    
+    <item>
+      <title>python-IDLE编辑器备忘</title>
+      <link>http://emacsvi.com/post/python-idle3/</link>
+      <pubDate>Fri, 23 Nov 2018 01:03:01 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/post/python-idle3/</guid>
+      <description>IDLE3常用备忘 为什么要用这货，主要是它轻量，有时候运行一些简单的测试代码就不用打开pycharm了，直接打开它就可以运行测试代码，很方便</description>
+    </item>
+    
+    <item>
+      <title>python-requests库</title>
+      <link>http://emacsvi.com/post/python-requests/</link>
+      <pubDate>Fri, 23 Nov 2018 01:02:01 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/post/python-requests/</guid>
+      <description>发送请求 常用功能 import requests # 常用请求 r = requests.get(&#39;https://api.github.com/events&#39;) r = requests.post(&#39;http://httpbin.org/post&#39;, data={&#39;key&#39;:&#39;value&#39;}) r = requests.put(&#39;http://httpbin.org/put&#39;, data = {&#39;key&#39;:&#39;value&#39;}) r = requests.delete(&#39;http://httpbin.org/delete&#39;) r = requests.head(&#39;http://httpbin.org/get&#39;) r = requests.options(&#39;http://httpbin.org/get&#39;) # 传递url参数 # 如果你是手工构建 URL，那么数据会以键/值对的形</description>
+    </item>
+    
+    <item>
+      <title>python爬腾讯视频评论信息</title>
+      <link>http://emacsvi.com/post/spider-v-qq-comment/</link>
+      <pubDate>Fri, 23 Nov 2018 01:00:39 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/post/spider-v-qq-comment/</guid>
+      <description>介绍 爬取腾讯某个视频下面的评论数。主要内容是涉及到列表不容易获取。 分析 分析腾讯视频评论： 视频链接是这个：https://v.qq.com/x</description>
+    </item>
+    
+    <item>
+      <title>用户代理与ip代理爬取搜狗微信文章</title>
+      <link>http://emacsvi.com/post/spider-sogou-weixin/</link>
+      <pubDate>Fri, 23 Nov 2018 01:00:35 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/post/spider-sogou-weixin/</guid>
+      <description>项目 需要爬取https://weixin.sogou.com/上面的关键字文章。爬取搜索出来的每一个文章的标题与内容 分析 分析好了爬虫就简单了</description>
+    </item>
+    
+    <item>
+      <title>python爬虫常用接口备忘</title>
+      <link>http://emacsvi.com/post/spider-crawler-python/</link>
+      <pubDate>Fri, 23 Nov 2018 01:00:33 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/post/spider-crawler-python/</guid>
+      <description>正则 基础1： 全局匹配函数使用格式: re.compile(正则表达式).findall(源字符串) 普通字符 正常匹配 \n 匹配换行符 \t 匹配制表符 \w 匹</description>
+    </item>
+    
+  </channel>
+</rss>

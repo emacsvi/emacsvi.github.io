@@ -1,0 +1,1024 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.54.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>python爬虫常用接口备忘 | 李伟的博客</title>
+    <meta property="og:title" content="python爬虫常用接口备忘 - 李伟的博客">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content="2018-11-23T01:00:33&#43;08:00">
+        
+        
+    <meta property="article:modified_time" content="2018-11-23T01:00:33&#43;08:00">
+        
+    <meta name="Keywords" content="golang,go语言,go语言笔记,区块链,博客,项目管理,python,软件架构">
+    <meta name="description" content="python爬虫常用接口备忘">
+        
+    <meta name="author" content="emacsvi">
+    <meta property="og:url" content="http://emacsvi.com/post/spider-crawler-python/">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="/css/normalize.css">
+    
+        <link rel="stylesheet" href="/css/prism.css">
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-129687838-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-129687838-1');
+    </script>
+
+
+    
+
+
+    
+    
+</head>
+
+<body>
+<header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="http://emacsvi.com">
+                        李伟的博客
+                    </a>
+                
+                <p class="description">主要专注于区块链、Go语言(golang)、Python、C语言、后端服务架构</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="http://emacsvi.com">首页</a>
+                    
+                    <a  href="http://emacsvi.com/archives/" title="归档">归档</a>
+                    
+                    <a  href="http://emacsvi.com/about/" title="关于">关于</a>
+                    
+                    <a  href="http://emacsvi.com/travel/" title="旅行">旅行</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<div id="body">
+    <div class="container">
+        <div class="col-group">
+
+            <div class="col-8" id="main">
+                <div class="res-cons">
+                    <article class="post">
+                        <header>
+                            <h1 class="post-title">python爬虫常用接口备忘</h1>
+                        </header>
+                        <date class="post-meta meta-date">
+                            2018年11月23日
+                        </date>
+                        
+                        <div class="post-meta">
+                            <span>|</span>
+                            
+                                <span class="meta-category"><a href="http://emacsvi.com/categories/python">python</a></span>
+                            
+                        </div>
+                        
+                        
+                        <div class="post-content">
+                            
+
+<h1 id="正则">正则</h1>
+
+<p>基础1：
+全局匹配函数使用格式: <code>re.compile(正则表达式).findall(源字符串)</code></p>
+
+<table>
+<thead>
+<tr>
+<th align="left">普通字符</th>
+<th align="left">正常匹配</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">\n</td>
+<td align="left">匹配换行符</td>
+</tr>
+
+<tr>
+<td align="left">\t</td>
+<td align="left">匹配制表符</td>
+</tr>
+
+<tr>
+<td align="left">\w</td>
+<td align="left">匹配字母、数字、下划线</td>
+</tr>
+
+<tr>
+<td align="left">\W</td>
+<td align="left">匹配除字母、数字、下划线</td>
+</tr>
+
+<tr>
+<td align="left">\d</td>
+<td align="left">匹配十进制数字</td>
+</tr>
+
+<tr>
+<td align="left">\D</td>
+<td align="left">匹配除十进制数字</td>
+</tr>
+
+<tr>
+<td align="left">\s</td>
+<td align="left">匹配空白字符</td>
+</tr>
+
+<tr>
+<td align="left">\S</td>
+<td align="left">匹配除空白字符</td>
+</tr>
+
+<tr>
+<td align="left">[ab89x]</td>
+<td align="left">原子表，匹配ab89x中的任意一个</td>
+</tr>
+
+<tr>
+<td align="left">[^ab89x]</td>
+<td align="left">原子表，匹配除ab89x以外的任意一个字符</td>
+</tr>
+
+<tr>
+<td align="left">.</td>
+<td align="left">匹配除换行外任意一个字符</td>
+</tr>
+
+<tr>
+<td align="left">^</td>
+<td align="left">匹配开始位置</td>
+</tr>
+
+<tr>
+<td align="left">$</td>
+<td align="left">匹配结束位置</td>
+</tr>
+
+<tr>
+<td align="left">*</td>
+<td align="left">前一个字符出现0\1\多次</td>
+</tr>
+
+<tr>
+<td align="left">?</td>
+<td align="left">前一个字符出现0\1次</td>
+</tr>
+
+<tr>
+<td align="left">+</td>
+<td align="left">前一个字符出现1\多次</td>
+</tr>
+
+<tr>
+<td align="left">{n}</td>
+<td align="left">前一个字符恰好出现n次</td>
+</tr>
+
+<tr>
+<td align="left">{n,}</td>
+<td align="left">前一个字符至少n次</td>
+</tr>
+
+<tr>
+<td align="left">{n,m}</td>
+<td align="left">前一个字符至少n，至多m次</td>
+</tr>
+
+<tr>
+<td align="left">()</td>
+<td align="left">模式单元，通俗来说就是：想提取出什么内容，就在正则中用小括号将其括起来</td>
+</tr>
+</tbody>
+</table>
+
+<p>基础3：
+- 贪婪模式：尽可能多地匹配
+- 懒惰模式：尽可能少地匹配，精准模式</p>
+
+<p>默认贪婪模式
+如果出现如下组合，则代表为懒惰模式：
+- *?
+- +?</p>
+
+<p>实例3：</p>
+
+<p>源字符串：&rdquo;poytphonyhjskjsa&rdquo;<br>
+正则表达式：&rdquo;p.*y&rdquo;<br>
+匹配出什么？  poytphony<br>
+为什么？    默认贪婪模式<br></p>
+
+<p>源字符串：&rdquo;poytphonyhjskjsa&rdquo;<br>
+正则表达式：&rdquo;p.*?y&rdquo;<br>
+匹配出什么？  [&lsquo;poy&rsquo;, &lsquo;phony&rsquo;]<br>
+为什么？    懒惰模式，精准匹配<br></p>
+
+<p>基础4：<br>
+模式修正符：在不改变正则表达式的情况下通过模式修正符使匹配结果发生更改
+- re.S      让.也可以匹配多行
+- re.I      让匹配时忽略大小写</p>
+
+<p>实例4:</p>
+
+<p>源字符串：&rdquo;Python&rdquo;<br>
+正则表达式：&rdquo;pyt&rdquo;<br>
+匹配方式:re.compile(&ldquo;pyt&rdquo;).findall(&ldquo;Python&rdquo;)<br>
+匹配结果： []<br></p>
+
+<p>源字符串：&rdquo;Python&rdquo;<br>
+正则表达式：&rdquo;pyt&rdquo;<br>
+匹配方式:re.compile(&ldquo;pyt&rdquo;,re.I).findall(&ldquo;Python&rdquo;)<br>
+匹配结果： Pyt<br></p>
+
+<p>源字符串：string=&ldquo;Python&rdquo;<br>
+正则表达式：&rdquo;pyt&rdquo;<br>
+匹配方式:re.compile(&ldquo;pyt&rdquo;,re.I).findall(&ldquo;Python&rdquo;)<br>
+匹配结果： Pyt<br></p>
+
+<p>源字符串：string=&ldquo;&rdquo;&ldquo;我是阿里云大学<br>
+欢迎来学习<br>
+Python网络爬虫课程<br>
+&ldquo;&rdquo;&rdquo;<br>
+正则表达式：pat=&ldquo;阿里.*?Python&rdquo;<br>
+匹配方式:re.compile(pat).findall(string)<br>
+匹配结果： []<br></p>
+
+<p>源字符串：string=&ldquo;&rdquo;&ldquo;我是阿里云大学<br>
+欢迎来学习<br>
+Python网络爬虫课程<br>
+&ldquo;&rdquo;&rdquo;<br>
+正则表达式：pat=&ldquo;阿里.*?Python&rdquo;<br>
+匹配方式:re.compile(pat,re.S).findall(string)<br>
+匹配结果： [&lsquo;阿里云大学\n欢迎来学习\nPython&rsquo;]<br></p>
+
+<h1 id="爬hellobi-com的课程名称-价格等">爬hellobi.com的课程名称，价格等。</h1>
+
+<p>分析：</p>
+
+<pre><code class="language-text">列表：
+ 发现课程的url都是以数字来区别的https://edu.hellobi.com/course/280
+
+ 内容：
+ 标题是在&lt;div class=&quot;course-info&quot;&gt;后面的h1的内容里面。
+
+ 价格：
+ &lt;span class=&quot;m-price&quot;&gt;&lt;span class=&quot;price-expense&quot;&gt;&lt;sub&gt;￥&lt;/sub&gt;799&lt;/span&gt;
+
+ 课程讲师：
+ class=&quot;lec-name&quot;&gt;宽胖子 &lt;/a&gt;
+</code></pre>
+
+<pre><code class="language-python">import urllib.request
+import re
+for i in range(0,1000):
+    thisurl=&quot;https://edu.hellobi.com/course/&quot;+str(i+1)
+    data=urllib.request.urlopen(thisurl).read().decode(&quot;utf-8&quot;,&quot;ignore&quot;)
+    title_pat='&lt;li class=&quot;active&quot;(.*?)&lt;/li&gt;'
+    teacher_pat='class=&quot;lec-name&quot;&gt;(.*?)&lt;'
+    price_pat='div class=&quot;course-price&quot;&gt;.*?&lt;sub&gt;￥&lt;/sub&gt;(.*?)&lt;/span&gt;'
+    title=re.compile(title_pat,re.S).findall(data)
+    if(len(title)&gt;0):
+        title=title[0]
+    else:
+        continue
+    teacher=re.compile(teacher_pat,re.S).findall(data)
+    if(len(teacher)&gt;0):
+        teacher=teacher[0]
+    else:
+        teacher=&quot;缺失&quot;
+    price=re.compile(price_pat,re.S).findall(data)
+    if(len(price)&gt;0):
+        price=price[0]
+    else:
+        price=&quot;免费&quot;
+    print(title)
+    print(teacher)
+    print(price)
+    print(&quot;--------------&quot;)
+</code></pre>
+
+<h1 id="urllib模块">urllib模块</h1>
+
+<ul>
+<li>http,https协议：先用http去试再用https去试。一般没有影响</li>
+<li>urlopen与urlretrieve以及request:</li>
+<li>网页状态码:200, 403, 404</li>
+</ul>
+
+<pre><code class="language-python"># 爬到内存中-方法1
+import urllib.request
+data=urllib.request.urlopen(&quot;http://www.baidu.com&quot;).read().decode(&quot;utf-8&quot;, &quot;ignore&quot;)
+# 爬到内存中-方法2: 经过一次封装 可以放一些头信息或者post数据信息
+url=&quot;http://www.baidu.com&quot;
+req=urllib.request.Request(url)
+urllib.request.urlopen(req).read().decode(&quot;utf-8&quot;, &quot;ignore&quot;)
+
+# 爬到硬盘中:
+urllib.request.urlretrieve(url, filename=&quot;/Users/liwei/index.html&quot;)
+
+# 拿到状态码
+fh=urllib.request.urlopen(&quot;http://www.baidu.com&quot;)
+print(fh.getcode())
+</code></pre>
+
+<h1 id="百度信息自动搜索关键字内容并自动翻页">百度信息自动搜索关键字内容并自动翻页</h1>
+
+<p>分析：</p>
+
+<pre><code class="language-text">列表：get请求
+https://www.baidu.com/s?ie=utf-8&amp;f=8&amp;rsv_bp=0&amp;rsv_idx=1&amp;tn=baidu&amp;wd=python&amp;rsv_pq=bfe9bb370003d725&amp;rsv_t=5622RVfMwmR6lV21OMBbXqZLyxt1vWbTTglAPZYA0yy5iFt0EtUsLtvqwP4&amp;rqlang=cn&amp;rsv_enter=1&amp;rsv_sug3=7&amp;rsv_sug2=0&amp;inputT=885&amp;rsv_sug4=1736
+
+2页:
+https://www.baidu.com/s?wd=python&amp;pn=10&amp;oq=python&amp;ie=utf-8&amp;rsv_idx=1&amp;rsv_pq=cde130520003e503&amp;rsv_t=5866vuBpvms3WP3hm65pjVIsDdwAHWrFegctP11MYLUC3i2XngqY8HGe25w
+
+3页：
+https://www.baidu.com/s?wd=python&amp;pn=20&amp;oq=python&amp;ie=utf-8&amp;rsv_idx=1&amp;rsv_pq=d7adc7c0000536c3&amp;rsv_t=087bPk0IQ%2FhxafWpV9EhYksaOkOBJ2oPQw3NXPpPb%2Fcie6qxRXGy3dgiLG4
+
+从上面可以理出来有用的信息：
+https://www.baidu.com/s?ie=utf-8&amp;wd=python&amp;pn=(i-1)*10
+
+标题：
+data-tools='{&quot;title&quot;:&quot;Python-开发语言-计算机专区-大家论坛&quot;
+
+</code></pre>
+
+<p>代码实现：</p>
+
+<pre><code class="language-python">import urllib.request
+import re
+url = &quot;http://www.baidu.com/s?wd=&quot;
+key=&quot;吉姆尼&quot;
+# 对关键词进行编码，因为url中需要对中文等进行处理
+key_code = urllib.request.quote(key)
+
+# 带检索关键词的url
+url_key = url + key_code + &quot;&amp;ie=utf-8&quot;
+
+# print(&quot;url_key: &quot; + url_key)
+
+# 通过for循环爬取各页信息，这里爬取1到10页
+for i in range(0, 10):
+    print(&quot;正在爬取 &quot; + str(i+1) + &quot; 页数据&quot;)
+    # 根据刚刚总结的url规律构造当前url
+    this_url= url_key + &quot;&amp;pn=&quot; + str(i*10)
+    # print(&quot;this_url:&quot; + this_url)
+    # 爬取这一页的数据
+    data = urllib.request.urlopen(this_url).read().decode(&quot;utf-8&quot;, &quot;ignore&quot;)
+    # 成功得到数据
+    # 根据正则表达式将爬到的网页列表中各网页标题进行提取
+    pat = '&quot;title&quot;:&quot;(.*?)&quot;'
+    rst = re.compile(pat, re.S).findall(data)
+    # 将各标题信息通过循环遍历输出
+    for j in range(0, len(rst)):
+        print(&quot;第&quot;+str(j)+&quot;条网页标题是:&quot;+str(rst[j]))
+        print(&quot;--------------&quot;)
+
+</code></pre>
+
+<h1 id="自动post请求">自动Post请求</h1>
+
+<pre><code class="language-python"># 自动post爬虫
+import urllib.request
+import urllib.parse
+url = &quot;http://www.iqianyue.com/mypost&quot;
+
+# 将数据使用urlencode编码处理后，使用encode()设置为utf-8编码
+postdata = urllib.parse.urlencode({
+    &quot;name&quot;:&quot;liwei@emacsvi.com&quot;,
+    &quot;pass&quot;:&quot;dada1233455&quot;,
+}).encode('utf-8')
+
+req = urllib.request.Request(url, postdata)
+req.add_header('User-Agent', 'Mozilla/5.0....')
+data = urllib.request.urlopen(req).read()
+fhandle = open(&quot;./index.html&quot;, &quot;wb&quot;)
+fhandle.write(data)
+fhandle.close()
+</code></pre>
+
+<h1 id="cookie处理">cookie处理</h1>
+
+<pre><code class="language-python">#cookie保存
+import urllib.request
+import http.cookiejar
+# 建立cookie处理
+cjar=http.cookiejar.CookieJar()
+opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(cjar))
+urllib.request.install_opener(opener) # 将cookie安装为全局的
+# cookie的读取
+print(str(cjar))
+</code></pre>
+
+<h1 id="浏览器伪装技术">浏览器伪装技术</h1>
+
+<ul>
+<li>通过opener添加headers</li>
+<li>通过request添加headers</li>
+<li>批量添加headers</li>
+</ul>
+
+<pre><code class="language-python">import urllib.request
+url=&quot;https://www.qiushibaike.com/&quot;
+# 方法- ：
+# 头文件格式header=(&quot;User-Agent&quot;, 具体用户代理值)
+# 使用opener来设置 先设一个元组 再opener.addheaders
+headers=(&quot;User-Agent&quot;, &quot;Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.2pre) Gecko/20070215 K-Ninja/2.1.1&quot;)
+opener=urllib.request.build_opener()
+opener.addheaders=[headers]
+data=opener.open(url).read() # 直接爬
+# 或者安装为全局再去查
+urllib.request.install_opener(opener)
+data=urllib.request.urlopen(url).read()
+
+
+# 方法二: 批量加多个header属性
+# 那我们如果添加多个头信息呢
+headers={&quot;User-Agent&quot;:&quot;Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.2pre) Gecko/20070215 K-Ninja/2.1.1&quot;,
+         &quot;Content-Type&quot;:&quot;application/javascript&quot;,}
+opener=urllib.request.build_opener()
+# [(&quot;k&quot;, &quot;v&quot;), (&quot;k&quot;, &quot;v&quot;)]
+headall=[]
+
+for k, v in headers.items():
+    item=(k, v)
+    headall.append(item)
+opener.addheaders=headall
+urllib.request.install_opener(opener)
+data=urllib.request.urlopen(url).read()
+
+
+# 方法三：添加user-agent
+# 利用Request请求方式
+req0 = urllib.request.Request(url)
+req0.add_header(&quot;User-Agent&quot;, &quot;Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.2pre) Gecko/20070215 K-Ninja/2.1.1&quot;)
+req0data=urllib.request.urlopen(req0).read().decode('utf-8', 'ignore')
+</code></pre>
+
+<h1 id="qiushibaike爬取">qiushibaike爬取</h1>
+
+<p>这个需要浏览器伪装才可以获取</p>
+
+<p>分析：</p>
+
+<pre><code class="language-text">列表：
+https://www.qiushibaike.com/8hr/page/2/
+https://www.qiushibaike.com/8hr/page/3/
+
+内容：
+&lt;div class=&quot;content&quot;&gt;来匹配
+</code></pre>
+
+<p>正则的地方一定要加：<strong>re.S</strong>才能匹配到。</p>
+
+<pre><code class="language-python">import urllib.request
+import re
+# 增加浏览器伪装
+headers=(&quot;User-Agent&quot;, &quot;Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.2pre) Gecko/20070215 K-Ninja/2.1.1&quot;)
+opener=urllib.request.build_opener()
+opener.addheaders=[headers]
+# 安装为全局再去爬取
+urllib.request.install_opener(opener)
+for i in range(0, 35):
+    try:
+        # https://www.qiushibaike.com/8hr/page/3/
+        print(&quot;正在爬取第&quot;+str(i+1)+&quot;页数据:&quot;)
+        thisurl=&quot;http://www.qiushibaike.com/8hr/page/&quot;+str(i+1)+&quot;/&quot;
+        print(thisurl)
+        data=urllib.request.urlopen(thisurl).read().decode('utf-8', 'ignore')
+        print(&quot;len(data)=&quot;, str(len(data)))
+        if (len(data) &lt;= 0):
+            continue
+        pat='&lt;div class=&quot;content&quot;&gt;.*?&lt;span&gt;(.*?)&lt;/span&gt;.*?&lt;/div&gt;'
+        rst = re.compile(pat, re.S).findall(data)
+        for j in range(0, len(rst)):
+            print(rst[j])
+            print(&quot;-----------&quot;)
+    except Exception as err:
+        pass
+
+</code></pre>
+
+<h1 id="requests模块使用">requests模块使用</h1>
+
+<p><strong>requests</strong>模块也是常用的爬虫模块，可能是目前用得最多的一个库吧。常用的一些方法如下:</p>
+
+<pre><code class="language-python">import requests
+import re
+'''
+请求方式：get, post, put...
+常用参数：params主要用于设置Get的参数headers, proxies, cookies，data设置post的数据
+requests.get()
+requests.post()
+rsp.text内容
+rsp.content二进制数据
+rsp.url当前访问的网址
+rsp.encoding当前编码
+rsp.cookies可以
+
+requests.utils.dict_from_cookiejar(rsp.cookies)
+'''
+# 常用的一些方法
+rsp = requests.get(&quot;https://www.hellobi.com&quot;)
+title = re.compile('&lt;title&gt;(.*?)&lt;/title', re.S).findall(rsp.text)
+print(title)
+print(len(rsp.text))
+print(rsp.url)
+print(rsp.encoding)
+print(rsp.cookies)
+ck = requests.utils.dict_from_cookiejar(rsp.cookies)
+# 增加header信息,直接以字典的方式取可
+hd={&quot;User-Agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36&quot;}
+px={&quot;http&quot;:&quot;http://127.0.0.1:8888&quot;,
+    &quot;https&quot;:&quot;http://127.0.0.1:8888&quot;}
+rsp=requests.get(&quot;https://www.hellobi.com&quot;, headers=hd, cookies=ck, proxies=px)
+print(rsp.status_code)
+# get参数
+key={&quot;wd&quot;:&quot;emacsvi&quot;}
+rsp=requests.get(&quot;http://www.baidu.com/s&quot;, headers=hd, cookies=ck, params=key)
+title = re.compile('&lt;title&gt;(.*?)&lt;/title', re.S).findall(rsp.text)
+
+# post的发送
+postdata={&quot;name&quot;:&quot;emacsvi&quot;, &quot;pass&quot;:&quot;123456&quot;}
+requests.post(&quot;http://www.islsls.com&quot;, data=postdata)
+</code></pre>
+
+<h1 id="beautifulsoup使用">BeautifulSoup使用</h1>
+
+<h1 id="淘宝图片爬虫">淘宝图片爬虫</h1>
+
+<p>先分析</p>
+
+<pre><code class="language-text">分析：
+对应关键字的图片
+
+列表:
+2页：
+https://s.taobao.com/search?q=%E5%A4%A7%E7%A0%81%E4%BF%9D%E6%9A%96%E5%86%85%E8%A1%A3&amp;imgfile=&amp;js=1&amp;stats_click=search_radio_all%3A1&amp;initiative_id=staobaoz_20181121&amp;ie=utf8&amp;bcoffset=3&amp;ntoffset=3&amp;p4ppushleft=1%2C48&amp;s=44
+
+3页：
+https://s.taobao.com/search?q=%E5%A4%A7%E7%A0%81%E4%BF%9D%E6%9A%96%E5%86%85%E8%A1%A3&amp;imgfile=&amp;js=1&amp;stats_click=search_radio_all%3A1&amp;initiative_id=staobaoz_20181121&amp;ie=utf8&amp;bcoffset=0&amp;ntoffset=6&amp;p4ppushleft=1%2C48&amp;s=88
+
+4页：
+https://s.taobao.com/search?q=%E5%A4%A7%E7%A0%81%E4%BF%9D%E6%9A%96%E5%86%85%E8%A1%A3&amp;imgfile=&amp;js=1&amp;stats_click=search_radio_all%3A1&amp;initiative_id=staobaoz_20181121&amp;ie=utf8&amp;bcoffset=-3&amp;ntoffset=-3&amp;p4ppushleft=1%2C48&amp;s=132
+
+结论：
+https://s.taobao.com/search?q=%E5%A4%A7%E7%A0%81%E4%BF%9D%E6%9A%96%E5%86%85%E8%A1%A3&amp;ie=utf8&amp;s=(i-1)*44
+
+图片数据是否能够直接找到:
+https://g-search3.alicdn.com/img/bao/uploaded/i4/i1/2931902494/TB2cJSsEb5YBuNjSspoXXbeNFXa_!!2931902494-0-item_pic.jpg_460x460Q90.jpg_.webp
+直接找却找不到，但是TB2cJSsEb5Y这样的东西可能是图片的Id号，先不用抓包应该都可以发现。把图片的关键的地方拿出来找，找到了。
+&quot;pic_url&quot;:&quot;//g-search3.alicdn.com/img/bao/uploaded/i4/i1/2931902494/TB2cJSsEb5YBuNjSspoXXbeNFXa_!!2931902494-0-item_pic.jpg&quot;
+find下刚好44个与端口个数一致。所以可以找到图片了。
+</code></pre>
+
+<p>但是现在需要登录之后才能查看这些数据了。有点尴尬了。</p>
+
+<h1 id="代理池">代理池</h1>
+
+<p>用户代理池与IP代理池的使用。</p>
+
+<pre><code class="language-python"># 同时使用用户代理池和ip代理池实现的第二种方式(接口调用法)
+import time
+import urllib.request
+import random
+def use_ip(ippools, myurl, thisapi):
+    uapools= [
+        &quot;Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; AcooBrowser; .NET CLR 1.1.4322; .NET CLR 2.0.50727)&quot;,
+        &quot;Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; Acoo Browser; SLCC1; .NET CLR 2.0.50727; Media Center PC 5.0; .NET CLR 3.0.04506)&quot;,
+        &quot;Mozilla/4.0 (compatible; MSIE 7.0; AOL 9.5; AOLBuild 4337.35; Windows NT 5.1; .NET CLR 1.1.4322; .NET CLR 2.0.50727)&quot;,
+        &quot;Mozilla/5.0 (Windows; U; MSIE 9.0; Windows NT 9.0; en-US)&quot;,
+        &quot;Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Win64; x64; Trident/5.0; .NET CLR 3.5.30729; .NET CLR 3.0.30729; .NET CLR 2.0.50727; Media Center PC 6.0)&quot;,
+        &quot;Mozilla/5.0 (compatible; MSIE 8.0; Windows NT 6.0; Trident/4.0; WOW64; Trident/4.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; .NET CLR 1.0.3705; .NET CLR 1.1.4322)&quot;,
+        &quot;Mozilla/4.0 (compatible; MSIE 7.0b; Windows NT 5.2; .NET CLR 1.1.4322; .NET CLR 2.0.50727; InfoPath.2; .NET CLR 3.0.04506.30)&quot;,
+        &quot;Mozilla/5.0 (Windows; U; Windows NT 5.1; zh-CN) AppleWebKit/523.15 (KHTML, like Gecko, Safari/419.3) Arora/0.3 (Change: 287 c9dfb30)&quot;,
+        &quot;Mozilla/5.0 (X11; U; Linux; en-US) AppleWebKit/527+ (KHTML, like Gecko, Safari/419.3) Arora/0.6&quot;,
+        &quot;Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.2pre) Gecko/20070215 K-Ninja/2.1.1&quot;,
+        &quot;Mozilla/5.0 (Windows; U; Windows NT 5.1; zh-CN; rv:1.9) Gecko/20080705 Firefox/3.0 Kapiko/3.0&quot;,
+        &quot;Mozilla/5.0 (X11; Linux i686; U;) Gecko/20070322 Kazehakase/0.4.5&quot;,
+        &quot;Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.8) Gecko Fedora/1.9.0.8-1.fc10 Kazehakase/0.5.6&quot;,
+        &quot;Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/535.11 (KHTML, like Gecko) Chrome/17.0.963.56 Safari/535.11&quot;,
+        &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_3) AppleWebKit/535.20 (KHTML, like Gecko) Chrome/19.0.1036.7 Safari/535.20&quot;,
+    ]
+
+    def api(thisapi):
+        print(&quot;这一次调用了接口&quot;)
+        # 清除之前调用url的信息，比如urlretrieve缓存信息
+        urllib.request.urlcleanup()
+        thisall=urllib.request.urlopen(thisapi).read().decode(&quot;utf-8&quot;, &quot;ignore&quot;)
+        print(&quot;接口调用完成&quot;)
+        return thisall
+    def ip(ippools, uapools):
+        thisua=random.choice(uapools)
+        print(thisua)
+        headers=(&quot;User-Agent&quot;, thisua)
+        thisip=ippools
+        print(&quot;当前用的ip是：&quot;+ippools)
+        proxy=urllib.request.ProxyHandler({&quot;http&quot;:thisip})
+        opener=urllib.request.build_opener(proxy, urllib.request.HTTPHandler)
+        opener.addheaders=[headers]
+        urllib.request.install_opener(opener)
+
+    if(ippools==0):
+        while True:
+            ippools=api(thisapi) # 调用一次代理接口获取代理
+            print(&quot;提取ip完成&quot;)
+            ip(ippools, uapools)
+            print(&quot;正在验证ip有效性&quot;)
+            data1=urllib.request.urlopen(&quot;http://www.baidu.com&quot;).read().decode(&quot;utf-8&quot;, &quot;ignore&quot;)
+            if (len(data1) &gt; 5000):
+                print(&quot;-------当前ip有效------&quot;)
+                break
+            else:
+                print(&quot;-------当前ip无效，正在延时60秒重新切换------&quot;)
+                time.sleep(60)
+    else:
+        ip(ippools, uapools)
+    url=myurl
+    data1=urllib.request.urlopen(url).read()
+    data=data1.decode(&quot;utf-8&quot;, &quot;ignore&quot;)
+    return ippools, data
+
+
+'''
+# 使用示例：
+x=0
+thisapi='xxxxx'
+for i in range(0, 35):
+    try:
+        url=&quot;http://www.baidu.com&quot;
+        if(i%7==0 and i==0):
+            ippools, thispagedata=use_ip(0, url, thisapi)
+        elif(i%7==0):
+            print(&quot;正在延时中...&quot;)
+            time.sleep(120)
+            print(&quot;延时完成，正在调取ip&quot;)
+            ippools.thispagedata=use_ip(0, url, thisapi)
+            print(&quot;ip调取完成&quot;)
+        else:
+            ippools, thispagedata = use_ip(ippools, url, thisapi)
+
+        print(len(thispagedata))
+        x+=1
+    except Exception as err:
+        print(err)
+        x+=1
+'''
+
+
+
+</code></pre>
+
+<h2 id="参考文献">参考文献</h2>
+
+<ul>
+<li><a href="http://docs.python-requests.org/zh_CN/latest/user/quickstart.html">requests库使用</a></li>
+<li><a href="https://github.com/requests/requests">requests.github</a></li>
+<li><a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/index.zh.html#">bs4文档</a></li>
+<li><a href="https://www.cnblogs.com/yd1227/archive/2011/03/18/1988015.html">random模块使用</a></li>
+</ul>
+
+                        </div>
+
+                        
+
+
+                        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/post/ethereum-decode-input-data/">解码以太坊input数据</a></li>
+        
+        <li><a href="/post/linux-screen/">linux-screen后台会话</a></li>
+        
+        <li><a href="/post/nodejs-install/">nodejs安装</a></li>
+        
+        <li><a href="/post/go-supervisord/">go-supervisord守护进程</a></li>
+        
+        <li><a href="/post/go-makefile/">go-makefile</a></li>
+        
+    </ul>
+</div>
+
+
+                        <div class="post-meta meta-tags">
+                            
+                            <ul class="clearfix">
+                                
+                                <li><a href="http://emacsvi.com/tags/python">python</a></li>
+                                
+                                <li><a href="http://emacsvi.com/tags/%E7%88%AC%E8%99%AB">爬虫</a></li>
+                                
+                            </ul>
+                            
+                        </div>
+                    </article>
+                    
+    
+
+    
+    
+                </div>
+            </div>
+            <div id="secondary">
+    <section class="widget">
+        <form id="search" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="http://emacsvi.com">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="http://emacsvi.com/post/kubeadm-kubernetes/" title="利用kubeadm部署kubernetes">利用kubeadm部署kubernetes</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/post/centos7-system-notes/" title="centos7系统配置">centos7系统配置</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/post/vagrant-notes/" title="vagrant相关配置命令">vagrant相关配置命令</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/post/heling-go-36-notes/" title="赫林老师go语言36讲">赫林老师go语言36讲</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/post/frp/" title="frp内网穿透">frp内网穿透</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/post/harbor-image-notes/" title="harbor镜像仓库搭建">harbor镜像仓库搭建</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/post/dynamic-json-in-go/" title="Dynamic Json In Go">Dynamic Json In Go</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/post/my-go-codes/" title="go常用的一些代码备忘">go常用的一些代码备忘</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/post/go-keng-notes/" title="go语言编码过程中常见的坑总结">go语言编码过程中常见的坑总结</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/post/go-websocket-practice/" title="websocket实践">websocket实践</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">分类</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="http://emacsvi.com/categories/blockchain/">blockchain(1)</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/categories/consul/">consul(1)</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/categories/db/">db(1)</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/categories/docker/">docker(2)</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/categories/etcd/">etcd(1)</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/categories/ethereum/">ethereum(1)</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/categories/go/">go(30)</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/categories/kubernetes/">kubernetes(2)</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/categories/linux/">linux(4)</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/categories/mac/">mac(1)</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/categories/markdown/">markdown(1)</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/categories/nodejs/">nodejs(1)</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/categories/python/">python(10)</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/categories/react/">react(1)</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/categories/redis/">redis(2)</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/categories/%E6%8A%80%E6%9C%AF/">技术(1)</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/categories/%E6%97%85%E8%A1%8C/">旅行(4)</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/categories/%E6%B5%81%E9%87%91%E5%B2%81%E6%9C%88/">流金岁月(1)</a>
+    </li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">标签</h3>
+<div class="tagcloud">
+    
+    <a href="http://emacsvi.com/tags/Istio/">Istio</a>
+    
+    <a href="http://emacsvi.com/tags/blockchain/">blockchain</a>
+    
+    <a href="http://emacsvi.com/tags/cmds/">cmds</a>
+    
+    <a href="http://emacsvi.com/tags/codis/">codis</a>
+    
+    <a href="http://emacsvi.com/tags/consul/">consul</a>
+    
+    <a href="http://emacsvi.com/tags/curl/">curl</a>
+    
+    <a href="http://emacsvi.com/tags/db/">db</a>
+    
+    <a href="http://emacsvi.com/tags/django/">django</a>
+    
+    <a href="http://emacsvi.com/tags/docker/">docker</a>
+    
+    <a href="http://emacsvi.com/tags/docker-compose/">docker-compose</a>
+    
+    <a href="http://emacsvi.com/tags/etcd/">etcd</a>
+    
+    <a href="http://emacsvi.com/tags/ethereum/">ethereum</a>
+    
+    <a href="http://emacsvi.com/tags/go/">go</a>
+    
+    <a href="http://emacsvi.com/tags/javascript/">javascript</a>
+    
+    <a href="http://emacsvi.com/tags/kubernetes/">kubernetes</a>
+    
+    <a href="http://emacsvi.com/tags/linux/">linux</a>
+    
+    <a href="http://emacsvi.com/tags/mac/">mac</a>
+    
+    <a href="http://emacsvi.com/tags/markdown/">markdown</a>
+    
+    <a href="http://emacsvi.com/tags/mongodb/">mongodb</a>
+    
+    <a href="http://emacsvi.com/tags/mysql/">mysql</a>
+    
+    <a href="http://emacsvi.com/tags/nodejs/">nodejs</a>
+    
+    <a href="http://emacsvi.com/tags/python/">python</a>
+    
+    <a href="http://emacsvi.com/tags/react/">react</a>
+    
+    <a href="http://emacsvi.com/tags/redis/">redis</a>
+    
+    <a href="http://emacsvi.com/tags/selenium/">selenium</a>
+    
+    <a href="http://emacsvi.com/tags/sql/">sql</a>
+    
+    <a href="http://emacsvi.com/tags/supervisord/">supervisord</a>
+    
+    <a href="http://emacsvi.com/tags/vagrant/">vagrant</a>
+    
+    <a href="http://emacsvi.com/tags/websocket/">websocket</a>
+    
+    <a href="http://emacsvi.com/tags/%E5%A4%87%E5%BF%98/">备忘</a>
+    
+    <a href="http://emacsvi.com/tags/%E6%8A%80%E6%9C%AF/">技术</a>
+    
+    <a href="http://emacsvi.com/tags/%E6%97%85%E8%A1%8C/">旅行</a>
+    
+    <a href="http://emacsvi.com/tags/%E7%88%AC%E8%99%AB/">爬虫</a>
+    
+</div>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a target="_blank" href="#" title="Android Gradle权威指南">Android Gradle权威指南</a>
+        </li>
+        
+        <li>
+            <a target="_blank" href="#" title="常用开发工具CDN镜像">常用开发工具CDN镜像</a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="http://emacsvi.com/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+        </div>
+    </div>
+</div>
+<footer id="footer">
+    <div class="container">
+        &copy; 2019 <a href="http://emacsvi.com">李伟的博客 By emacsvi</a>.
+        Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
+        <a href="https://www.emacsvi.com/" target="_blank">Theme</a> based on <a href="https://emacsvi.com" target="_blank">maupassant</a>.
+        
+    </div>
+</footer>
+
+
+    <script type="text/javascript">
+    
+    (function(){
+        $("pre code").parent().addClass("line-numbers")
+    }())
+
+    window.MathJax = {
+        tex2jax: {
+            inlineMath: [ ['$','$'] ],
+            processEscapes: true
+        }
+    };
+    </script>
+    <script type="text/javascript" src="/js/prism.js" async="true"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src="/js/totop.js?v=0.0.0" async=""></script>
+
+
+
+
+
+
+
+</body>
+</html>

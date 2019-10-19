@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>django on 李伟的博客</title>
+    <link>http://emacsvi.com/tags/django/</link>
+    <description>Recent content in django on 李伟的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 27 Nov 2018 01:00:01 +0000</lastBuildDate>
+    
+	<atom:link href="http://emacsvi.com/tags/django/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>django框架学习</title>
+      <link>http://emacsvi.com/post/python-django-framework-study/</link>
+      <pubDate>Tue, 27 Nov 2018 01:00:01 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/post/python-django-framework-study/</guid>
+      <description>django框架学习 django是一个mvt框架，与传统的mvc框架是一样的。 M:model模型，和数据库进行交互 T:Template模板，</description>
+    </item>
+    
+  </channel>
+</rss>

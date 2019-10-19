@@ -1,0 +1,540 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.54.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>go-range的注意事项 | 李伟的博客</title>
+    <meta property="og:title" content="go-range的注意事项 - 李伟的博客">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content="2018-11-23T01:00:24&#43;08:00">
+        
+        
+    <meta property="article:modified_time" content="2018-11-23T01:00:24&#43;08:00">
+        
+    <meta name="Keywords" content="golang,go语言,go语言笔记,区块链,博客,项目管理,python,软件架构">
+    <meta name="description" content="go-range的注意事项">
+        
+    <meta name="author" content="emacsvi">
+    <meta property="og:url" content="http://emacsvi.com/post/go-rang/">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="/css/normalize.css">
+    
+        <link rel="stylesheet" href="/css/prism.css">
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-129687838-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-129687838-1');
+    </script>
+
+
+    
+
+
+    
+    
+</head>
+
+<body>
+<header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="http://emacsvi.com">
+                        李伟的博客
+                    </a>
+                
+                <p class="description">主要专注于区块链、Go语言(golang)、Python、C语言、后端服务架构</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="http://emacsvi.com">首页</a>
+                    
+                    <a  href="http://emacsvi.com/archives/" title="归档">归档</a>
+                    
+                    <a  href="http://emacsvi.com/about/" title="关于">关于</a>
+                    
+                    <a  href="http://emacsvi.com/travel/" title="旅行">旅行</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<div id="body">
+    <div class="container">
+        <div class="col-group">
+
+            <div class="col-8" id="main">
+                <div class="res-cons">
+                    <article class="post">
+                        <header>
+                            <h1 class="post-title">go-range的注意事项</h1>
+                        </header>
+                        <date class="post-meta meta-date">
+                            2018年11月23日
+                        </date>
+                        
+                        <div class="post-meta">
+                            <span>|</span>
+                            
+                                <span class="meta-category"><a href="http://emacsvi.com/categories/go">go</a></span>
+                            
+                        </div>
+                        
+                        
+                        <div class="post-content">
+                            
+
+<p>Go中的<code>range</code>关键字使用起来非常的方便，它允许你遍历某个<code>slice</code>或者<code>map</code>，并通过两个参数(<strong>index</strong>和<strong>value</strong>)，分别获取到slice或者map中某个元素所在的index以及其值。 比如像这样的用法：</p>
+
+<pre><code class="language-go">for index, value := range mySlice {
+    fmt.Println(&quot;index: &quot; + index)
+    fmt.Println(&quot;value: &quot; + value)
+}
+</code></pre>
+
+<hr />
+
+<p>上面的例子足够清晰的描述了range的用法，实际上在使用range关键字的时候，还有一些需要特别注意的地方，有一些新手很容易入的<strong>坑</strong>。为了说明这些<strong>坑</strong>，我们可以从下面这个稍复杂的例子说起：</p>
+
+<pre><code class="language-go">type Foo struct {
+    bar string
+}
+
+func main() {
+    list := []Foo{
+        {&quot;A&quot;},
+        {&quot;B&quot;},
+        {&quot;C&quot;},
+    }
+
+    list2 := make([]*Foo, len(list))
+    for i, value := range list {
+        list2[i] = &amp;value
+    }
+
+    fmt.Println(list[0], list[1], list[2])
+    fmt.Println(list2[0], list2[1], list2[2])
+}
+</code></pre>
+
+<p>在这个例子中，我们干了下面的一些事情：</p>
+
+<ul>
+<li>定义了一个叫做Foo的结构，里面有一个叫bar的field。随后，我们创建了一个基于Foo结构体的slice，名字叫list</li>
+<li>我们还创建了一个基于Foo结构体指针类型的slice，叫做list2</li>
+<li>在一个for循环中，我们试图遍历list中的每一个元素，获取其指针地址，并赋值到list2中index与之对应的位置。</li>
+<li>最后，分别输出list与list2中的每个元素</li>
+</ul>
+
+<p>从代码来看，理所当然，我们期望得到的结果应该是这样：</p>
+
+<pre><code class="language-go">{A} {B} {C}
+&amp;{A} &amp;{B} &amp;{C}
+</code></pre>
+
+<p>但是结果却出乎意料，程序的输出是这样的：</p>
+
+<pre><code class="language-go">{A} {B} {C}
+&amp;{C} &amp;{C} &amp;{C}
+</code></pre>
+
+<p>从结果来看，仿佛list2中的三个元素，都指向了list中的最后一个元素。这是为什么呢？问题就出在上面那一段<code>for...range</code>循环中。</p>
+
+<p>在Go的<code>for...range</code>循环中，Go始终使用值拷贝的方式代替被遍历的元素本身，简单来说，就是<code>for...range</code>中那个value，是一个值拷贝，而不是元素本身。这样一来，当我们期望用<code>&amp;</code>获取元素的地址时，实际上只是取到了value这个<strong>临时变量的地址</strong>，而非list中真正被遍历到的某个元素的地址。而在整个<code>for...range</code>循环中，value这个临时变量会被重复使用，所以，在上面的例子中，list2被填充了三个相同的地址，其实都是value的地址。而在最后一次循环中，value被赋值为{c}。因此，list2输出的时候显示出了三个&amp;{c}。</p>
+
+<p>同样的，下面的写法，跟<code>for...range</code>的例子如出一辙：</p>
+
+<pre><code class="language-go">var value Foo
+for var i := 0; i &lt; len(list); i++ {
+    value = list[i]
+    list2[i] = &amp;value
+}
+</code></pre>
+
+<p>如果我们输出list2的三个元素，结果同样是: <code>&amp;{C} &amp;{C} &amp;{C}</code></p>
+
+<p>那么，怎样才是正确的写法呢？我们应该用<strong>index</strong>来访问<code>for...range</code>中真实的元素，并获取其指针地址：</p>
+
+<pre><code class="language-go">for i, _ := range list {
+    list2[i] = &amp;list[i]
+}
+</code></pre>
+
+<p>这样，输出list2中的元素，就能得到我们想要的结果(&amp;{A} &amp;{B} &amp;{C})了。</p>
+
+<p>了解了range的正确使用姿势，那么我们下面这个例子也能迎刃而解了：</p>
+
+<pre><code class="language-go">package main
+
+import &quot;fmt&quot;
+
+type MyType struct {
+    field string
+}
+
+func main() {
+    var array [10]MyType
+
+    for _, e := range array {
+        e.field = &quot;foo&quot;
+    }
+
+    for _, e := range array {
+        fmt.Println(e.field)
+        fmt.Println(&quot;--&quot;)
+    }
+}
+</code></pre>
+
+<p>平常写代码最常见的场景，就是我们需要在一个循环中修改被遍历元素的值。比如上面这个例子，我们希望能使用<code>for...range</code>循环，一次性将array中每个元素的field设置为<code>foo</code>。同样，因为range值拷贝的缘故，上面的程序什么都不会输出&hellip;</p>
+
+<p>而正确的做法是：</p>
+
+<pre><code class="language-go">for i, _ := range array {
+	array[i].field = &quot;foo&quot;
+}
+</code></pre>
+
+<p>通过index访问每个元素，并修改其field，这样，就能输出一堆”foo”了……</p>
+
+<h2 id="参考文献">参考文献</h2>
+
+<ul>
+<li><a href="https://xiaozhou.net/something-about-range-of-go-2016-04-10.html">聊聊Go中的Range关键字</a></li>
+</ul>
+
+                        </div>
+
+                        
+
+
+                        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/post/go-consistent/">go语言一致性hash实现</a></li>
+        
+        <li><a href="/post/boltdb/">boltdb</a></li>
+        
+        <li><a href="/post/go-chan-goroutine/">go并发控制</a></li>
+        
+        <li><a href="/post/go-mgo-v2/">mongo连接池</a></li>
+        
+        <li><a href="/post/go-struct/">go-struct</a></li>
+        
+    </ul>
+</div>
+
+
+                        <div class="post-meta meta-tags">
+                            
+                            <ul class="clearfix">
+                                
+                                <li><a href="http://emacsvi.com/tags/go">go</a></li>
+                                
+                            </ul>
+                            
+                        </div>
+                    </article>
+                    
+    
+
+    
+    
+                </div>
+            </div>
+            <div id="secondary">
+    <section class="widget">
+        <form id="search" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="http://emacsvi.com">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="http://emacsvi.com/post/kubeadm-kubernetes/" title="利用kubeadm部署kubernetes">利用kubeadm部署kubernetes</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/post/centos7-system-notes/" title="centos7系统配置">centos7系统配置</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/post/vagrant-notes/" title="vagrant相关配置命令">vagrant相关配置命令</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/post/heling-go-36-notes/" title="赫林老师go语言36讲">赫林老师go语言36讲</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/post/frp/" title="frp内网穿透">frp内网穿透</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/post/harbor-image-notes/" title="harbor镜像仓库搭建">harbor镜像仓库搭建</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/post/dynamic-json-in-go/" title="Dynamic Json In Go">Dynamic Json In Go</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/post/my-go-codes/" title="go常用的一些代码备忘">go常用的一些代码备忘</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/post/go-keng-notes/" title="go语言编码过程中常见的坑总结">go语言编码过程中常见的坑总结</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/post/go-websocket-practice/" title="websocket实践">websocket实践</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">分类</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="http://emacsvi.com/categories/blockchain/">blockchain(1)</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/categories/consul/">consul(1)</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/categories/db/">db(1)</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/categories/docker/">docker(2)</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/categories/etcd/">etcd(1)</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/categories/ethereum/">ethereum(1)</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/categories/go/">go(30)</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/categories/kubernetes/">kubernetes(2)</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/categories/linux/">linux(4)</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/categories/mac/">mac(1)</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/categories/markdown/">markdown(1)</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/categories/nodejs/">nodejs(1)</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/categories/python/">python(10)</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/categories/react/">react(1)</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/categories/redis/">redis(2)</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/categories/%E6%8A%80%E6%9C%AF/">技术(1)</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/categories/%E6%97%85%E8%A1%8C/">旅行(4)</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/categories/%E6%B5%81%E9%87%91%E5%B2%81%E6%9C%88/">流金岁月(1)</a>
+    </li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">标签</h3>
+<div class="tagcloud">
+    
+    <a href="http://emacsvi.com/tags/Istio/">Istio</a>
+    
+    <a href="http://emacsvi.com/tags/blockchain/">blockchain</a>
+    
+    <a href="http://emacsvi.com/tags/cmds/">cmds</a>
+    
+    <a href="http://emacsvi.com/tags/codis/">codis</a>
+    
+    <a href="http://emacsvi.com/tags/consul/">consul</a>
+    
+    <a href="http://emacsvi.com/tags/curl/">curl</a>
+    
+    <a href="http://emacsvi.com/tags/db/">db</a>
+    
+    <a href="http://emacsvi.com/tags/django/">django</a>
+    
+    <a href="http://emacsvi.com/tags/docker/">docker</a>
+    
+    <a href="http://emacsvi.com/tags/docker-compose/">docker-compose</a>
+    
+    <a href="http://emacsvi.com/tags/etcd/">etcd</a>
+    
+    <a href="http://emacsvi.com/tags/ethereum/">ethereum</a>
+    
+    <a href="http://emacsvi.com/tags/go/">go</a>
+    
+    <a href="http://emacsvi.com/tags/javascript/">javascript</a>
+    
+    <a href="http://emacsvi.com/tags/kubernetes/">kubernetes</a>
+    
+    <a href="http://emacsvi.com/tags/linux/">linux</a>
+    
+    <a href="http://emacsvi.com/tags/mac/">mac</a>
+    
+    <a href="http://emacsvi.com/tags/markdown/">markdown</a>
+    
+    <a href="http://emacsvi.com/tags/mongodb/">mongodb</a>
+    
+    <a href="http://emacsvi.com/tags/mysql/">mysql</a>
+    
+    <a href="http://emacsvi.com/tags/nodejs/">nodejs</a>
+    
+    <a href="http://emacsvi.com/tags/python/">python</a>
+    
+    <a href="http://emacsvi.com/tags/react/">react</a>
+    
+    <a href="http://emacsvi.com/tags/redis/">redis</a>
+    
+    <a href="http://emacsvi.com/tags/selenium/">selenium</a>
+    
+    <a href="http://emacsvi.com/tags/sql/">sql</a>
+    
+    <a href="http://emacsvi.com/tags/supervisord/">supervisord</a>
+    
+    <a href="http://emacsvi.com/tags/vagrant/">vagrant</a>
+    
+    <a href="http://emacsvi.com/tags/websocket/">websocket</a>
+    
+    <a href="http://emacsvi.com/tags/%E5%A4%87%E5%BF%98/">备忘</a>
+    
+    <a href="http://emacsvi.com/tags/%E6%8A%80%E6%9C%AF/">技术</a>
+    
+    <a href="http://emacsvi.com/tags/%E6%97%85%E8%A1%8C/">旅行</a>
+    
+    <a href="http://emacsvi.com/tags/%E7%88%AC%E8%99%AB/">爬虫</a>
+    
+</div>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a target="_blank" href="#" title="Android Gradle权威指南">Android Gradle权威指南</a>
+        </li>
+        
+        <li>
+            <a target="_blank" href="#" title="常用开发工具CDN镜像">常用开发工具CDN镜像</a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="http://emacsvi.com/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+        </div>
+    </div>
+</div>
+<footer id="footer">
+    <div class="container">
+        &copy; 2019 <a href="http://emacsvi.com">李伟的博客 By emacsvi</a>.
+        Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
+        <a href="https://www.emacsvi.com/" target="_blank">Theme</a> based on <a href="https://emacsvi.com" target="_blank">maupassant</a>.
+        
+    </div>
+</footer>
+
+
+    <script type="text/javascript">
+    
+    (function(){
+        $("pre code").parent().addClass("line-numbers")
+    }())
+
+    window.MathJax = {
+        tex2jax: {
+            inlineMath: [ ['$','$'] ],
+            processEscapes: true
+        }
+    };
+    </script>
+    <script type="text/javascript" src="/js/prism.js" async="true"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src="/js/totop.js?v=0.0.0" async=""></script>
+
+
+
+
+
+
+
+</body>
+</html>

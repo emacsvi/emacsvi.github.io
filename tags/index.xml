@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on 李伟的博客</title>
+    <link>http://emacsvi.com/tags/</link>
+    <description>Recent content in Tags on 李伟的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 13 Mar 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://emacsvi.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Istio</title>
+      <link>http://emacsvi.com/tags/Istio/</link>
+      <pubDate>Wed, 13 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/tags/Istio/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>blockchain</title>
+      <link>http://emacsvi.com/tags/blockchain/</link>
+      <pubDate>Fri, 23 Nov 2018 01:00:31 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/tags/blockchain/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cmds</title>
+      <link>http://emacsvi.com/tags/cmds/</link>
+      <pubDate>Fri, 23 Nov 2018 01:00:21 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/tags/cmds/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>codis</title>
+      <link>http://emacsvi.com/tags/codis/</link>
+      <pubDate>Wed, 13 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/tags/codis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>consul</title>
+      <link>http://emacsvi.com/tags/consul/</link>
+      <pubDate>Mon, 24 Dec 2018 01:00:01 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/tags/consul/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>curl</title>
+      <link>http://emacsvi.com/tags/curl/</link>
+      <pubDate>Fri, 23 Nov 2018 01:00:01 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/tags/curl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>db</title>
+      <link>http://emacsvi.com/tags/db/</link>
+      <pubDate>Wed, 13 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/tags/db/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>django</title>
+      <link>http://emacsvi.com/tags/django/</link>
+      <pubDate>Tue, 27 Nov 2018 01:00:01 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/tags/django/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>docker</title>
+      <link>http://emacsvi.com/tags/docker/</link>
+      <pubDate>Tue, 19 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>docker-compose</title>
+      <link>http://emacsvi.com/tags/docker-compose/</link>
+      <pubDate>Fri, 23 Nov 2018 01:00:25 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/tags/docker-compose/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>etcd</title>
+      <link>http://emacsvi.com/tags/etcd/</link>
+      <pubDate>Wed, 13 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/tags/etcd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ethereum</title>
+      <link>http://emacsvi.com/tags/ethereum/</link>
+      <pubDate>Fri, 23 Nov 2018 01:00:31 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/tags/ethereum/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>go</title>
+      <link>http://emacsvi.com/tags/go/</link>
+      <pubDate>Tue, 02 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/tags/go/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>javascript</title>
+      <link>http://emacsvi.com/tags/javascript/</link>
+      <pubDate>Fri, 23 Nov 2018 01:00:34 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/tags/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>kubernetes</title>
+      <link>http://emacsvi.com/tags/kubernetes/</link>
+      <pubDate>Tue, 16 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/tags/kubernetes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linux</title>
+      <link>http://emacsvi.com/tags/linux/</link>
+      <pubDate>Mon, 15 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mac</title>
+      <link>http://emacsvi.com/tags/mac/</link>
+      <pubDate>Fri, 23 Nov 2018 01:00:21 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/tags/mac/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>markdown</title>
+      <link>http://emacsvi.com/tags/markdown/</link>
+      <pubDate>Wed, 13 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/tags/markdown/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mongodb</title>
+      <link>http://emacsvi.com/tags/mongodb/</link>
+      <pubDate>Wed, 13 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/tags/mongodb/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mysql</title>
+      <link>http://emacsvi.com/tags/mysql/</link>
+      <pubDate>Mon, 24 Jul 2017 14:00:41 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/tags/mysql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>nodejs</title>
+      <link>http://emacsvi.com/tags/nodejs/</link>
+      <pubDate>Fri, 23 Nov 2018 01:00:34 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/tags/nodejs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python</title>
+      <link>http://emacsvi.com/tags/python/</link>
+      <pubDate>Wed, 12 Dec 2018 01:00:01 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>react</title>
+      <link>http://emacsvi.com/tags/react/</link>
+      <pubDate>Fri, 23 Nov 2018 01:00:34 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/tags/react/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>redis</title>
+      <link>http://emacsvi.com/tags/redis/</link>
+      <pubDate>Wed, 13 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/tags/redis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>selenium</title>
+      <link>http://emacsvi.com/tags/selenium/</link>
+      <pubDate>Sat, 24 Nov 2018 01:00:01 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/tags/selenium/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sql</title>
+      <link>http://emacsvi.com/tags/sql/</link>
+      <pubDate>Mon, 24 Jul 2017 14:00:41 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/tags/sql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>supervisord</title>
+      <link>http://emacsvi.com/tags/supervisord/</link>
+      <pubDate>Fri, 23 Nov 2018 01:00:28 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/tags/supervisord/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vagrant</title>
+      <link>http://emacsvi.com/tags/vagrant/</link>
+      <pubDate>Mon, 15 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/tags/vagrant/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>websocket</title>
+      <link>http://emacsvi.com/tags/websocket/</link>
+      <pubDate>Sat, 16 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/tags/websocket/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>备忘</title>
+      <link>http://emacsvi.com/tags/%E5%A4%87%E5%BF%98/</link>
+      <pubDate>Mon, 24 Jul 2017 14:00:41 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/tags/%E5%A4%87%E5%BF%98/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>技术</title>
+      <link>http://emacsvi.com/tags/%E6%8A%80%E6%9C%AF/</link>
+      <pubDate>Fri, 23 Nov 2018 01:00:03 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/tags/%E6%8A%80%E6%9C%AF/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>旅行</title>
+      <link>http://emacsvi.com/tags/%E6%97%85%E8%A1%8C/</link>
+      <pubDate>Thu, 21 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/tags/%E6%97%85%E8%A1%8C/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>爬虫</title>
+      <link>http://emacsvi.com/tags/%E7%88%AC%E8%99%AB/</link>
+      <pubDate>Fri, 23 Nov 2018 01:00:39 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/tags/%E7%88%AC%E8%99%AB/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

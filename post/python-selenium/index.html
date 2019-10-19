@@ -1,0 +1,995 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.54.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>python&#43;selenium教程 | 李伟的博客</title>
+    <meta property="og:title" content="python&#43;selenium教程 - 李伟的博客">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content="2018-11-24T01:00:01&#43;08:00">
+        
+        
+    <meta property="article:modified_time" content="2018-11-24T01:00:01&#43;08:00">
+        
+    <meta name="Keywords" content="golang,go语言,go语言笔记,区块链,博客,项目管理,python,软件架构">
+    <meta name="description" content="python&#43;selenium教程">
+        
+    <meta name="author" content="emacsvi">
+    <meta property="og:url" content="http://emacsvi.com/post/python-selenium/">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="/css/normalize.css">
+    
+        <link rel="stylesheet" href="/css/prism.css">
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-129687838-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-129687838-1');
+    </script>
+
+
+    
+
+
+    
+    
+</head>
+
+<body>
+<header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="http://emacsvi.com">
+                        李伟的博客
+                    </a>
+                
+                <p class="description">主要专注于区块链、Go语言(golang)、Python、C语言、后端服务架构</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="http://emacsvi.com">首页</a>
+                    
+                    <a  href="http://emacsvi.com/archives/" title="归档">归档</a>
+                    
+                    <a  href="http://emacsvi.com/about/" title="关于">关于</a>
+                    
+                    <a  href="http://emacsvi.com/travel/" title="旅行">旅行</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<div id="body">
+    <div class="container">
+        <div class="col-group">
+
+            <div class="col-8" id="main">
+                <div class="res-cons">
+                    <article class="post">
+                        <header>
+                            <h1 class="post-title">python&#43;selenium教程</h1>
+                        </header>
+                        <date class="post-meta meta-date">
+                            2018年11月24日
+                        </date>
+                        
+                        <div class="post-meta">
+                            <span>|</span>
+                            
+                                <span class="meta-category"><a href="http://emacsvi.com/categories/python">python</a></span>
+                            
+                        </div>
+                        
+                        
+                        <div class="post-content">
+                            
+
+<h1 id="selenium安装">selenium安装</h1>
+
+<pre><code class="language-bash">pip3 install selenium
+brew tap homebrew/cask
+brew cask install chromedriver
+</code></pre>
+
+<h1 id="selenium保存cookie">selenium保存cookie</h1>
+
+<p>保存cookie</p>
+
+<pre><code class="language-python"># You can save the current cookies as a python object using pickle. For example:
+import pickle
+import selenium.webdriver 
+
+driver = selenium.webdriver.Firefox()
+driver.get(&quot;http://www.google.com&quot;)
+pickle.dump( driver.get_cookies() , open(&quot;cookies.pkl&quot;,&quot;wb&quot;))
+</code></pre>
+
+<p>然后再恢复cookie</p>
+
+<pre><code class="language-python">#and later to add them back:
+import pickle
+import selenium.webdriver 
+
+driver = selenium.webdriver.Firefox()
+driver.get(&quot;http://www.google.com&quot;)
+cookies = pickle.load(open(&quot;cookies.pkl&quot;, &quot;rb&quot;))
+for cookie in cookies:
+    driver.add_cookie(cookie)
+
+</code></pre>
+
+<h1 id="设置">设置</h1>
+
+<ul>
+<li>设置无头</li>
+</ul>
+
+<pre><code class="language-python">  # 创建chrome启动选项
+  chrome_options = webdriver.ChromeOptions()
+  
+  # 指定chrome启动类型为headless 并且禁用gpu
+  chrome_options.add_argument('--headless')
+  chrome_options.add_argument('--disable-gpu')
+  
+  # 调用环境变量指定的chrome浏览器创建浏览器对象
+  driver = webdriver.Chrome(chrome_options=chrome_options)	
+</code></pre>
+
+<ul>
+<li>请求超时</li>
+</ul>
+
+<pre><code class="language-python">  # get方法会一直等到页面被完全加载，然后才会继续程序，通常测试会在这里选择 time.sleep(2)
+  driver.set_page_load_timeout(20) # 秒	
+  driver.get(&quot;http://www.baidu.com/&quot;)
+</code></pre>
+
+<ul>
+<li>设置代理</li>
+</ul>
+
+<p>在使用<strong>selenium</strong>浏览器渲染技术，爬取网站信息时，一般来说，速度是很慢的。而且一般需要用到这种技术爬取的网站，反爬技术都比较厉害，对IP的访问频率应该有相当的限制。所以，如果想提升<strong>selenium</strong>抓取数据的速度，可以从两个方面出发：</p>
+
+<ul>
+<li><p>提高抓取频率，出现验证信息时进行破解，一般是验证码或者用户登录。</p></li>
+
+<li><p>使用多线程 + 代理IP， 这种方式，需要电脑有足够的内存和充足稳定的代理IP 。</p></li>
+</ul>
+
+<pre><code class="language-python">  from selenium import webdriver
+  chromeOptions = webdriver.ChromeOptions()
+  
+  # 设置代理
+  chromeOptions.add_argument(&quot;--proxy-server=http://202.20.16.82:10152&quot;)
+  # 一定要注意，=两边不能有空格，不能是这样--proxy-server = http://202.20.16.82:10152
+  browser = webdriver.Chrome(chrome_options = chromeOptions)
+  
+  # 查看本机ip，查看代理是否起作用
+  browser.get(&quot;http://httpbin.org/ip&quot;)
+  print(browser.page_source)
+  
+  # 退出，清除浏览器缓存
+  browser.quit()
+</code></pre>
+
+<h1 id="属性">属性</h1>
+
+<ul>
+<li>driver常用属性</li>
+</ul>
+
+<pre><code class="language-python">  # 获取新的页面快照
+  driver.save_screenshot(&quot;首页.png&quot;)
+  
+  # 打印网页渲染后的源代码
+  print(driver.page_source)
+  
+  # 获取当前页面Cookie
+  print(driver.get_cookies())
+  
+  # ctrl+a 全选输入框内容
+  driver.find_element_by_id(&quot;kw&quot;).send_keys(Keys.CONTROL,'a')
+  
+  # ctrl+x 剪切输入框内容
+  driver.find_element_by_id(&quot;kw&quot;).send_keys(Keys.CONTROL,'x')
+  
+  # 输入框重新输入内容
+  driver.find_element_by_id(&quot;kw&quot;).send_keys(&quot;wangxin&quot;)
+  
+  # 模拟Enter回车键
+  driver.find_element_by_id(&quot;su&quot;).send_keys(Keys.RETURN)
+  
+  # 清除输入框内容
+  driver.find_element_by_id(&quot;kw&quot;).clear()
+  
+  # 获取当前url
+  print(driver.current_url)
+  
+  # 关闭当前页面，如果只有一个页面，会关闭浏览器
+  driver.close()
+  
+  
+  
+</code></pre>
+
+<h1 id="xpath">XPATH</h1>
+
+<ul>
+<li>常用选择</li>
+</ul>
+
+<pre><code class="language-python">  # text() 函数 文本定位
+  # 查找所有文本为&quot;百度搜索&quot; 的元素
+  driver.findElement(By.xpath(&quot;//*[text()='百度搜索']&quot;))
+   
+  #查找所有文本为“搜索” 的超链接 
+  driver.findElement(By.xpath(&quot;//a[contains(text(),'搜索')]&quot;))
+  
+  # 模糊定位contains关键字
+  #查找图片alt属性包含'g1'关键字的元素
+  driver.findElement(By.xpath(&quot;//img[contains(@alt,'g1')]&quot;))
+  
+  #使用索引定位元素，索引的初始值为1，注意与数组等区分开。
+  driver. findElement(By.xpath (&quot;//input[2]&quot;))
+  
+  #结合属性值来定位元素。
+  driver. findElement(By.xpath (&quot;//input[@id='username']&quot;));
+  driver. findElement(By.xpath (&quot;//img[@alt='flowr']&quot;));
+  
+  # 使用逻辑运算符，结合属性值定位元素,and与or
+  driver.findElement(By.xpath(&quot;//input[@id='username' and @name='userID']&quot;));
+  
+  #使用任意属性值匹配元素。
+  driver. findElement(By.xpath (&quot;//input[@*='username']&quot;))
+</code></pre>
+
+<ul>
+<li>等效果不同写法</li>
+</ul>
+
+<pre><code class="language-python">  # &lt;div id=&quot;coolestWidgetEvah&quot;&gt;...&lt;/div&gt;
+  element = driver.find_element_by_id(&quot;coolestWidgetEvah&quot;)
+  
+  # 或者
+  from selenium.webdriver.common.by import By
+  element = driver.find_element(by=By.ID, value=&quot;coolestWidgetEvah&quot;)
+  
+  # &lt;div class=&quot;cheese&quot;&gt;&lt;span&gt;Cheddar&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;cheese&quot;&gt;&lt;span&gt;Gouda&lt;/span&gt;&lt;/div&gt;
+  cheeses = driver.find_elements_by_class_name(&quot;cheese&quot;)
+  
+  # 或者
+  from selenium.webdriver.common.by import By
+  cheeses = driver.find_elements(By.CLASS_NAME, &quot;cheese&quot;)
+  
+  # &lt;iframe src=&quot;...&quot;&gt;&lt;/iframe&gt;
+  frame = driver.find_element_by_tag_name(&quot;iframe&quot;)
+  
+  # 或者
+  from selenium.webdriver.common.by import By
+  frame = driver.find_element(By.TAG_NAME, &quot;iframe&quot;)
+  
+  # &lt;input name=&quot;cheese&quot; type=&quot;text&quot;/&gt;
+  cheese = driver.find_element_by_name(&quot;cheese&quot;)
+  
+  # 或者
+  from selenium.webdriver.common.by import By
+  cheese = driver.find_element(By.NAME, &quot;cheese&quot;)
+  
+  # By Link Text
+  # &lt;a href=&quot;http://www.google.com/search?q=cheese&quot;&gt;cheese&lt;/a&gt;
+  #实现
+  cheese = driver.find_element_by_link_text(&quot;cheese&quot;)
+  
+  # 或者
+  from selenium.webdriver.common.by import By
+  cheese = driver.find_element(By.LINK_TEXT, &quot;cheese&quot;)
+  
+  # By Partial Link Text
+  # &lt;a href=&quot;http://www.google.com/search?q=cheese&quot;&gt;search for cheese&lt;/a&gt;&gt;
+  # 实现
+  cheese = driver.find_element_by_partial_link_text(&quot;cheese&quot;)
+  
+  # 或者
+  from selenium.webdriver.common.by import By
+  cheese = driver.find_element(By.PARTIAL_LINK_TEXT, &quot;cheese&quot;)
+  
+  # 7.By CSS
+  # &lt;div id=&quot;food&quot;&gt;&lt;span class=&quot;dairy&quot;&gt;milk&lt;/span&gt;&lt;span class=&quot;dairy aged&quot;&gt;cheese&lt;/span&gt;&lt;/div&gt;
+  # 实现
+  cheese = driver.find_element_by_css_selector(&quot;#food span.dairy.aged&quot;)
+  
+  # 或者
+  from selenium.webdriver.common.by import By
+  cheese = driver.find_element(By.CSS_SELECTOR, &quot;#food span.dairy.aged&quot;)
+  
+  # 8.By XPath
+  # &lt;input type=&quot;text&quot; name=&quot;example&quot; /&gt; &lt;INPUT type=&quot;text&quot; name=&quot;other&quot; /&gt;
+  # 实现
+  inputs = driver.find_elements_by_xpath(&quot;//input&quot;)
+  
+  # 或者
+  from selenium.webdriver.common.by import By
+  inputs = driver.find_elements(By.XPATH, &quot;//input&quot;)
+  
+</code></pre>
+
+<ul>
+<li>定位属性动态变化</li>
+</ul>
+
+<p>现象：在我们定位元素的时候，发现有id, name或其他的属性存在，于是就用相应的定位方法去定位。可是运行的时候提示定位不到，然后我们再去查看元素的时候，发现属性值和我们写代码的时候不一样了。</p>
+
+<p>原因：通常产生这种情况的原因就是你使用的属性值是动态变化的，主要表现有属性值是一串数据，或是字符加一串数据等情况。页面加载一次变化一次，每次都不相同。</p>
+
+<p>解决办法：我们应尽量避免用这样的属性值去定位，而采用这个元素下的其他固定不变的属性值。或是向上层查找，采用Xpath定位。</p>
+
+<p>动态id定位不到元素示例：</p>
+
+<pre><code class="language-python">  xiexin_element = driver.findElement(By.id(&quot;_mail_component_82_82&quot;)); # 这条定位不到
+  xiexin_element = driver.findElement(By.xpath(&quot;//span[contains(.,'写 信')]&quot;)); 
+  xiexin_element.click();
+</code></pre>
+
+<p>上面一段代码注释掉的部分为通过id定位element的，但是此id<code>_mail_component_82_82</code>”后面的数字会随着你每次登陆而变化，此时就无法通过id准确定位到element。所以推荐使用xpath的相对路径方法查找到该元素。</p>
+
+<ul>
+<li>iframe中的元素定位出错</li>
+</ul>
+
+<p>现象：我们在定位元素的时候，查看网页源码，发现有iframe存在。可是我们没有做特殊处理，而是直接用通用的定位方法，name ,id, xpath或者CSS来定位。用Selenium IDE验证能查找到元素，可是运行测试用例的时候，总是元素找不到。</p>
+
+<p>原因：在我们运行测试脚本的时候，代码获取的是页面的句柄，而iframe在句柄中是当成一个元素来处理的。<strong>脚本是没有办法自己去iframe中去定位元素的</strong>，所以当搜索完页面时，发现找不到要定位的元素，就当错误处理。</p>
+
+<p>解决办法：当需要定位iframe中的元素的时候，先将句柄切换到iframe中去处理。</p>
+
+<pre><code class="language-python">  driver.switchTo().frame(&quot;framename&quot;);
+</code></pre>
+
+<p>然后再去定位，就能定位到要测试的元素。</p>
+
+<h1 id="鼠标动作链">鼠标动作链</h1>
+
+<h2 id="鼠标动作链-1">鼠标动作链</h2>
+
+<p>有些时候，我们需要再页面上模拟一些鼠标操作，比如双击、右击、拖拽甚至按住不动等，我们可以通过导入 ActionChains 类来做到：</p>
+
+<pre><code class="language-python">#导入 ActionChains 类
+from selenium.webdriver import ActionChains
+
+# 鼠标移动到 ac 位置
+ac = driver.find_element_by_xpath('element')
+ActionChains(driver).move_to_element(ac).perform()
+
+
+# 在 ac 位置单击
+ac = driver.find_element_by_xpath(&quot;elementA&quot;)
+ActionChains(driver).move_to_element(ac).click(ac).perform()
+
+# 在 ac 位置双击
+ac = driver.find_element_by_xpath(&quot;elementB&quot;)
+ActionChains(driver).move_to_element(ac).double_click(ac).perform()
+
+# 在 ac 位置右击
+ac = driver.find_element_by_xpath(&quot;elementC&quot;)
+ActionChains(driver).move_to_element(ac).context_click(ac).perform()
+
+# 在 ac 位置左键单击hold住
+ac = driver.find_element_by_xpath('elementF')
+ActionChains(driver).move_to_element(ac).click_and_hold(ac).perform()
+
+# 将 ac1 拖拽到 ac2 位置
+ac1 = driver.find_element_by_xpath('elementD')
+ac2 = driver.find_element_by_xpath('elementE')
+ActionChains(driver).drag_and_drop(ac1, ac2).perform()
+</code></pre>
+
+<h1 id="填充表单">填充表单</h1>
+
+<p>我们已经知道了怎样向文本框中输入文字，但是有时候我们会碰到 标签的下拉框。直接点击下拉框中的选项不一定可行。</p>
+
+<pre><code class="language-python">&lt;select id=&quot;status&quot; class=&quot;form-control valid&quot; onchange=&quot;&quot; name=&quot;status&quot;&gt;
+    &lt;option value=&quot;&quot;&gt;&lt;/option&gt;
+    &lt;option value=&quot;0&quot;&gt;未审核&lt;/option&gt;
+    &lt;option value=&quot;1&quot;&gt;初审通过&lt;/option&gt;
+    &lt;option value=&quot;2&quot;&gt;复审通过&lt;/option&gt;
+    &lt;option value=&quot;3&quot;&gt;审核不通过&lt;/option&gt;
+&lt;/select&gt;
+</code></pre>
+
+<p><strong>Selenium</strong> 专门提供了 <code>Select</code> 类来处理下拉框。</p>
+
+<p>其实 <strong>WebDriver</strong> 中提供了一个叫 <code>Select</code> 的方法，可以帮助我们完成这些事情：</p>
+
+<pre><code class="language-python"># 导入 Select 类
+from selenium.webdriver.support.ui import Select
+
+# 找到 name 的选项卡
+select = Select(driver.find_element_by_name('status'))
+
+# 选择
+select.select_by_index(1)
+select.select_by_value(&quot;0&quot;)
+select.select_by_visible_text(u&quot;未审核&quot;)
+</code></pre>
+
+<p>以上是三种选择下拉框的方式，它可以根据<strong>索引</strong>来选择，可以根据<strong>值</strong>来选择，可以根据<strong>文字</strong>来选择。注意：</p>
+
+<pre><code class="language-python">&quot;&quot;&quot;
+index 索引从 0 开始
+value是option标签的一个属性值，并不是显示在下拉框中的值
+visible_text是在option标签文本的值，是显示在下拉框的值
+全部取消选择怎么办呢？很简单:
+select.deselect_all()
+&quot;&quot;&quot;
+</code></pre>
+
+<h2 id="弹窗处理">弹窗处理</h2>
+
+<p>当你触发了某个事件之后，页面出现了弹窗提示，处理这个提示或者获取提示信息方法如下：</p>
+
+<pre><code class="language-python">alert = driver.switch_to_alert()
+</code></pre>
+
+<h2 id="页面切换">页面切换</h2>
+
+<p>一个浏览器肯定会有很多窗口，所以我们肯定要有方法来实现窗口的切换。</p>
+
+<p>切换窗口的方法如下：</p>
+
+<pre><code class="language-python">driver.switch_to.window(&quot;this is window name&quot;)
+</code></pre>
+
+<p>也可以使用 window_handles 方法来获取每个窗口的操作对象。例如：</p>
+
+<pre><code class="language-python">for handle in driver.window_handles:
+    driver.switch_to_window(handle)
+</code></pre>
+
+<p>下面这个函数打开一个页面，处理完成之后再关闭这个页面，并且回到之前那个页面的流程：</p>
+
+<pre><code class="language-python">    def request_detail_page(self, url):
+        self.driver.execute_script(&quot;window.open('%s')&quot;%url)
+        self.driver.switch_to.window(self.driver.window_handles[1])
+        try:
+            self.driver.get(url)
+        except Exception as err:
+            print(err)
+            return
+        try:
+            WebDriverWait(driver=self.driver, timeout=10).until(
+                # 这种xpath只能寻找元素，不能寻找里面的内容，如果加/text()这样就会报错
+                EC.presence_of_element_located((By.XPATH, &quot;//span[@class='name']&quot;))
+            )
+            source = self.driver.page_source
+            self.parse_detail_page(source)
+        except Exception as err:
+            print(err)
+
+        # 关闭当前这个详情页
+        self.driver.close()
+        # 继续切回查询页
+        self.driver.switch_to.window(self.driver.window_handles[0])
+
+</code></pre>
+
+<h2 id="页面前进和后退">页面前进和后退</h2>
+
+<p>操作页面的前进和后退功能：</p>
+
+<pre><code class="language-python">driver.forward()     #前进
+driver.back()        # 后退
+</code></pre>
+
+<h2 id="cookies">Cookies</h2>
+
+<p>获取页面每个Cookies值，用法如下</p>
+
+<pre><code class="language-python">for cookie in driver.get_cookies():
+    print &quot;%s -&gt; %s&quot; % (cookie['name'], cookie['value'])
+</code></pre>
+
+<p>删除Cookies，用法如下</p>
+
+<pre><code class="language-python"># By name
+driver.delete_cookie(&quot;CookieName&quot;)
+
+# all
+driver.delete_all_cookies()
+</code></pre>
+
+<h2 id="页面等待">页面等待</h2>
+
+<p>现在的网页越来越多采用了 <code>Ajax</code> 技术，这样程序便不能确定何时某个元素完全加载出来了。</p>
+
+<p>如果实际页面等待时间过长导致某个<code>dom</code>元素还没出来，但是你的代码直接使用了这个<code>WebElement</code>，那么就会抛出<code>NullPointer的异常</code>。</p>
+
+<p>为了避免这种元素定位困难而且会提高产生 <code>ElementNotVisibleException</code> 的概率。所以 <strong>Selenium</strong> 提供了两种等待方式，一种是<strong>隐式等待</strong>，一种是<strong>显式等待</strong>。</p>
+
+<p>隐式等待是等待特定的时间，显式等待是指定某一条件直到这个条件成立时继续执行。</p>
+
+<h3 id="1-显式等待">1.显式等待</h3>
+
+<p>显式等待指定某个条件，然后设置最长等待时间。如果在这个时间还没有找到元素，那么便会抛出异常了。</p>
+
+<pre><code class="language-python">from selenium import webdriver
+from selenium.webdriver.common.by import By
+# WebDriverWait 库，负责循环等待
+from selenium.webdriver.support.ui import WebDriverWait
+# expected_conditions 类，负责条件出发
+from selenium.webdriver.support import expected_conditions as EC
+
+driver = webdriver.Chrome()
+driver.get(&quot;http://www.xxxxx.com/loading&quot;)
+try:
+    # 页面一直循环，直到 id=&quot;myDynamicElement&quot; 出现
+    element = WebDriverWait(driver, 10).until(
+        EC.presence_of_element_located((By.ID, &quot;myDynamicElement&quot;))
+    )
+finally:
+    driver.quit()
+</code></pre>
+
+<p>如果不写参数，程序默认会 0.5s 调用一次来查看元素是否已经生成，如果本来元素就是存在的，那么会立即返回。</p>
+
+<p>下面是一些内置的等待条件，你可以直接调用这些条件，而不用自己写某些等待条件了。</p>
+
+<p><strong>locator</strong>：元组类型，如<code>(By.ID, 'kw')</code></p>
+
+<table>
+<thead>
+<tr>
+<th>条件</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>title_is</td>
+<td align="left">验证传入的参数是否与title是否相等</td>
+</tr>
+
+<tr>
+<td>title_contains</td>
+<td align="left">验证传入的参数是否包含于driver.title</td>
+</tr>
+
+<tr>
+<td>presence_of_element_located</td>
+<td align="left">传入locator， 验证元素是否出现，只要一个符合条件的元素加载出来就通过</td>
+</tr>
+
+<tr>
+<td>presence_of_all_elements_located</td>
+<td align="left">传入locator， 验证元素是否出现，必须所有符合条件的元素都加载出来才行</td>
+</tr>
+
+<tr>
+<td>visibility_of</td>
+<td align="left">验证元素是否可见，传入 WebElement，</td>
+</tr>
+
+<tr>
+<td>visibility_of_element_located</td>
+<td align="left">验证元素是否可见， 传入 locator，</td>
+</tr>
+
+<tr>
+<td>invisibility_of_element_located</td>
+<td align="left">验证元素是否可见，传入 locator 和 visibility_of 实质一样</td>
+</tr>
+
+<tr>
+<td>text_to_be_present_in_element</td>
+<td align="left">判断某段文本是否出现在某元素的text中</td>
+</tr>
+
+<tr>
+<td>text_to_be_present_in_element_value</td>
+<td align="left">判断某段文本是否出现在某元素的value中</td>
+</tr>
+
+<tr>
+<td>frame_to_be_available_and_switch_to_it</td>
+<td align="left">判断frame是否可切入，传入locator元组 或 直接传入定位方式：id、name、index或WebElement</td>
+</tr>
+
+<tr>
+<td>alert_is_present</td>
+<td align="left">判断是否有alert出现</td>
+</tr>
+
+<tr>
+<td>element_to_be_clickable</td>
+<td align="left">判断元素是否可点击，传入locator</td>
+</tr>
+
+<tr>
+<td>element_to_be_selected</td>
+<td align="left">判断元素是否被选中，传入WebElement对象，选中返回True，否则返回False</td>
+</tr>
+
+<tr>
+<td>element_selection_state_to_be</td>
+<td align="left">判断元素是否被选中，传入WebElement对象以及状态，相等返回True，否则返回False</td>
+</tr>
+
+<tr>
+<td>element_located_to_be_selected</td>
+<td align="left">判断元素是否被选中，传入locator元组，选中返回True，否则返回False</td>
+</tr>
+
+<tr>
+<td>element_located_selection_state_to_be</td>
+<td align="left">判断元素是否被选中，传入locator以及状态，相等返回True，否则返回False</td>
+</tr>
+
+<tr>
+<td>staleness_of</td>
+<td align="left">判断一个元素是否仍在DOM中，传入WebElement对象，可以判断页面是否刷新。</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="隐式等待">隐式等待</h3>
+
+<p>隐式等待比较简单，就是简单地设置一个等待时间，单位为秒。</p>
+
+<pre><code class="language-python">from selenium import webdriver
+
+driver = webdriver.Chrome()
+driver.implicitly_wait(10) # seconds
+driver.get(&quot;http://www.xxxxx.com/loading&quot;)
+myDynamicElement = driver.find_element_by_id(&quot;myDynamicElement&quot;)
+</code></pre>
+
+<p>当然如果不设置，默认等待时间为0。</p>
+
+<h1 id="链接">链接</h1>
+
+<ul>
+<li><a href="https://selenium-python.readthedocs.io/installation.html">官网</a></li>
+<li><a href="https://stackoverflow.com/questions/15058462/how-to-save-and-load-cookies-using-python-selenium-webdriver">cookie保存再恢复</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/28587931">登录爬取</a></li>
+<li><a href="https://wangxin1248.github.io/python/2018/09/python3-spider-8.html">设置相关</a></li>
+<li><a href="https://hellowac.github.io/programing%20teach/2017/04/06/selenium01.html">页面等待</a></li>
+<li><a href="https://blog.csdn.net/qq_24373725/article/details/79728729">xpath定位不到的处理</a></li>
+</ul>
+
+                        </div>
+
+                        
+
+
+                        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/post/python-idle3/">python-IDLE编辑器备忘</a></li>
+        
+        <li><a href="/post/python-requests/">python-requests库</a></li>
+        
+        <li><a href="/post/spider-v-qq-comment/">python爬腾讯视频评论信息</a></li>
+        
+        <li><a href="/post/spider-sogou-weixin/">用户代理与ip代理爬取搜狗微信文章</a></li>
+        
+        <li><a href="/post/spider-crawler-python/">python爬虫常用接口备忘</a></li>
+        
+    </ul>
+</div>
+
+
+                        <div class="post-meta meta-tags">
+                            
+                            <ul class="clearfix">
+                                
+                                <li><a href="http://emacsvi.com/tags/python">python</a></li>
+                                
+                                <li><a href="http://emacsvi.com/tags/selenium">selenium</a></li>
+                                
+                            </ul>
+                            
+                        </div>
+                    </article>
+                    
+    
+
+    
+    
+                </div>
+            </div>
+            <div id="secondary">
+    <section class="widget">
+        <form id="search" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="http://emacsvi.com">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="http://emacsvi.com/post/kubeadm-kubernetes/" title="利用kubeadm部署kubernetes">利用kubeadm部署kubernetes</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/post/centos7-system-notes/" title="centos7系统配置">centos7系统配置</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/post/vagrant-notes/" title="vagrant相关配置命令">vagrant相关配置命令</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/post/heling-go-36-notes/" title="赫林老师go语言36讲">赫林老师go语言36讲</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/post/frp/" title="frp内网穿透">frp内网穿透</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/post/harbor-image-notes/" title="harbor镜像仓库搭建">harbor镜像仓库搭建</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/post/dynamic-json-in-go/" title="Dynamic Json In Go">Dynamic Json In Go</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/post/my-go-codes/" title="go常用的一些代码备忘">go常用的一些代码备忘</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/post/go-keng-notes/" title="go语言编码过程中常见的坑总结">go语言编码过程中常见的坑总结</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/post/go-websocket-practice/" title="websocket实践">websocket实践</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">分类</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="http://emacsvi.com/categories/blockchain/">blockchain(1)</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/categories/consul/">consul(1)</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/categories/db/">db(1)</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/categories/docker/">docker(2)</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/categories/etcd/">etcd(1)</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/categories/ethereum/">ethereum(1)</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/categories/go/">go(30)</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/categories/kubernetes/">kubernetes(2)</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/categories/linux/">linux(4)</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/categories/mac/">mac(1)</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/categories/markdown/">markdown(1)</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/categories/nodejs/">nodejs(1)</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/categories/python/">python(10)</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/categories/react/">react(1)</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/categories/redis/">redis(2)</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/categories/%E6%8A%80%E6%9C%AF/">技术(1)</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/categories/%E6%97%85%E8%A1%8C/">旅行(4)</a>
+    </li>
+    
+    <li>
+        <a href="http://emacsvi.com/categories/%E6%B5%81%E9%87%91%E5%B2%81%E6%9C%88/">流金岁月(1)</a>
+    </li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">标签</h3>
+<div class="tagcloud">
+    
+    <a href="http://emacsvi.com/tags/Istio/">Istio</a>
+    
+    <a href="http://emacsvi.com/tags/blockchain/">blockchain</a>
+    
+    <a href="http://emacsvi.com/tags/cmds/">cmds</a>
+    
+    <a href="http://emacsvi.com/tags/codis/">codis</a>
+    
+    <a href="http://emacsvi.com/tags/consul/">consul</a>
+    
+    <a href="http://emacsvi.com/tags/curl/">curl</a>
+    
+    <a href="http://emacsvi.com/tags/db/">db</a>
+    
+    <a href="http://emacsvi.com/tags/django/">django</a>
+    
+    <a href="http://emacsvi.com/tags/docker/">docker</a>
+    
+    <a href="http://emacsvi.com/tags/docker-compose/">docker-compose</a>
+    
+    <a href="http://emacsvi.com/tags/etcd/">etcd</a>
+    
+    <a href="http://emacsvi.com/tags/ethereum/">ethereum</a>
+    
+    <a href="http://emacsvi.com/tags/go/">go</a>
+    
+    <a href="http://emacsvi.com/tags/javascript/">javascript</a>
+    
+    <a href="http://emacsvi.com/tags/kubernetes/">kubernetes</a>
+    
+    <a href="http://emacsvi.com/tags/linux/">linux</a>
+    
+    <a href="http://emacsvi.com/tags/mac/">mac</a>
+    
+    <a href="http://emacsvi.com/tags/markdown/">markdown</a>
+    
+    <a href="http://emacsvi.com/tags/mongodb/">mongodb</a>
+    
+    <a href="http://emacsvi.com/tags/mysql/">mysql</a>
+    
+    <a href="http://emacsvi.com/tags/nodejs/">nodejs</a>
+    
+    <a href="http://emacsvi.com/tags/python/">python</a>
+    
+    <a href="http://emacsvi.com/tags/react/">react</a>
+    
+    <a href="http://emacsvi.com/tags/redis/">redis</a>
+    
+    <a href="http://emacsvi.com/tags/selenium/">selenium</a>
+    
+    <a href="http://emacsvi.com/tags/sql/">sql</a>
+    
+    <a href="http://emacsvi.com/tags/supervisord/">supervisord</a>
+    
+    <a href="http://emacsvi.com/tags/vagrant/">vagrant</a>
+    
+    <a href="http://emacsvi.com/tags/websocket/">websocket</a>
+    
+    <a href="http://emacsvi.com/tags/%E5%A4%87%E5%BF%98/">备忘</a>
+    
+    <a href="http://emacsvi.com/tags/%E6%8A%80%E6%9C%AF/">技术</a>
+    
+    <a href="http://emacsvi.com/tags/%E6%97%85%E8%A1%8C/">旅行</a>
+    
+    <a href="http://emacsvi.com/tags/%E7%88%AC%E8%99%AB/">爬虫</a>
+    
+</div>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a target="_blank" href="#" title="Android Gradle权威指南">Android Gradle权威指南</a>
+        </li>
+        
+        <li>
+            <a target="_blank" href="#" title="常用开发工具CDN镜像">常用开发工具CDN镜像</a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="http://emacsvi.com/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+        </div>
+    </div>
+</div>
+<footer id="footer">
+    <div class="container">
+        &copy; 2019 <a href="http://emacsvi.com">李伟的博客 By emacsvi</a>.
+        Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
+        <a href="https://www.emacsvi.com/" target="_blank">Theme</a> based on <a href="https://emacsvi.com" target="_blank">maupassant</a>.
+        
+    </div>
+</footer>
+
+
+    <script type="text/javascript">
+    
+    (function(){
+        $("pre code").parent().addClass("line-numbers")
+    }())
+
+    window.MathJax = {
+        tex2jax: {
+            inlineMath: [ ['$','$'] ],
+            processEscapes: true
+        }
+    };
+    </script>
+    <script type="text/javascript" src="/js/prism.js" async="true"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src="/js/totop.js?v=0.0.0" async=""></script>
+
+
+
+
+
+
+
+</body>
+</html>

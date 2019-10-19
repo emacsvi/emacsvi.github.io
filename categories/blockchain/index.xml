@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>blockchain on 李伟的博客</title>
+    <link>http://emacsvi.com/categories/blockchain/</link>
+    <description>Recent content in blockchain on 李伟的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 23 Nov 2018 01:00:31 +0000</lastBuildDate>
+    
+	<atom:link href="http://emacsvi.com/categories/blockchain/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>解码以太坊input数据</title>
+      <link>http://emacsvi.com/post/ethereum-decode-input-data/</link>
+      <pubDate>Fri, 23 Nov 2018 01:00:31 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/post/ethereum-decode-input-data/</guid>
+      <description>编码 编码很简单,这里要区分合约是数据还是普通交易的数据。 普通交易的data输入数据： func PackString(str string) []byte { l := len(str) return append( math.PaddedBigBytes(math.U256(big.NewInt(int64(l))), 32), common.RightPadBytes([]byte(str), (l+31)/32*32)..., ) } func PackNum(num *big.Int) []byte { return math.PaddedBigBytes(math.U256(new(big.Int).Set(num)), 32) } 合约交</description>
+    </item>
+    
+  </channel>
+</rss>

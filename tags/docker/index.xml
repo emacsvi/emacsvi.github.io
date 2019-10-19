@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>docker on 李伟的博客</title>
+    <link>http://emacsvi.com/tags/docker/</link>
+    <description>Recent content in docker on 李伟的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 19 Mar 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://emacsvi.com/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>harbor镜像仓库搭建</title>
+      <link>http://emacsvi.com/post/harbor-image-notes/</link>
+      <pubDate>Tue, 19 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/post/harbor-image-notes/</guid>
+      <description>&lt;p&gt;harbor镜像仓库的搭建。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>kubernetes备忘</title>
+      <link>http://emacsvi.com/post/kubernetes-notes/</link>
+      <pubDate>Wed, 13 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/post/kubernetes-notes/</guid>
+      <description>概念 参考文献 切片的本质 数组和切片 slice go array slices array and slice</description>
+    </item>
+    
+    <item>
+      <title>consul-docker下使用</title>
+      <link>http://emacsvi.com/post/consul-docker-deploy/</link>
+      <pubDate>Mon, 24 Dec 2018 01:00:01 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/post/consul-docker-deploy/</guid>
+      <description>consul在docker下使用 使用命令： # 拉取官方镜像 docker search consul docker pull consul # 启动node1(server模式) docker run -d -e &#39;CONSUL_LOCAL_CONFIG={&amp;quot;skip_leave_on_interrupt&amp;quot;: true}&#39; --name=node1 consul agent -server -bind=172.17.0.2 -bootstrap-expect=3 -node=node1 # 启动节点</description>
+    </item>
+    
+    <item>
+      <title>docker部署python应用</title>
+      <link>http://emacsvi.com/post/docker-for-python-app/</link>
+      <pubDate>Wed, 12 Dec 2018 01:00:01 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/post/docker-for-python-app/</guid>
+      <description>部署python单应用 利用docker来部署python单应用的环境。有如下几点需要确认： 利用pip freeze &amp;gt; requirements.txt导出</description>
+    </item>
+    
+    <item>
+      <title>备忘docker-compose部署命令</title>
+      <link>http://emacsvi.com/post/docker-compose-deploy/</link>
+      <pubDate>Fri, 23 Nov 2018 01:00:25 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/post/docker-compose-deploy/</guid>
+      <description>写在前面 在区块链开发中，有很多很麻烦的环境需要部署。这时候docker容器就派上了用场。因为有很多参数，有很多不同的版本，也有go,pyth</description>
+    </item>
+    
+    <item>
+      <title>备忘docker常用命令</title>
+      <link>http://emacsvi.com/post/docer-cmds/</link>
+      <pubDate>Fri, 23 Nov 2018 01:00:09 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/post/docer-cmds/</guid>
+      <description>centos6安装docker Add the EPEL Repository Docker is part of Extra Packages for Enterprise Linux (EPEL), which is a community repository of non-standard packages for the RHEL distribution. First, we’ll install the EPEL repository: rpm -iUvh http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm Then, as a matter of best practice, we’ll update our packages: yum</description>
+    </item>
+    
+  </channel>
+</rss>

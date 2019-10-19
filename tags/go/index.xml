@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>go on 李伟的博客</title>
+    <link>http://emacsvi.com/tags/go/</link>
+    <description>Recent content in go on 李伟的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 02 Apr 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://emacsvi.com/tags/go/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>赫林老师go语言36讲</title>
+      <link>http://emacsvi.com/post/heling-go-36-notes/</link>
+      <pubDate>Tue, 02 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/post/heling-go-36-notes/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;赫林&lt;/strong&gt;老师有关&lt;strong&gt;go语言&lt;/strong&gt;的&lt;strong&gt;36讲&lt;/strong&gt;，看了一些很基础的go知识发现自己居然不知道。这太说不过去了。于是记录一下。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>frp内网穿透</title>
+      <link>http://emacsvi.com/post/frp/</link>
+      <pubDate>Mon, 01 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/post/frp/</guid>
+      <description>&lt;p&gt;家里有台式机24*7开机，用来当服务器。这样可以在外网访问，做一些集群化的工作。减轻笔记本上面呼呼喘息的声音(经常在mbp上跑十几个&lt;strong&gt;docker container&lt;/strong&gt;,真的对它太不珍惜了，现在用内网的机器跑起来就踏实多了)。你可以在一个台式机上用&lt;strong&gt;virtualbox&lt;/strong&gt;装几个linux虚拟机，当服务器用，比便宜的&lt;strong&gt;vps&lt;/strong&gt;可强太多了。我的台式机&lt;strong&gt;i5 8500&lt;/strong&gt; + &lt;strong&gt;16g内存&lt;/strong&gt; + &lt;strong&gt;256gSSD&lt;/strong&gt;的配置，装了3个虚拟机(每个机器4个cpu + 4g内存)当服务器，很强悍。而且现在我随处走到哪儿，即便是在咖啡厅&lt;strong&gt;装B&lt;/strong&gt;也可以随时连接上我家里的服务器集群做想做的事情(不过我从来没有在咖啡厅去过)。现在有5台机器连接在集群下面的。打算等内存和&lt;strong&gt;cpu&lt;/strong&gt;便宜了再升级一下台式机，多装上几个虚拟机，这样要不要太爽了。之前我跑的&lt;strong&gt;kubernetes&lt;/strong&gt;就跑在这上面的。&lt;font color=red&gt;你也来试试吧！&lt;/font&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>harbor镜像仓库搭建</title>
+      <link>http://emacsvi.com/post/harbor-image-notes/</link>
+      <pubDate>Tue, 19 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/post/harbor-image-notes/</guid>
+      <description>&lt;p&gt;harbor镜像仓库的搭建。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Dynamic Json In Go</title>
+      <link>http://emacsvi.com/post/dynamic-json-in-go/</link>
+      <pubDate>Mon, 18 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/post/dynamic-json-in-go/</guid>
+      <description>&lt;p&gt;动态的解析Json的类型，虽然go是静态的。但是还是有办法解析。而且也没有那么多&lt;strong&gt;ugly code&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>go常用的一些代码备忘</title>
+      <link>http://emacsvi.com/post/my-go-codes/</link>
+      <pubDate>Mon, 18 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/post/my-go-codes/</guid>
+      <description>&lt;p&gt;go常用的一些代码备忘汇总。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>go语言编码过程中常见的坑总结</title>
+      <link>http://emacsvi.com/post/go-keng-notes/</link>
+      <pubDate>Mon, 18 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/post/go-keng-notes/</guid>
+      <description>&lt;p&gt;这里汇总一些平时常见的一些go语言在编码中遇到的&lt;strong&gt;坑&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>websocket实践</title>
+      <link>http://emacsvi.com/post/go-websocket-practice/</link>
+      <pubDate>Sat, 16 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/post/go-websocket-practice/</guid>
+      <description>&lt;p&gt;websocket的实践内容，主要以&lt;code&gt;go&lt;/code&gt;语言来做。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Istio的使用教程</title>
+      <link>http://emacsvi.com/post/istio-notes/</link>
+      <pubDate>Wed, 13 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/post/istio-notes/</guid>
+      <description>概念 参考文献 切片的本质 数组和切片 slice go array slices array and slice</description>
+    </item>
+    
+    <item>
+      <title>TiDB分布式数据库</title>
+      <link>http://emacsvi.com/post/TiDB-notes/</link>
+      <pubDate>Wed, 13 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/post/TiDB-notes/</guid>
+      <description>概念 参考文献 切片的本质 数组和切片 slice go array slices array and slice</description>
+    </item>
+    
+    <item>
+      <title>dep教程</title>
+      <link>http://emacsvi.com/post/go-dep/</link>
+      <pubDate>Wed, 13 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/post/go-dep/</guid>
+      <description>概念 参考文献 切片的本质 数组和切片 slice go array slices array and slice</description>
+    </item>
+    
+    <item>
+      <title>etcd 有关的内容 这只是一个示例 内容随便写</title>
+      <link>http://emacsvi.com/post/spf13-vim-3-0-release-and-new-website/</link>
+      <pubDate>Wed, 13 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/post/spf13-vim-3-0-release-and-new-website/</guid>
+      <description>&lt;p&gt;摘要有必要写一点吗？&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>etcd备忘</title>
+      <link>http://emacsvi.com/post/etcd-notes/</link>
+      <pubDate>Wed, 13 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/post/etcd-notes/</guid>
+      <description>概念 来自raft安全性问题以及投票过程 Raft一共研究的就是三个子问题： 如何选举领导者，当现有的领导者失效的情况下，如何选出新的领导者，选举</description>
+    </item>
+    
+    <item>
+      <title>mongo-go-driver库使用</title>
+      <link>http://emacsvi.com/post/mongo-go-driver-notes/</link>
+      <pubDate>Wed, 13 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/post/mongo-go-driver-notes/</guid>
+      <description>概念 mongo-go-driver是mongodb官方的库，与之前介绍的其他mongo库不一样。这个库可以实现很多原始的操作。虽然很笨但是还</description>
+    </item>
+    
+    <item>
+      <title>常用的面试题准备</title>
+      <link>http://emacsvi.com/post/mianshi/</link>
+      <pubDate>Wed, 13 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/post/mianshi/</guid>
+      <description>&lt;p&gt;面试的一些准备。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>consul-docker下使用</title>
+      <link>http://emacsvi.com/post/consul-docker-deploy/</link>
+      <pubDate>Mon, 24 Dec 2018 01:00:01 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/post/consul-docker-deploy/</guid>
+      <description>consul在docker下使用 使用命令： # 拉取官方镜像 docker search consul docker pull consul # 启动node1(server模式) docker run -d -e &#39;CONSUL_LOCAL_CONFIG={&amp;quot;skip_leave_on_interrupt&amp;quot;: true}&#39; --name=node1 consul agent -server -bind=172.17.0.2 -bootstrap-expect=3 -node=node1 # 启动节点</description>
+    </item>
+    
+    <item>
+      <title>解码以太坊input数据</title>
+      <link>http://emacsvi.com/post/ethereum-decode-input-data/</link>
+      <pubDate>Fri, 23 Nov 2018 01:00:31 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/post/ethereum-decode-input-data/</guid>
+      <description>编码 编码很简单,这里要区分合约是数据还是普通交易的数据。 普通交易的data输入数据： func PackString(str string) []byte { l := len(str) return append( math.PaddedBigBytes(math.U256(big.NewInt(int64(l))), 32), common.RightPadBytes([]byte(str), (l+31)/32*32)..., ) } func PackNum(num *big.Int) []byte { return math.PaddedBigBytes(math.U256(new(big.Int).Set(num)), 32) } 合约交</description>
+    </item>
+    
+    <item>
+      <title>go-supervisord守护进程</title>
+      <link>http://emacsvi.com/post/go-supervisord/</link>
+      <pubDate>Fri, 23 Nov 2018 01:00:28 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/post/go-supervisord/</guid>
+      <description>参数 参数 功能 directory=/tmp 程序的运行目录 environment=KEY=&amp;ldquo;val&amp;rdquo;,KEY2=&amp;ldquo;val2&amp;rdquo; 环境变量 autostart = true ; 在 supervisord 启动的时候也自动启动 startsecs = 5 ; 启动 5 秒后没有异常退出，就当作已经正常启动了 autorestart = true ; 程序异常退</description>
+    </item>
+    
+    <item>
+      <title>go-makefile</title>
+      <link>http://emacsvi.com/post/go-makefile/</link>
+      <pubDate>Fri, 23 Nov 2018 01:00:26 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/post/go-makefile/</guid>
+      <description>有时候还是喜欢用Makefile比较方便。这里先不论交叉编译的情况，因为交叉编译被我利用docker container代替了。只需要dock</description>
+    </item>
+    
+    <item>
+      <title>go-range的注意事项</title>
+      <link>http://emacsvi.com/post/go-rang/</link>
+      <pubDate>Fri, 23 Nov 2018 01:00:24 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/post/go-rang/</guid>
+      <description>Go中的range关键字使用起来非常的方便，它允许你遍历某个slice或者map，并通过两个参数(index和value)，分别获取到sli</description>
+    </item>
+    
+    <item>
+      <title>go语言一致性hash实现</title>
+      <link>http://emacsvi.com/post/go-consistent/</link>
+      <pubDate>Fri, 23 Nov 2018 01:00:22 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/post/go-consistent/</guid>
+      <description>原理 实例 原理很简单，我想手动写过HashMap的人，或者做过服务器负载均衡或者集群的人都有了解。花一个小时就能搞明白。 从这个库里面来做一致性</description>
+    </item>
+    
+    <item>
+      <title>boltdb</title>
+      <link>http://emacsvi.com/post/boltdb/</link>
+      <pubDate>Fri, 23 Nov 2018 01:00:20 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/post/boltdb/</guid>
+      <description>BoltDb Bolt就是这么一个纯粹的Go语言版的嵌入式key/value的数据库，而且在Go的应用中很方便地去用作持久化。Bolt类似于LMDB，这</description>
+    </item>
+    
+    <item>
+      <title>go并发控制</title>
+      <link>http://emacsvi.com/post/go-chan-goroutine/</link>
+      <pubDate>Fri, 23 Nov 2018 01:00:19 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/post/go-chan-goroutine/</guid>
+      <description>最简单的方式,定义一个chan来做控制： package main import ( &amp;quot;fmt&amp;quot; &amp;quot;time&amp;quot; ) func main() { concurrency := 3 sem := make(chan bool, concurrency) urls := []string{&amp;quot;url1&amp;quot;, &amp;quot;url2&amp;quot;, &amp;quot;url3&amp;quot;, &amp;quot;url4&amp;quot;, &amp;quot;url5&amp;quot;, &amp;quot;url6&amp;quot;, &amp;quot;url7&amp;quot;} for _, url := range urls { sem &amp;lt;- true go func(url string) { defer func() { &amp;lt;-sem }() fmt.Println(url) time.Sleep(time.Second * 3)</description>
+    </item>
+    
+    <item>
+      <title>mongo连接池</title>
+      <link>http://emacsvi.com/post/go-mgo-v2/</link>
+      <pubDate>Fri, 23 Nov 2018 01:00:18 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/post/go-mgo-v2/</guid>
+      <description>golang使用mongodb，目前比较多人用的是mgo(pronounced as mango) 官网例子 首先是要获得模块 go get gopkg.in/mgo.v2 然后： type Person struct { Name string Phone string } func main()</description>
+    </item>
+    
+    <item>
+      <title>go-struct</title>
+      <link>http://emacsvi.com/post/go-struct/</link>
+      <pubDate>Fri, 23 Nov 2018 01:00:17 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/post/go-struct/</guid>
+      <description>struct Go语言中，也和C或者其他语言一样，我们可以声明新的类型，作为其它类型的属性或字段的容器。例如，我们可以创建一个自定义类型person代表</description>
+    </item>
+    
+    <item>
+      <title>go-map</title>
+      <link>http://emacsvi.com/post/go-map/</link>
+      <pubDate>Fri, 23 Nov 2018 01:00:15 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/post/go-map/</guid>
+      <description>map概念 Go语言中map是一种特殊的数据结构：一种元素对(pair)的无序集合，pair 的一个元素是key，对应的另一个元素是value，</description>
+    </item>
+    
+    <item>
+      <title>ipfs编译问题</title>
+      <link>http://emacsvi.com/post/go-ipfs-compile/</link>
+      <pubDate>Fri, 23 Nov 2018 01:00:14 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/post/go-ipfs-compile/</guid>
+      <description>源码安装go-ipfs会编译不通过。 go get -u -d github.com/ipfs/go-ipfs cd $GOPATH/src/github.com/ipfs/go-ipfs make install 在make install的时候会报错： [0 / 196] 50sERROR: from shell.Get(): Post https://ipfs.io/api/v0/get?arg=QmXfkENeeBvh3zYA51MaSdGUdBjhQ99cP5WQe8zgr6wchG&amp;amp;encoding=json&amp;amp;stream-channels=true: dial tcp 69.63.176.15:443: connect: connection refused retrying fetch QmXfkENeeBvh3zYA51MaSdGUdBjhQ99cP5WQe8zgr6wchG after a second... [err ] [fetch] go-ipfs-cmds</description>
+    </item>
+    
+    <item>
+      <title>jetbrains</title>
+      <link>http://emacsvi.com/post/jetbrain%E5%AE%B6%E6%97%8Fgoland-pycharm-webstorm%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Fri, 23 Nov 2018 01:00:13 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/post/jetbrain%E5%AE%B6%E6%97%8Fgoland-pycharm-webstorm%E9%85%8D%E7%BD%AE/</guid>
+      <description>pycharm是我用得比较多的go ide. 因为有时候要写python, 想一个ide搞定。但是最近go1.10出来之后，pycharm不支持。而go</description>
+    </item>
+    
+    <item>
+      <title>备忘go语言常用的库</title>
+      <link>http://emacsvi.com/post/emacsvi-awesome-go/</link>
+      <pubDate>Fri, 23 Nov 2018 01:00:10 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/post/emacsvi-awesome-go/</guid>
+      <description>简介 这是我平时用的一些库的整合。 功能简介 github 监控进程的库 https://github.com/mitchellh/go-ps cli库 https://github.com/urfave/cli kexec https://github.com/codeskyblue/kexec awesome-go https://juejin.im/post/59129535128fe10058680cc2 awesome-go english https://github.com/gostor/awesome-go-storage awesome-go 中文 https://github.com/hackstoic/golang-open-source-projects 全面的awesome-go https://github.com/avelino/awesome-go 值得学习的项目 https://www.zhihu.com/question/20801814 beego/log 参考文</description>
+    </item>
+    
+    <item>
+      <title>go-time.After释放</title>
+      <link>http://emacsvi.com/post/go-time-after/</link>
+      <pubDate>Fri, 23 Nov 2018 01:00:08 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/post/go-time-after/</guid>
+      <description>time.After释放的问题 在谢大群里看到有同学在讨论time.After泄漏的问题，就算时间到了也不会释放，瞬间就惊呆了，忍不住做了试验</description>
+    </item>
+    
+    <item>
+      <title>go-select使用误区</title>
+      <link>http://emacsvi.com/post/go-select/</link>
+      <pubDate>Fri, 23 Nov 2018 01:00:06 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/post/go-select/</guid>
+      <description>select是Go中的一个控制结构，类似于用于通信的switch语句。每个case必须是一个通信操作，要么是发送要么是接收。 select随机</description>
+    </item>
+    
+    <item>
+      <title>go每分钟百万高并发模型</title>
+      <link>http://emacsvi.com/post/handling-1-million-requests-per-minute-with-golang/</link>
+      <pubDate>Fri, 23 Nov 2018 01:00:05 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/post/handling-1-million-requests-per-minute-with-golang/</guid>
+      <description>使用Go语言每分钟处理1百万请求（译） 在Malwarebytes 我们经历了显著的增长，自从我一年前加入了硅谷的公司，一个主要的职责成了设计架</description>
+    </item>
+    
+    <item>
+      <title>go-channel详解</title>
+      <link>http://emacsvi.com/post/go-channel/</link>
+      <pubDate>Fri, 23 Nov 2018 01:00:04 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/post/go-channel/</guid>
+      <description>channel goroutine允许我们并行的运行一些代码。但是要想让这些代码对我们来说更有意义，我们会有一些额外的需求&amp;ndash;我们应该能够传递数</description>
+    </item>
+    
+    <item>
+      <title>go-清空slice</title>
+      <link>http://emacsvi.com/post/go-slice-empty/</link>
+      <pubDate>Fri, 23 Nov 2018 01:00:02 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/post/go-slice-empty/</guid>
+      <description>示例 data := []int{1, 2, 3, 34, 5, 5, 6, 67, 77, 87} fmt.Println(data) s1 := data[:0:0] s1 = append(s1, 123) s2 := data[:0] s2 = append(s2, 10) fmt.Printf(&amp;quot;%p\n&amp;quot;, &amp;amp;data[0]) fmt.Printf(&amp;quot;%p\n&amp;quot;, &amp;amp;s2[0]) fmt.Printf(&amp;quot;%p\n&amp;quot;, &amp;amp;s1[0]) 上面是test的代码片段。 初始化的slice就是data，接下来是两种</description>
+    </item>
+    
+    <item>
+      <title>go-sync.pool</title>
+      <link>http://emacsvi.com/post/go-pool/</link>
+      <pubDate>Fri, 23 Nov 2018 01:00:01 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/post/go-pool/</guid>
+      <description>前言 Go 1.3 的sync包中加入一个新特性：Pool。 这个类设计的目的是用来保存和复用临时对象，以减少内存分配，降低GC压力。 type Pool func (p *Pool) Get() interface{} func (p *Pool)</description>
+    </item>
+    
+    <item>
+      <title>go的数组与切片</title>
+      <link>http://emacsvi.com/post/go-array-slice/</link>
+      <pubDate>Fri, 23 Nov 2018 01:00:01 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/post/go-array-slice/</guid>
+      <description>数据与切片 声明一个数组和一个切片是不同的。 var arr [5]int arr := [5]int{1,2,3,4,5 } var sli []int sli := []int{1,2,3,4,5} 请看完下面 数组： Go的切片是在数组之上的抽象数据类型，因此在了解切片之前</description>
+    </item>
+    
+    <item>
+      <title>ethereum以太坊源码分析</title>
+      <link>http://emacsvi.com/post/ethereum-source-analysis/</link>
+      <pubDate>Tue, 20 Nov 2018 01:00:01 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/post/ethereum-source-analysis/</guid>
+      <description>goland配置源码 配置goland的源码环境参考这儿进行配置。</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>kubernetes on 李伟的博客</title>
+    <link>http://emacsvi.com/categories/kubernetes/</link>
+    <description>Recent content in kubernetes on 李伟的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 16 Apr 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://emacsvi.com/categories/kubernetes/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>利用kubeadm部署kubernetes</title>
+      <link>http://emacsvi.com/post/kubeadm-kubernetes/</link>
+      <pubDate>Tue, 16 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/post/kubeadm-kubernetes/</guid>
+      <description>&lt;p&gt;利用kubeadm部署教程。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>kubernetes备忘</title>
+      <link>http://emacsvi.com/post/kubernetes-notes/</link>
+      <pubDate>Wed, 13 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/post/kubernetes-notes/</guid>
+      <description>概念 参考文献 切片的本质 数组和切片 slice go array slices array and slice</description>
+    </item>
+    
+  </channel>
+</rss>

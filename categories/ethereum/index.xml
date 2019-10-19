@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ethereum on 李伟的博客</title>
+    <link>http://emacsvi.com/categories/ethereum/</link>
+    <description>Recent content in ethereum on 李伟的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 20 Nov 2018 01:00:01 +0000</lastBuildDate>
+    
+	<atom:link href="http://emacsvi.com/categories/ethereum/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ethereum以太坊源码分析</title>
+      <link>http://emacsvi.com/post/ethereum-source-analysis/</link>
+      <pubDate>Tue, 20 Nov 2018 01:00:01 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/post/ethereum-source-analysis/</guid>
+      <description>goland配置源码 配置goland的源码环境参考这儿进行配置。</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>sql on 李伟的博客</title>
+    <link>http://emacsvi.com/tags/sql/</link>
+    <description>Recent content in sql on 李伟的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 24 Jul 2017 14:00:41 +0000</lastBuildDate>
+    
+	<atom:link href="http://emacsvi.com/tags/sql/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Mysql无法创建外键原因总结</title>
+      <link>http://emacsvi.com/post/can-not-create-foreign-key-reasons/</link>
+      <pubDate>Mon, 24 Jul 2017 14:00:41 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/post/can-not-create-foreign-key-reasons/</guid>
+      <description>#原因 在Mysql中创建外键时，经常会遇到问题而失败，这是因为Mysql中还有很多细节需要我们去留意，经过各种查阅资料，列出了以下几种常见原</description>
+    </item>
+    
+  </channel>
+</rss>

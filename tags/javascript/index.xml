@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>javascript on 李伟的博客</title>
+    <link>http://emacsvi.com/tags/javascript/</link>
+    <description>Recent content in javascript on 李伟的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 23 Nov 2018 01:00:34 +0000</lastBuildDate>
+    
+	<atom:link href="http://emacsvi.com/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>gatsbyJs博客</title>
+      <link>http://emacsvi.com/post/mygatsbyjs-blog/</link>
+      <pubDate>Fri, 23 Nov 2018 01:00:34 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/post/mygatsbyjs-blog/</guid>
+      <description>Gatsby博客 花了一天一夜的时间把博客从以前的jekyll迁到了gatsbyJs的环境了。原因有如下几个： - 张恋哥哥说之前的网页比我本人还</description>
+    </item>
+    
+  </channel>
+</rss>

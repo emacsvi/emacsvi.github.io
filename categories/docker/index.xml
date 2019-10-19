@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>docker on 李伟的博客</title>
+    <link>http://emacsvi.com/categories/docker/</link>
+    <description>Recent content in docker on 李伟的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 23 Nov 2018 01:00:25 +0000</lastBuildDate>
+    
+	<atom:link href="http://emacsvi.com/categories/docker/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>备忘docker-compose部署命令</title>
+      <link>http://emacsvi.com/post/docker-compose-deploy/</link>
+      <pubDate>Fri, 23 Nov 2018 01:00:25 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/post/docker-compose-deploy/</guid>
+      <description>写在前面 在区块链开发中，有很多很麻烦的环境需要部署。这时候docker容器就派上了用场。因为有很多参数，有很多不同的版本，也有go,pyth</description>
+    </item>
+    
+    <item>
+      <title>备忘docker常用命令</title>
+      <link>http://emacsvi.com/post/docer-cmds/</link>
+      <pubDate>Fri, 23 Nov 2018 01:00:09 +0000</pubDate>
+      
+      <guid>http://emacsvi.com/post/docer-cmds/</guid>
+      <description>centos6安装docker Add the EPEL Repository Docker is part of Extra Packages for Enterprise Linux (EPEL), which is a community repository of non-standard packages for the RHEL distribution. First, we’ll install the EPEL repository: rpm -iUvh http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm Then, as a matter of best practice, we’ll update our packages: yum</description>
+    </item>
+    
+  </channel>
+</rss>
