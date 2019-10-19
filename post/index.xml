@@ -53,7 +53,7 @@
       <pubDate>Mon, 01 Apr 2019 00:00:00 +0000</pubDate>
       
       <guid>http://emacsvi.com/post/frp/</guid>
-      <description>&lt;p&gt;家里有台式机24*7开机，用来当服务器。这样可以在外网访问，做一些集群化的工作。减轻笔记本上面呼呼喘息的声音(经常在mbp上跑十几个&lt;strong&gt;docker container&lt;/strong&gt;,真的对它太不珍惜了，现在用内网的机器跑起来就踏实多了)。你可以在一个台式机上用&lt;strong&gt;virtualbox&lt;/strong&gt;装几个linux虚拟机，当服务器用，比便宜的&lt;strong&gt;vps&lt;/strong&gt;可强太多了。我的台式机&lt;strong&gt;i5 8500&lt;/strong&gt; + &lt;strong&gt;16g内存&lt;/strong&gt; + &lt;strong&gt;256gSSD&lt;/strong&gt;的配置，装了3个虚拟机(每个机器4个cpu + 4g内存)当服务器，很强悍。而且现在我随处走到哪儿，即便是在咖啡厅&lt;strong&gt;装B&lt;/strong&gt;也可以随时连接上我家里的服务器集群做想做的事情(不过我从来没有在咖啡厅去过)。现在有5台机器连接在集群下面的。打算等内存和&lt;strong&gt;cpu&lt;/strong&gt;便宜了再升级一下台式机，多装上几个虚拟机，这样要不要太爽了。之前我跑的&lt;strong&gt;kubernetes&lt;/strong&gt;就跑在这上面的。&lt;font color=red&gt;你也来试试吧！&lt;/font&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;家里有台式机24*7开机，用来当服务器。这样可以在外网访问，做一些集群化的工作。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -206,7 +206,7 @@
       <pubDate>Mon, 24 Dec 2018 01:00:01 +0000</pubDate>
       
       <guid>http://emacsvi.com/post/consul-docker-deploy/</guid>
-      <description>consul在docker下使用 使用命令： # 拉取官方镜像 docker search consul docker pull consul # 启动node1(server模式) docker run -d -e &#39;CONSUL_LOCAL_CONFIG={&amp;quot;skip_leave_on_interrupt&amp;quot;: true}&#39; --name=node1 consul agent -server -bind=172.17.0.2 -bootstrap-expect=3 -node=node1 # 启动节点</description>
+      <description>&lt;p&gt;consul在docker下常用的操作。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -251,7 +251,7 @@
       <pubDate>Sat, 24 Nov 2018 01:00:01 +0000</pubDate>
       
       <guid>http://emacsvi.com/post/python-selenium/</guid>
-      <description>selenium安装 pip3 install selenium brew tap homebrew/cask brew cask install chromedriver selenium保存cookie 保存cookie # You can save the current cookies as a python object using pickle. For example: import pickle import selenium.webdriver driver = selenium.webdriver.Firefox() driver.get(&amp;quot;http://www.google.com&amp;quot;) pickle.dump( driver.get_cookies() ,</description>
+      <description>&lt;p&gt;selenium的应用.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -269,7 +269,7 @@
       <pubDate>Fri, 23 Nov 2018 01:02:01 +0000</pubDate>
       
       <guid>http://emacsvi.com/post/python-requests/</guid>
-      <description>发送请求 常用功能 import requests # 常用请求 r = requests.get(&#39;https://api.github.com/events&#39;) r = requests.post(&#39;http://httpbin.org/post&#39;, data={&#39;key&#39;:&#39;value&#39;}) r = requests.put(&#39;http://httpbin.org/put&#39;, data = {&#39;key&#39;:&#39;value&#39;}) r = requests.delete(&#39;http://httpbin.org/delete&#39;) r = requests.head(&#39;http://httpbin.org/get&#39;) r = requests.options(&#39;http://httpbin.org/get&#39;) # 传递url参数 # 如果你是手工构建 URL，那么数据会以键/值对的形</description>
+      <description>&lt;p&gt;python+request库的应用.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -314,7 +314,7 @@
       <pubDate>Fri, 23 Nov 2018 01:00:31 +0000</pubDate>
       
       <guid>http://emacsvi.com/post/ethereum-decode-input-data/</guid>
-      <description>编码 编码很简单,这里要区分合约是数据还是普通交易的数据。 普通交易的data输入数据： func PackString(str string) []byte { l := len(str) return append( math.PaddedBigBytes(math.U256(big.NewInt(int64(l))), 32), common.RightPadBytes([]byte(str), (l+31)/32*32)..., ) } func PackNum(num *big.Int) []byte { return math.PaddedBigBytes(math.U256(new(big.Int).Set(num)), 32) } 合约交</description>
+      <description>&lt;p&gt;编码很简单,这里要区分合约是数据还是普通交易的数据。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -332,7 +332,7 @@
       <pubDate>Fri, 23 Nov 2018 01:00:29 +0000</pubDate>
       
       <guid>http://emacsvi.com/post/nodejs-install/</guid>
-      <description>手动安装nodejs 手动安装 wget https://nodejs.org/dist/v8.1.0/node-v8.1.0-linux-x64.tar.xz tar -xf node-v8.11.4-linux-x64.tar.xz --directory /usr/local --strip-components 1 node --version npm --version 配置taobao镜像 taobao镜像 临时使用 bash npm --registry https://registry.npm.taobao.org install express 持久使用 bash npm config set registry https://registry.npm.taobao.org #配置后可</description>
+      <description>&lt;p&gt;nodejs nvm install&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -404,7 +404,7 @@
       <pubDate>Fri, 23 Nov 2018 01:00:19 +0000</pubDate>
       
       <guid>http://emacsvi.com/post/go-chan-goroutine/</guid>
-      <description>最简单的方式,定义一个chan来做控制： package main import ( &amp;quot;fmt&amp;quot; &amp;quot;time&amp;quot; ) func main() { concurrency := 3 sem := make(chan bool, concurrency) urls := []string{&amp;quot;url1&amp;quot;, &amp;quot;url2&amp;quot;, &amp;quot;url3&amp;quot;, &amp;quot;url4&amp;quot;, &amp;quot;url5&amp;quot;, &amp;quot;url6&amp;quot;, &amp;quot;url7&amp;quot;} for _, url := range urls { sem &amp;lt;- true go func(url string) { defer func() { &amp;lt;-sem }() fmt.Println(url) time.Sleep(time.Second * 3)</description>
+      <description>&lt;p&gt;最简单的方式,定义一个chan来做控制：&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -440,7 +440,7 @@
       <pubDate>Fri, 23 Nov 2018 01:00:14 +0000</pubDate>
       
       <guid>http://emacsvi.com/post/go-ipfs-compile/</guid>
-      <description>源码安装go-ipfs会编译不通过。 go get -u -d github.com/ipfs/go-ipfs cd $GOPATH/src/github.com/ipfs/go-ipfs make install 在make install的时候会报错： [0 / 196] 50sERROR: from shell.Get(): Post https://ipfs.io/api/v0/get?arg=QmXfkENeeBvh3zYA51MaSdGUdBjhQ99cP5WQe8zgr6wchG&amp;amp;encoding=json&amp;amp;stream-channels=true: dial tcp 69.63.176.15:443: connect: connection refused retrying fetch QmXfkENeeBvh3zYA51MaSdGUdBjhQ99cP5WQe8zgr6wchG after a second... [err ] [fetch] go-ipfs-cmds</description>
+      <description>&lt;p&gt;源码安装&lt;code&gt;go-ipfs&lt;/code&gt;会编译不通过。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -458,7 +458,7 @@
       <pubDate>Fri, 23 Nov 2018 01:00:10 +0000</pubDate>
       
       <guid>http://emacsvi.com/post/emacsvi-awesome-go/</guid>
-      <description>简介 这是我平时用的一些库的整合。 功能简介 github 监控进程的库 https://github.com/mitchellh/go-ps cli库 https://github.com/urfave/cli kexec https://github.com/codeskyblue/kexec awesome-go https://juejin.im/post/59129535128fe10058680cc2 awesome-go english https://github.com/gostor/awesome-go-storage awesome-go 中文 https://github.com/hackstoic/golang-open-source-projects 全面的awesome-go https://github.com/avelino/awesome-go 值得学习的项目 https://www.zhihu.com/question/20801814 beego/log 参考文</description>
+      <description>&lt;p&gt;这是我平时用的一些库的整合。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -467,7 +467,7 @@
       <pubDate>Fri, 23 Nov 2018 01:00:09 +0000</pubDate>
       
       <guid>http://emacsvi.com/post/docer-cmds/</guid>
-      <description>centos6安装docker Add the EPEL Repository Docker is part of Extra Packages for Enterprise Linux (EPEL), which is a community repository of non-standard packages for the RHEL distribution. First, we’ll install the EPEL repository: rpm -iUvh http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm Then, as a matter of best practice, we’ll update our packages: yum</description>
+      <description>&lt;p&gt;docker commands.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -527,7 +527,7 @@
       <pubDate>Fri, 23 Nov 2018 01:00:02 +0000</pubDate>
       
       <guid>http://emacsvi.com/post/go-slice-empty/</guid>
-      <description>示例 data := []int{1, 2, 3, 34, 5, 5, 6, 67, 77, 87} fmt.Println(data) s1 := data[:0:0] s1 = append(s1, 123) s2 := data[:0] s2 = append(s2, 10) fmt.Printf(&amp;quot;%p\n&amp;quot;, &amp;amp;data[0]) fmt.Printf(&amp;quot;%p\n&amp;quot;, &amp;amp;s2[0]) fmt.Printf(&amp;quot;%p\n&amp;quot;, &amp;amp;s1[0]) 上面是test的代码片段。 初始化的slice就是data，接下来是两种</description>
+      <description>&lt;p&gt;如何更加安全的清空slice&lt;/p&gt;</description>
     </item>
     
     <item>

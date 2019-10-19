@@ -58,11 +58,6 @@
   </url>
   
   <url>
-    <loc>http://emacsvi.com/travel/travel-life-2019-03/</loc>
-    <lastmod>2019-03-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://emacsvi.com/about/</loc>
     <lastmod>2019-03-13T19:28:28+08:00</lastmod>
   </url>
@@ -371,13 +366,13 @@
   </url>
   
   <url>
-    <loc>http://emacsvi.com/categories/blockchain/</loc>
+    <loc>http://emacsvi.com/tags/blockchain/</loc>
     <lastmod>2018-11-23T01:00:31+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://emacsvi.com/tags/blockchain/</loc>
+    <loc>http://emacsvi.com/categories/blockchain/</loc>
     <lastmod>2018-11-23T01:00:31+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -395,13 +390,13 @@
   </url>
   
   <url>
-    <loc>http://emacsvi.com/categories/consul/</loc>
+    <loc>http://emacsvi.com/tags/consul/</loc>
     <lastmod>2018-12-24T01:00:01+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://emacsvi.com/tags/consul/</loc>
+    <loc>http://emacsvi.com/categories/consul/</loc>
     <lastmod>2018-12-24T01:00:01+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -413,13 +408,13 @@
   </url>
   
   <url>
-    <loc>http://emacsvi.com/categories/db/</loc>
+    <loc>http://emacsvi.com/tags/db/</loc>
     <lastmod>2019-03-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://emacsvi.com/tags/db/</loc>
+    <loc>http://emacsvi.com/categories/db/</loc>
     <lastmod>2019-03-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -431,14 +426,14 @@
   </url>
   
   <url>
-    <loc>http://emacsvi.com/categories/docker/</loc>
-    <lastmod>2018-11-23T01:00:25+00:00</lastmod>
+    <loc>http://emacsvi.com/tags/docker/</loc>
+    <lastmod>2019-03-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://emacsvi.com/tags/docker/</loc>
-    <lastmod>2019-03-19T00:00:00+00:00</lastmod>
+    <loc>http://emacsvi.com/categories/docker/</loc>
+    <lastmod>2018-11-23T01:00:25+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -449,20 +444,14 @@
   </url>
   
   <url>
-    <loc>http://emacsvi.com/categories/etcd/</loc>
-    <lastmod>2019-03-13T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>http://emacsvi.com/tags/etcd/</loc>
     <lastmod>2019-03-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://emacsvi.com/categories/ethereum/</loc>
-    <lastmod>2018-11-20T01:00:01+00:00</lastmod>
+    <loc>http://emacsvi.com/categories/etcd/</loc>
+    <lastmod>2019-03-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -473,13 +462,19 @@
   </url>
   
   <url>
-    <loc>http://emacsvi.com/categories/go/</loc>
-    <lastmod>2019-04-02T00:00:00+00:00</lastmod>
+    <loc>http://emacsvi.com/categories/ethereum/</loc>
+    <lastmod>2018-11-20T01:00:01+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://emacsvi.com/tags/go/</loc>
+    <lastmod>2019-04-02T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://emacsvi.com/categories/go/</loc>
     <lastmod>2019-04-02T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -491,20 +486,14 @@
   </url>
   
   <url>
-    <loc>http://emacsvi.com/categories/kubernetes/</loc>
-    <lastmod>2019-04-16T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>http://emacsvi.com/tags/kubernetes/</loc>
     <lastmod>2019-04-16T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://emacsvi.com/categories/linux/</loc>
-    <lastmod>2019-04-15T00:00:00+00:00</lastmod>
+    <loc>http://emacsvi.com/categories/kubernetes/</loc>
+    <lastmod>2019-04-16T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -515,8 +504,8 @@
   </url>
   
   <url>
-    <loc>http://emacsvi.com/categories/mac/</loc>
-    <lastmod>2018-11-23T01:00:21+00:00</lastmod>
+    <loc>http://emacsvi.com/categories/linux/</loc>
+    <lastmod>2019-04-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -527,13 +516,19 @@
   </url>
   
   <url>
-    <loc>http://emacsvi.com/categories/markdown/</loc>
-    <lastmod>2019-03-13T00:00:00+00:00</lastmod>
+    <loc>http://emacsvi.com/categories/mac/</loc>
+    <lastmod>2018-11-23T01:00:21+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://emacsvi.com/tags/markdown/</loc>
+    <lastmod>2019-03-13T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://emacsvi.com/categories/markdown/</loc>
     <lastmod>2019-03-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -551,20 +546,14 @@
   </url>
   
   <url>
-    <loc>http://emacsvi.com/categories/nodejs/</loc>
-    <lastmod>2018-11-23T01:00:29+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>http://emacsvi.com/tags/nodejs/</loc>
     <lastmod>2018-11-23T01:00:34+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://emacsvi.com/categories/python/</loc>
-    <lastmod>2018-12-12T01:00:01+00:00</lastmod>
+    <loc>http://emacsvi.com/categories/nodejs/</loc>
+    <lastmod>2018-11-23T01:00:29+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -575,8 +564,8 @@
   </url>
   
   <url>
-    <loc>http://emacsvi.com/categories/react/</loc>
-    <lastmod>2018-11-23T01:00:34+00:00</lastmod>
+    <loc>http://emacsvi.com/categories/python/</loc>
+    <lastmod>2018-12-12T01:00:01+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -587,13 +576,19 @@
   </url>
   
   <url>
-    <loc>http://emacsvi.com/categories/redis/</loc>
-    <lastmod>2019-03-13T00:00:00+00:00</lastmod>
+    <loc>http://emacsvi.com/categories/react/</loc>
+    <lastmod>2018-11-23T01:00:34+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://emacsvi.com/tags/redis/</loc>
+    <lastmod>2019-03-13T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://emacsvi.com/categories/redis/</loc>
     <lastmod>2019-03-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -639,25 +634,25 @@
   </url>
   
   <url>
-    <loc>http://emacsvi.com/categories/%E6%8A%80%E6%9C%AF/</loc>
-    <lastmod>2017-07-24T14:00:41+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>http://emacsvi.com/tags/%E6%8A%80%E6%9C%AF/</loc>
     <lastmod>2018-11-23T01:00:03+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://emacsvi.com/categories/%E6%97%85%E8%A1%8C/</loc>
-    <lastmod>2019-03-21T00:00:00+00:00</lastmod>
+    <loc>http://emacsvi.com/categories/%E6%8A%80%E6%9C%AF/</loc>
+    <lastmod>2017-07-24T14:00:41+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://emacsvi.com/tags/%E6%97%85%E8%A1%8C/</loc>
+    <lastmod>2019-03-21T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://emacsvi.com/categories/%E6%97%85%E8%A1%8C/</loc>
     <lastmod>2019-03-21T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>

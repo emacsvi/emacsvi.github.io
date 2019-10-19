@@ -28,18 +28,7 @@
         <link rel="stylesheet" href="/css/prism.css">
     
     <link rel="stylesheet" href="/css/style.css">
-    <script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-    
-    
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-129687838-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'UA-129687838-1');
-    </script>
-
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     
 
@@ -78,6 +67,8 @@
 
 
 <div id="body">
+        
+        
     <div class="container">
         <div class="col-group">
 
@@ -99,6 +90,7 @@
                         </div>
                         
                         
+                        
                         <div class="post-content">
                             
 
@@ -108,7 +100,7 @@
 
 <p>在<a href="http://www.malwarebytes.org/">Malwarebytes </a>我们经历了显著的增长，自从我一年前加入了硅谷的公司，一个主要的职责成了设计架构和开发一些系统来支持一个快速增长的信息安全公司和所有需要的设施来支持一个每天百万用户使用的产品。我在反病毒和反恶意软件行业的不同公司工作了12年，从而我知道由于我们每天处理大量的数据，这些系统是多么复杂。</p>
 
-<p>有趣的是，在过去的大约9年间，我参与的所有的web后端的开发通常是通过Ruby on Rails技术实现的。不要错怪我。我喜欢Ruby on Rails，并且我相信它是个令人惊讶的环境。但是一段时间后，你会开始以ruby的方式开始思考和设计系统，你会忘记，如果你可以利用多线程、并行、快速执行和小内存开销，软件架构本来应该是多么高效和简单。很多年期间，我是一个c/c++、Delphi和c#开发者，我刚开始意识到使用正确的工具可以把复杂的事情变得简单些。</p>
+<p>有趣的是，在过去的大约9年间，我参与的所有的web后端的开发通常是通过Ruby on Rails技术实现的。不要错怪我。我喜欢Ruby on Rails，并且我相信它是个令人惊讶的环境。但是一段时间后，你会开始以ruby的方式开始思考和设计系统，你会忘记，如果你可以利用多线程、并行、快速执行和小内存开销，软件架构本来应该是多么高效和简单。很多年期间，我是一个<code>c/c++</code>、Delphi和c#开发者，我刚开始意识到使用正确的工具可以把复杂的事情变得简单些。</p>
 
 <p>作为首席架构师，我不会很关心在互联网上的语言和框架战争。我相信效率、生产力。代码可维护性主要依赖于你如何把解决方案设计得很简单。</p>
 
@@ -577,9 +569,9 @@ func createRawTransaction() {
         
         <li><a href="/post/go-slice-empty/">go-清空slice</a></li>
         
-        <li><a href="/post/go-array-slice/">go的数组与切片</a></li>
-        
         <li><a href="/post/go-pool/">go-sync.pool</a></li>
+        
+        <li><a href="/post/go-array-slice/">go的数组与切片</a></li>
         
         <li><a href="/post/ethereum-source-analysis/">ethereum以太坊源码分析</a></li>
         
@@ -732,7 +724,7 @@ func createRawTransaction() {
     </li>
     
     <li>
-        <a href="http://emacsvi.com/categories/%E6%97%85%E8%A1%8C/">旅行(4)</a>
+        <a href="http://emacsvi.com/categories/%E6%97%85%E8%A1%8C/">旅行(3)</a>
     </li>
     
     <li>
@@ -846,27 +838,29 @@ func createRawTransaction() {
     <div class="container">
         &copy; 2019 <a href="http://emacsvi.com">李伟的博客 By emacsvi</a>.
         Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
-        <a href="https://www.emacsvi.com/" target="_blank">Theme</a> based on <a href="https://emacsvi.com" target="_blank">maupassant</a>.
+        <a href="https://www.emacsvi.com/" target="_blank">Theme</a> based on <a href="https://github.com/rujews/maupassant-hugo" target="_blank">maupassant</a>.
         
     </div>
 </footer>
 
 
-    <script type="text/javascript">
     
-    (function(){
-        $("pre code").parent().addClass("line-numbers")
-    }())
+    <script type="text/javascript">
+        
+        (function () {
+            $("pre code").parent().addClass("line-numbers")
+        }());
 
-    window.MathJax = {
-        tex2jax: {
-            inlineMath: [ ['$','$'] ],
-            processEscapes: true
-        }
-    };
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
     </script>
     <script type="text/javascript" src="/js/prism.js" async="true"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
 
 <a id="rocket" href="#top"></a>
 <script type="text/javascript" src="/js/totop.js?v=0.0.0" async=""></script>

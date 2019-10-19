@@ -11,7 +11,8 @@ pre[class*="language-"] {
 	color: black;
 	background: none;
 	text-shadow: 0 1px white;
-	font-family: Menlo,Monaco,Consolas,"Andale Mono","lucida console","Courier New",monospace;
+	/* font-family: Menlo,Monaco,Consolas,"Andale Mono","lucida console","Courier New",monospace; */
+  font-family: Roboto Mono, Source Sans Pro, Monaco, courier, monospace !important;
 	text-align: left;
 	white-space: pre;
 	word-spacing: normal;
@@ -27,6 +28,13 @@ pre[class*="language-"] {
 	-moz-hyphens: none;
 	-ms-hyphens: none;
 	hyphens: none;
+
+    /*margin: 0 2px;*/
+    /* padding: 2px 4px; */
+    /* border-radius: 2px; */
+    font-size: 0.92rem;
+    /*color: #e96900; */
+    /* background-color: #f8f8f8; */
 }
 
 pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,

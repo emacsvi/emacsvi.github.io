@@ -17,7 +17,7 @@
       <pubDate>Fri, 23 Nov 2018 01:00:31 +0000</pubDate>
       
       <guid>http://emacsvi.com/post/ethereum-decode-input-data/</guid>
-      <description>编码 编码很简单,这里要区分合约是数据还是普通交易的数据。 普通交易的data输入数据： func PackString(str string) []byte { l := len(str) return append( math.PaddedBigBytes(math.U256(big.NewInt(int64(l))), 32), common.RightPadBytes([]byte(str), (l+31)/32*32)..., ) } func PackNum(num *big.Int) []byte { return math.PaddedBigBytes(math.U256(new(big.Int).Set(num)), 32) } 合约交</description>
+      <description>&lt;p&gt;编码很简单,这里要区分合约是数据还是普通交易的数据。&lt;/p&gt;</description>
     </item>
     
     <item>

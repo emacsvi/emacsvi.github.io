@@ -28,18 +28,7 @@
         <link rel="stylesheet" href="/css/prism.css">
     
     <link rel="stylesheet" href="/css/style.css">
-    <script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-    
-    
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-129687838-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'UA-129687838-1');
-    </script>
-
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     
 
@@ -147,13 +136,13 @@
     <h2>See Also</h2>
     <ul class="listing">
         
-        <li><a href="/travel/travel-life-2019-03/">2019.3月生活内容</a></li>
-        
         <li><a href="/travel/travel-life-jimny/">喜欢吉姆尼</a></li>
         
         <li><a href="/travel/travel-life-go/">旅行相关的</a></li>
         
         <li><a href="/post/harbor-image-notes/">harbor镜像仓库搭建</a></li>
+        
+        <li><a href="/post/go-keng-notes/">go语言编码过程中常见的坑总结</a></li>
         
         <li><a href="/post/my-go-codes/">go常用的一些代码备忘</a></li>
         
@@ -306,7 +295,7 @@
     </li>
     
     <li>
-        <a href="http://emacsvi.com/categories/%E6%97%85%E8%A1%8C/">旅行(4)</a>
+        <a href="http://emacsvi.com/categories/%E6%97%85%E8%A1%8C/">旅行(3)</a>
     </li>
     
     <li>
@@ -420,27 +409,29 @@
     <div class="container">
         &copy; 2019 <a href="http://emacsvi.com">李伟的博客 By emacsvi</a>.
         Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
-        <a href="https://www.emacsvi.com/" target="_blank">Theme</a> based on <a href="https://emacsvi.com" target="_blank">maupassant</a>.
+        <a href="https://www.emacsvi.com/" target="_blank">Theme</a> based on <a href="https://github.com/rujews/maupassant-hugo" target="_blank">maupassant</a>.
         
     </div>
 </footer>
 
 
-    <script type="text/javascript">
     
-    (function(){
-        $("pre code").parent().addClass("line-numbers")
-    }())
+    <script type="text/javascript">
+        
+        (function () {
+            $("pre code").parent().addClass("line-numbers")
+        }());
 
-    window.MathJax = {
-        tex2jax: {
-            inlineMath: [ ['$','$'] ],
-            processEscapes: true
-        }
-    };
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
     </script>
     <script type="text/javascript" src="/js/prism.js" async="true"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
 
 <a id="rocket" href="#top"></a>
 <script type="text/javascript" src="/js/totop.js?v=0.0.0" async=""></script>

@@ -28,18 +28,7 @@
         <link rel="stylesheet" href="/css/prism.css">
     
     <link rel="stylesheet" href="/css/style.css">
-    <script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-    
-    
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-129687838-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'UA-129687838-1');
-    </script>
-
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     
 
@@ -78,6 +67,8 @@
 
 
 <div id="body">
+        
+        
     <div class="container">
         <div class="col-group">
 
@@ -99,8 +90,9 @@
                         </div>
                         
                         
+                        
                         <div class="post-content">
-                            
+                            <p>consul在docker下常用的操作。</p>
 
 <h1 id="consul在docker下使用">consul在docker下使用</h1>
 
@@ -148,7 +140,6 @@ docker run -d -e 'CONSUL_LOCAL_CONFIG={&quot;leave_on_terminate&quot;: true}' --
 <p>希望有人懂你的欲言又止。</p>
 
 <p>你还没离开，我已经开始想念。</p>
-
                         </div>
 
                         
@@ -323,7 +314,7 @@ docker run -d -e 'CONSUL_LOCAL_CONFIG={&quot;leave_on_terminate&quot;: true}' --
     </li>
     
     <li>
-        <a href="http://emacsvi.com/categories/%E6%97%85%E8%A1%8C/">旅行(4)</a>
+        <a href="http://emacsvi.com/categories/%E6%97%85%E8%A1%8C/">旅行(3)</a>
     </li>
     
     <li>
@@ -437,27 +428,29 @@ docker run -d -e 'CONSUL_LOCAL_CONFIG={&quot;leave_on_terminate&quot;: true}' --
     <div class="container">
         &copy; 2019 <a href="http://emacsvi.com">李伟的博客 By emacsvi</a>.
         Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
-        <a href="https://www.emacsvi.com/" target="_blank">Theme</a> based on <a href="https://emacsvi.com" target="_blank">maupassant</a>.
+        <a href="https://www.emacsvi.com/" target="_blank">Theme</a> based on <a href="https://github.com/rujews/maupassant-hugo" target="_blank">maupassant</a>.
         
     </div>
 </footer>
 
 
-    <script type="text/javascript">
     
-    (function(){
-        $("pre code").parent().addClass("line-numbers")
-    }())
+    <script type="text/javascript">
+        
+        (function () {
+            $("pre code").parent().addClass("line-numbers")
+        }());
 
-    window.MathJax = {
-        tex2jax: {
-            inlineMath: [ ['$','$'] ],
-            processEscapes: true
-        }
-    };
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
     </script>
     <script type="text/javascript" src="/js/prism.js" async="true"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
 
 <a id="rocket" href="#top"></a>
 <script type="text/javascript" src="/js/totop.js?v=0.0.0" async=""></script>

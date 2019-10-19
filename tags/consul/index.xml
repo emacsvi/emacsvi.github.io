@@ -17,7 +17,7 @@
       <pubDate>Mon, 24 Dec 2018 01:00:01 +0000</pubDate>
       
       <guid>http://emacsvi.com/post/consul-docker-deploy/</guid>
-      <description>consul在docker下使用 使用命令： # 拉取官方镜像 docker search consul docker pull consul # 启动node1(server模式) docker run -d -e &#39;CONSUL_LOCAL_CONFIG={&amp;quot;skip_leave_on_interrupt&amp;quot;: true}&#39; --name=node1 consul agent -server -bind=172.17.0.2 -bootstrap-expect=3 -node=node1 # 启动节点</description>
+      <description>&lt;p&gt;consul在docker下常用的操作。&lt;/p&gt;</description>
     </item>
     
   </channel>

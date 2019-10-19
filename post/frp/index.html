@@ -28,18 +28,7 @@
         <link rel="stylesheet" href="/css/prism.css">
     
     <link rel="stylesheet" href="/css/style.css">
-    <script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-    
-    
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-129687838-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'UA-129687838-1');
-    </script>
-
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     
 
@@ -78,6 +67,8 @@
 
 
 <div id="body">
+        
+        
     <div class="container">
         <div class="col-group">
 
@@ -99,8 +90,11 @@
                         </div>
                         
                         
+                        
                         <div class="post-content">
-                            <p>家里有台式机24*7开机，用来当服务器。这样可以在外网访问，做一些集群化的工作。减轻笔记本上面呼呼喘息的声音(经常在mbp上跑十几个<strong>docker container</strong>,真的对它太不珍惜了，现在用内网的机器跑起来就踏实多了)。你可以在一个台式机上用<strong>virtualbox</strong>装几个linux虚拟机，当服务器用，比便宜的<strong>vps</strong>可强太多了。我的台式机<strong>i5 8500</strong> + <strong>16g内存</strong> + <strong>256gSSD</strong>的配置，装了3个虚拟机(每个机器4个cpu + 4g内存)当服务器，很强悍。而且现在我随处走到哪儿，即便是在咖啡厅<strong>装B</strong>也可以随时连接上我家里的服务器集群做想做的事情(不过我从来没有在咖啡厅去过)。现在有5台机器连接在集群下面的。打算等内存和<strong>cpu</strong>便宜了再升级一下台式机，多装上几个虚拟机，这样要不要太爽了。之前我跑的<strong>kubernetes</strong>就跑在这上面的。<font color=red>你也来试试吧！</font></p>
+                            <p>家里有台式机24*7开机，用来当服务器。这样可以在外网访问，做一些集群化的工作。</p>
+
+<p>减轻笔记本上面呼呼喘息的声音(经常在mbp上跑十几个<strong>docker container</strong>,真的对它太不珍惜了，现在用内网的机器跑起来就踏实多了)。你可以在一个台式机上用<strong>virtualbox</strong>装几个linux虚拟机，当服务器用，比便宜的<strong>vps</strong>可强太多了。我的台式机<strong>i5 8500</strong> + <strong>16g内存</strong> + <strong>256gSSD</strong>的配置，装了3个虚拟机(每个机器4个cpu + 4g内存)当服务器，很强悍。而且现在我随处走到哪儿，即便是在咖啡厅<strong>装B</strong>也可以随时连接上我家里的服务器集群做想做的事情(不过我从来没有在咖啡厅去过)。现在有5台机器连接在集群下面的。打算等内存和<strong>cpu</strong>便宜了再升级一下台式机，多装上几个虚拟机，这样要不要太爽了。之前我跑的<strong>kubernetes</strong>就跑在这上面的。<font color=red>你也来试试吧！</font></p>
 
 <h2 id="概念">概念</h2>
 
@@ -270,9 +264,9 @@ ssh -p 6118 liwei@bc
         
         <li><a href="/post/harbor-image-notes/">harbor镜像仓库搭建</a></li>
         
-        <li><a href="/post/go-keng-notes/">go语言编码过程中常见的坑总结</a></li>
-        
         <li><a href="/post/dynamic-json-in-go/">Dynamic Json In Go</a></li>
+        
+        <li><a href="/post/go-keng-notes/">go语言编码过程中常见的坑总结</a></li>
         
         <li><a href="/post/my-go-codes/">go常用的一些代码备忘</a></li>
         
@@ -427,7 +421,7 @@ ssh -p 6118 liwei@bc
     </li>
     
     <li>
-        <a href="http://emacsvi.com/categories/%E6%97%85%E8%A1%8C/">旅行(4)</a>
+        <a href="http://emacsvi.com/categories/%E6%97%85%E8%A1%8C/">旅行(3)</a>
     </li>
     
     <li>
@@ -541,27 +535,29 @@ ssh -p 6118 liwei@bc
     <div class="container">
         &copy; 2019 <a href="http://emacsvi.com">李伟的博客 By emacsvi</a>.
         Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
-        <a href="https://www.emacsvi.com/" target="_blank">Theme</a> based on <a href="https://emacsvi.com" target="_blank">maupassant</a>.
+        <a href="https://www.emacsvi.com/" target="_blank">Theme</a> based on <a href="https://github.com/rujews/maupassant-hugo" target="_blank">maupassant</a>.
         
     </div>
 </footer>
 
 
-    <script type="text/javascript">
     
-    (function(){
-        $("pre code").parent().addClass("line-numbers")
-    }())
+    <script type="text/javascript">
+        
+        (function () {
+            $("pre code").parent().addClass("line-numbers")
+        }());
 
-    window.MathJax = {
-        tex2jax: {
-            inlineMath: [ ['$','$'] ],
-            processEscapes: true
-        }
-    };
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
     </script>
     <script type="text/javascript" src="/js/prism.js" async="true"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
 
 <a id="rocket" href="#top"></a>
 <script type="text/javascript" src="/js/totop.js?v=0.0.0" async=""></script>

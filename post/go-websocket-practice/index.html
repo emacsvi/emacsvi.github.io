@@ -28,18 +28,7 @@
         <link rel="stylesheet" href="/css/prism.css">
     
     <link rel="stylesheet" href="/css/style.css">
-    <script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-    
-    
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-129687838-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'UA-129687838-1');
-    </script>
-
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     
 
@@ -78,6 +67,8 @@
 
 
 <div id="body">
+        
+        
     <div class="container">
         <div class="col-group">
 
@@ -97,6 +88,7 @@
                                 <span class="meta-category"><a href="http://emacsvi.com/categories/go">go</a></span>
                             
                         </div>
+                        
                         
                         
                         <div class="post-content">
@@ -150,15 +142,15 @@ message底层会被切分成多个frame帧进行传输，从协议层面不能�
     <h2>See Also</h2>
     <ul class="listing">
         
-        <li><a href="/post/mianshi/">常用的面试题准备</a></li>
-        
-        <li><a href="/post/mongo-go-driver-notes/">mongo-go-driver库使用</a></li>
-        
         <li><a href="/post/istio-notes/">Istio的使用教程</a></li>
+        
+        <li><a href="/post/etcd-notes/">etcd备忘</a></li>
         
         <li><a href="/post/go-dep/">dep教程</a></li>
         
         <li><a href="/post/TiDB-notes/">TiDB分布式数据库</a></li>
+        
+        <li><a href="/post/spf13-vim-3-0-release-and-new-website/">etcd 有关的内容 这只是一个示例 内容随便写</a></li>
         
     </ul>
 </div>
@@ -311,7 +303,7 @@ message底层会被切分成多个frame帧进行传输，从协议层面不能�
     </li>
     
     <li>
-        <a href="http://emacsvi.com/categories/%E6%97%85%E8%A1%8C/">旅行(4)</a>
+        <a href="http://emacsvi.com/categories/%E6%97%85%E8%A1%8C/">旅行(3)</a>
     </li>
     
     <li>
@@ -425,27 +417,29 @@ message底层会被切分成多个frame帧进行传输，从协议层面不能�
     <div class="container">
         &copy; 2019 <a href="http://emacsvi.com">李伟的博客 By emacsvi</a>.
         Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
-        <a href="https://www.emacsvi.com/" target="_blank">Theme</a> based on <a href="https://emacsvi.com" target="_blank">maupassant</a>.
+        <a href="https://www.emacsvi.com/" target="_blank">Theme</a> based on <a href="https://github.com/rujews/maupassant-hugo" target="_blank">maupassant</a>.
         
     </div>
 </footer>
 
 
-    <script type="text/javascript">
     
-    (function(){
-        $("pre code").parent().addClass("line-numbers")
-    }())
+    <script type="text/javascript">
+        
+        (function () {
+            $("pre code").parent().addClass("line-numbers")
+        }());
 
-    window.MathJax = {
-        tex2jax: {
-            inlineMath: [ ['$','$'] ],
-            processEscapes: true
-        }
-    };
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
     </script>
     <script type="text/javascript" src="/js/prism.js" async="true"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
 
 <a id="rocket" href="#top"></a>
 <script type="text/javascript" src="/js/totop.js?v=0.0.0" async=""></script>

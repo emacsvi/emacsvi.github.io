@@ -53,7 +53,7 @@
       <pubDate>Sat, 24 Nov 2018 01:00:01 +0000</pubDate>
       
       <guid>http://emacsvi.com/post/python-selenium/</guid>
-      <description>selenium安装 pip3 install selenium brew tap homebrew/cask brew cask install chromedriver selenium保存cookie 保存cookie # You can save the current cookies as a python object using pickle. For example: import pickle import selenium.webdriver driver = selenium.webdriver.Firefox() driver.get(&amp;quot;http://www.google.com&amp;quot;) pickle.dump( driver.get_cookies() ,</description>
+      <description>&lt;p&gt;selenium的应用.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -71,7 +71,7 @@
       <pubDate>Fri, 23 Nov 2018 01:02:01 +0000</pubDate>
       
       <guid>http://emacsvi.com/post/python-requests/</guid>
-      <description>发送请求 常用功能 import requests # 常用请求 r = requests.get(&#39;https://api.github.com/events&#39;) r = requests.post(&#39;http://httpbin.org/post&#39;, data={&#39;key&#39;:&#39;value&#39;}) r = requests.put(&#39;http://httpbin.org/put&#39;, data = {&#39;key&#39;:&#39;value&#39;}) r = requests.delete(&#39;http://httpbin.org/delete&#39;) r = requests.head(&#39;http://httpbin.org/get&#39;) r = requests.options(&#39;http://httpbin.org/get&#39;) # 传递url参数 # 如果你是手工构建 URL，那么数据会以键/值对的形</description>
+      <description>&lt;p&gt;python+request库的应用.&lt;/p&gt;</description>
     </item>
     
     <item>

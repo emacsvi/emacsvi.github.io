@@ -23,18 +23,7 @@
     
     <link rel="stylesheet" href="/css/style.css">
     <link rel="alternate" type="application/rss+xml+xml" href="http://emacsvi.com/tags/ethereum/index.xml" title="李伟的博客" />
-    <script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-    
-    
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-129687838-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'UA-129687838-1');
-    </script>
-
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     
 
@@ -106,8 +95,8 @@
                             </div>
                             
                             <div class="post-content">
-                                编码 编码很简单,这里要区分合约是数据还是普通交易的数据。 普通交易的data输入数据： func PackString(str string) []byte { l := len(str) return append( math.PaddedBigBytes(math.U256(big.NewInt(int64(l))), 32), common.RightPadBytes([]byte(str), (l+31)/32*32)..., ) } func PackNum(num *big.Int) []byte { return math.PaddedBigBytes(math.U256(new(big.Int).Set(num)), 32) } 合约交……
-                                <p class="readmore"><a href="http://emacsvi.com/post/ethereum-decode-input-data/">阅读全文</a></p>
+                                <p>编码很简单,这里要区分合约是数据还是普通交易的数据。</p>……
+                                
                             </div>
                         </article>
                     
@@ -130,12 +119,13 @@
                             
                             <div class="post-content">
                                 goland配置源码 配置goland的源码环境参考这儿进行配置。……
-                                <p class="readmore"><a href="http://emacsvi.com/post/ethereum-source-analysis/">阅读全文</a></p>
+                                
                             </div>
                         </article>
                     
 
                     
+
 
 
 
@@ -271,7 +261,7 @@
     </li>
     
     <li>
-        <a href="http://emacsvi.com/categories/%E6%97%85%E8%A1%8C/">旅行(4)</a>
+        <a href="http://emacsvi.com/categories/%E6%97%85%E8%A1%8C/">旅行(3)</a>
     </li>
     
     <li>
@@ -385,10 +375,11 @@
     <div class="container">
         &copy; 2019 <a href="http://emacsvi.com">李伟的博客 By emacsvi</a>.
         Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
-        <a href="https://www.emacsvi.com/" target="_blank">Theme</a> based on <a href="https://emacsvi.com" target="_blank">maupassant</a>.
+        <a href="https://www.emacsvi.com/" target="_blank">Theme</a> based on <a href="https://github.com/rujews/maupassant-hugo" target="_blank">maupassant</a>.
         
     </div>
 </footer>
+
 
 
 <a id="rocket" href="#top"></a>
