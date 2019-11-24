@@ -1,0 +1,20 @@
+---
+title: {{ .Title }}
+slug: {{ .UrlPath }}
+date: "{{ .DateString }}"
+description: {{ .Description }}
+categories: {{ range $i, $v := .Categories }}
+- {{ $v }} {{ end }}
+tags: {{ range $i, $v := .Tags }}
+- {{ $v }} {{ end }}
+---
+
+
+{{ .MoreHTML }}
+
+## 概念
+
+## 参考文献
+- []()
+- []()
+

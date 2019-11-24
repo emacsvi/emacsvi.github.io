@@ -11,33 +11,6 @@
     
     
     <item>
-      <title>blockchain</title>
-      <link>http://emacsvi.com/categories/blockchain/</link>
-      <pubDate>Fri, 23 Nov 2018 01:00:31 +0000</pubDate>
-      
-      <guid>http://emacsvi.com/categories/blockchain/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>consul</title>
-      <link>http://emacsvi.com/categories/consul/</link>
-      <pubDate>Mon, 24 Dec 2018 01:00:01 +0000</pubDate>
-      
-      <guid>http://emacsvi.com/categories/consul/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>db</title>
-      <link>http://emacsvi.com/categories/db/</link>
-      <pubDate>Wed, 13 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>http://emacsvi.com/categories/db/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>docker</title>
       <link>http://emacsvi.com/categories/docker/</link>
       <pubDate>Fri, 23 Nov 2018 01:00:25 +0000</pubDate>
@@ -56,36 +29,27 @@
     </item>
     
     <item>
-      <title>ethereum</title>
-      <link>http://emacsvi.com/categories/ethereum/</link>
-      <pubDate>Tue, 20 Nov 2018 01:00:01 +0000</pubDate>
+      <title>filecoin</title>
+      <link>http://emacsvi.com/categories/filecoin/</link>
+      <pubDate>Sun, 24 Nov 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://emacsvi.com/categories/ethereum/</guid>
+      <guid>http://emacsvi.com/categories/filecoin/</guid>
       <description></description>
     </item>
     
     <item>
       <title>go</title>
       <link>http://emacsvi.com/categories/go/</link>
-      <pubDate>Tue, 02 Apr 2019 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 22 Oct 2019 00:00:00 +0000</pubDate>
       
       <guid>http://emacsvi.com/categories/go/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>kubernetes</title>
-      <link>http://emacsvi.com/categories/kubernetes/</link>
-      <pubDate>Tue, 16 Apr 2019 00:00:00 +0000</pubDate>
-      
-      <guid>http://emacsvi.com/categories/kubernetes/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>linux</title>
       <link>http://emacsvi.com/categories/linux/</link>
-      <pubDate>Mon, 15 Apr 2019 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 17 Oct 2019 00:00:00 +0000</pubDate>
       
       <guid>http://emacsvi.com/categories/linux/</guid>
       <description></description>
@@ -110,42 +74,6 @@
     </item>
     
     <item>
-      <title>nodejs</title>
-      <link>http://emacsvi.com/categories/nodejs/</link>
-      <pubDate>Fri, 23 Nov 2018 01:00:29 +0000</pubDate>
-      
-      <guid>http://emacsvi.com/categories/nodejs/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>python</title>
-      <link>http://emacsvi.com/categories/python/</link>
-      <pubDate>Wed, 12 Dec 2018 01:00:01 +0000</pubDate>
-      
-      <guid>http://emacsvi.com/categories/python/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>react</title>
-      <link>http://emacsvi.com/categories/react/</link>
-      <pubDate>Fri, 23 Nov 2018 01:00:34 +0000</pubDate>
-      
-      <guid>http://emacsvi.com/categories/react/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>redis</title>
-      <link>http://emacsvi.com/categories/redis/</link>
-      <pubDate>Wed, 13 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>http://emacsvi.com/categories/redis/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>技术</title>
       <link>http://emacsvi.com/categories/%E6%8A%80%E6%9C%AF/</link>
       <pubDate>Mon, 24 Jul 2017 14:00:41 +0000</pubDate>
@@ -157,7 +85,7 @@
     <item>
       <title>旅行</title>
       <link>http://emacsvi.com/categories/%E6%97%85%E8%A1%8C/</link>
-      <pubDate>Thu, 21 Mar 2019 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 13 Mar 2019 00:00:00 +0000</pubDate>
       
       <guid>http://emacsvi.com/categories/%E6%97%85%E8%A1%8C/</guid>
       <description></description>

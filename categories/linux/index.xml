@@ -6,27 +6,18 @@
     <description>Recent content in linux on 李伟的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 15 Apr 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 17 Oct 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://emacsvi.com/categories/linux/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>centos7系统配置</title>
-      <link>http://emacsvi.com/post/centos7-system-notes/</link>
-      <pubDate>Mon, 15 Apr 2019 00:00:00 +0000</pubDate>
+      <title>ln软连接与硬连接区别</title>
+      <link>http://emacsvi.com/post/ln-s-d/</link>
+      <pubDate>Thu, 17 Oct 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://emacsvi.com/post/centos7-system-notes/</guid>
-      <description>&lt;p&gt;centos7的一些系统配置备忘。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>vagrant相关配置命令</title>
-      <link>http://emacsvi.com/post/vagrant-notes/</link>
-      <pubDate>Mon, 15 Apr 2019 00:00:00 +0000</pubDate>
-      
-      <guid>http://emacsvi.com/post/vagrant-notes/</guid>
-      <description>&lt;p&gt;vagrant的一些命令备忘。&lt;/p&gt;</description>
+      <guid>http://emacsvi.com/post/ln-s-d/</guid>
+      <description>&lt;p&gt;ln软连接与硬连接&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -36,15 +27,6 @@
       
       <guid>http://emacsvi.com/post/linux-screen/</guid>
       <description>screen 常常需要在后台临时运行一些程序，这时候用screen再方便不过了。 screen -S rand ./randomtxs ##screen -S 会话命名 command，然后Ctrl+a+d放到后台 screen -ls 参考</description>
-    </item>
-    
-    <item>
-      <title>curl命令</title>
-      <link>http://emacsvi.com/post/curl/</link>
-      <pubDate>Fri, 23 Nov 2018 01:00:01 +0000</pubDate>
-      
-      <guid>http://emacsvi.com/post/curl/</guid>
-      <description>Get 使用curl发送GET请求：curl protocol://address:port/url?args curl http://127.0.0.1:8080/login?admin&amp;amp;passwd=12345678 POST 使用curl发送POST请求：curl -d &amp;quot;args&amp;quot; protocol://address:port/url curl -d &amp;quot;user=admin&amp;amp;passwd=12345678&amp;quot; http://127.0.0.1:8080/login 这种方法是参数直接在header里面的，如</description>
     </item>
     
   </channel>

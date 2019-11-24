@@ -6,27 +6,18 @@
     <description>Recent content in linux on 李伟的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 15 Apr 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 17 Oct 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://emacsvi.com/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>centos7系统配置</title>
-      <link>http://emacsvi.com/post/centos7-system-notes/</link>
-      <pubDate>Mon, 15 Apr 2019 00:00:00 +0000</pubDate>
+      <title>ln软连接与硬连接区别</title>
+      <link>http://emacsvi.com/post/ln-s-d/</link>
+      <pubDate>Thu, 17 Oct 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://emacsvi.com/post/centos7-system-notes/</guid>
-      <description>&lt;p&gt;centos7的一些系统配置备忘。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>vagrant相关配置命令</title>
-      <link>http://emacsvi.com/post/vagrant-notes/</link>
-      <pubDate>Mon, 15 Apr 2019 00:00:00 +0000</pubDate>
-      
-      <guid>http://emacsvi.com/post/vagrant-notes/</guid>
-      <description>&lt;p&gt;vagrant的一些命令备忘。&lt;/p&gt;</description>
+      <guid>http://emacsvi.com/post/ln-s-d/</guid>
+      <description>&lt;p&gt;ln软连接与硬连接&lt;/p&gt;</description>
     </item>
     
     <item>
