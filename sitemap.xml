@@ -1,453 +1,53 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://emacsvi.com/post/filecoin-lotus-cmd/</loc>
-    <lastmod>2019-11-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://emacsvi.com/post/go-mapstructure-json/</loc>
-    <lastmod>2019-10-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://emacsvi.com/post/go-pprof/</loc>
-    <lastmod>2019-10-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://emacsvi.com/post/go-panic-defer-recover/</loc>
-    <lastmod>2019-10-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://emacsvi.com/post/go-channel-bugs/</loc>
-    <lastmod>2019-10-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://emacsvi.com/post/go-create-markdown-program/</loc>
-    <lastmod>2019-10-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://emacsvi.com/post/go-pipeline/</loc>
-    <lastmod>2019-10-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://emacsvi.com/post/go-context-translate/</loc>
-    <lastmod>2019-10-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://emacsvi.com/post/go-init-flow/</loc>
-    <lastmod>2019-10-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://emacsvi.com/post/go-map-deepcopy/</loc>
-    <lastmod>2019-10-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://emacsvi.com/post/go-bugs/</loc>
-    <lastmod>2019-10-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://emacsvi.com/post/http2-websocket/</loc>
-    <lastmod>2019-10-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://emacsvi.com/post/ln-s-d/</loc>
-    <lastmod>2019-10-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://emacsvi.com/post/spf13-viper/</loc>
-    <lastmod>2019-10-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://emacsvi.com/post/dynamic-json-in-go/</loc>
-    <lastmod>2019-03-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://emacsvi.com/post/my-go-codes/</loc>
-    <lastmod>2019-03-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://emacsvi.com/post/go-websocket-practice/</loc>
-    <lastmod>2019-03-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://emacsvi.com/about/</loc>
-    <lastmod>2019-03-13T19:28:28+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://emacsvi.com/post/spf13-vim-3-0-release-and-new-website/</loc>
-    <lastmod>2019-03-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://emacsvi.com/post/etcd-notes/</loc>
-    <lastmod>2019-03-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://emacsvi.com/post/mongo-go-driver-notes/</loc>
-    <lastmod>2019-03-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://emacsvi.com/travel/travel-life-jimny/</loc>
-    <lastmod>2019-03-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://emacsvi.com/post/new-blog-notes/</loc>
-    <lastmod>2019-03-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://emacsvi.com/travel/travel-life-go/</loc>
-    <lastmod>2019-03-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://emacsvi.com/post/linux-screen/</loc>
-    <lastmod>2018-11-23T01:00:30+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://emacsvi.com/post/go-supervisord/</loc>
-    <lastmod>2018-11-23T01:00:28+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://emacsvi.com/post/go-makefile/</loc>
-    <lastmod>2018-11-23T01:00:26+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://emacsvi.com/post/docker-compose-deploy/</loc>
-    <lastmod>2018-11-23T01:00:25+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://emacsvi.com/post/go-rang/</loc>
-    <lastmod>2018-11-23T01:00:24+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://emacsvi.com/post/go-consistent/</loc>
-    <lastmod>2018-11-23T01:00:22+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://emacsvi.com/post/mac-os-cmds/</loc>
-    <lastmod>2018-11-23T01:00:21+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://emacsvi.com/post/boltdb/</loc>
-    <lastmod>2018-11-23T01:00:20+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://emacsvi.com/post/go-chan-goroutine/</loc>
-    <lastmod>2018-11-23T01:00:19+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://emacsvi.com/post/go-mgo-v2/</loc>
-    <lastmod>2018-11-23T01:00:18+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://emacsvi.com/post/go-struct/</loc>
-    <lastmod>2018-11-23T01:00:17+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://emacsvi.com/post/go-map/</loc>
-    <lastmod>2018-11-23T01:00:15+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://emacsvi.com/post/jetbrain%E5%AE%B6%E6%97%8Fgoland-pycharm-webstorm%E9%85%8D%E7%BD%AE/</loc>
-    <lastmod>2018-11-23T01:00:13+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://emacsvi.com/post/emacsvi-awesome-go/</loc>
-    <lastmod>2018-11-23T01:00:10+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://emacsvi.com/post/docer-cmds/</loc>
-    <lastmod>2018-11-23T01:00:09+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://emacsvi.com/post/go-time-after/</loc>
-    <lastmod>2018-11-23T01:00:08+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://emacsvi.com/post/go-select/</loc>
-    <lastmod>2018-11-23T01:00:06+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://emacsvi.com/post/handling-1-million-requests-per-minute-with-golang/</loc>
-    <lastmod>2018-11-23T01:00:05+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://emacsvi.com/post/go-channel/</loc>
-    <lastmod>2018-11-23T01:00:04+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://emacsvi.com/post/hhkb/</loc>
-    <lastmod>2018-11-23T01:00:03+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://emacsvi.com/post/go-slice-empty/</loc>
-    <lastmod>2018-11-23T01:00:02+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://emacsvi.com/post/go-pool/</loc>
-    <lastmod>2018-11-23T01:00:01+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://emacsvi.com/post/go-array-slice/</loc>
-    <lastmod>2018-11-23T01:00:01+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://emacsvi.com/travel/travel-life-30/</loc>
-    <lastmod>2018-03-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://emacsvi.com/post/can-not-create-foreign-key-reasons/</loc>
-    <lastmod>2017-07-24T14:00:41+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://emacsvi.com/post/heling-go-36-notes/</loc>
-    <lastmod>2017-04-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://emacsvi.com/post/docker-network/</loc>
-  </url>
-  
-  <url>
-    <loc>http://emacsvi.com/categories/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://emacsvi.com/post/</loc>
-    <lastmod>2019-11-24T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://emacsvi.com/tags/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://emacsvi.com/travel/</loc>
-    <lastmod>2019-03-13T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://emacsvi.com/tags/cmds/</loc>
-    <lastmod>2018-11-23T01:00:21+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://emacsvi.com/tags/docker/</loc>
-    <lastmod>2018-11-23T01:00:25+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://emacsvi.com/categories/docker/</loc>
-    <lastmod>2018-11-23T01:00:25+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://emacsvi.com/tags/docker-compose/</loc>
-    <lastmod>2018-11-23T01:00:25+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://emacsvi.com/tags/etcd/</loc>
-    <lastmod>2019-03-13T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://emacsvi.com/categories/etcd/</loc>
-    <lastmod>2019-03-13T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <loc>http://emacsvi.com/</loc>
+    <lastmod>2020-11-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>http://emacsvi.com/tags/filecoin/</loc>
-    <lastmod>2019-11-24T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <lastmod>2020-11-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://emacsvi.com/categories/filecoin/</loc>
-    <lastmod>2019-11-24T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <loc>http://emacsvi.com/posts/blockchain/filecoin/</loc>
+    <lastmod>2020-11-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://emacsvi.com/tags/go/</loc>
-    <lastmod>2019-10-22T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <loc>http://emacsvi.com/posts/</loc>
+    <lastmod>2020-11-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://emacsvi.com/categories/go/</loc>
-    <lastmod>2019-10-22T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <loc>http://emacsvi.com/tags/</loc>
+    <lastmod>2020-11-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://emacsvi.com/tags/linux/</loc>
-    <lastmod>2019-10-17T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <loc>http://emacsvi.com/tags/git/</loc>
+    <lastmod>2020-11-12T21:28:00+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://emacsvi.com/categories/linux/</loc>
-    <lastmod>2019-10-17T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <loc>http://emacsvi.com/posts/git/git/</loc>
+    <lastmod>2020-11-12T21:28:00+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://emacsvi.com/tags/mac/</loc>
-    <lastmod>2018-11-23T01:00:21+00:00</lastmod>
-    <priority>0</priority>
+    <loc>http://emacsvi.com/about/</loc>
+    <lastmod>2019-01-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://emacsvi.com/categories/mac/</loc>
-    <lastmod>2018-11-23T01:00:21+00:00</lastmod>
-    <priority>0</priority>
+    <loc>http://emacsvi.com/archive/</loc>
   </url>
   
   <url>
-    <loc>http://emacsvi.com/tags/markdown/</loc>
-    <lastmod>2019-03-13T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://emacsvi.com/categories/markdown/</loc>
-    <lastmod>2019-03-13T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://emacsvi.com/tags/mongodb/</loc>
-    <lastmod>2019-03-13T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://emacsvi.com/tags/mysql/</loc>
-    <lastmod>2017-07-24T14:00:41+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://emacsvi.com/tags/sql/</loc>
-    <lastmod>2017-07-24T14:00:41+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://emacsvi.com/tags/supervisord/</loc>
-    <lastmod>2018-11-23T01:00:28+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://emacsvi.com/tags/websocket/</loc>
-    <lastmod>2019-03-16T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://emacsvi.com/tags/%E5%A4%87%E5%BF%98/</loc>
-    <lastmod>2017-07-24T14:00:41+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://emacsvi.com/archives/</loc>
-  </url>
-  
-  <url>
-    <loc>http://emacsvi.com/tags/%E6%8A%80%E6%9C%AF/</loc>
-    <lastmod>2018-11-23T01:00:03+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://emacsvi.com/categories/%E6%8A%80%E6%9C%AF/</loc>
-    <lastmod>2017-07-24T14:00:41+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://emacsvi.com/tags/%E6%97%85%E8%A1%8C/</loc>
-    <lastmod>2019-03-13T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://emacsvi.com/categories/%E6%97%85%E8%A1%8C/</loc>
-    <lastmod>2019-03-13T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://emacsvi.com/</loc>
-    <lastmod>2019-11-24T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://emacsvi.com/categories/%E6%B5%81%E9%87%91%E5%B2%81%E6%9C%88/</loc>
-    <lastmod>2018-11-23T01:00:03+00:00</lastmod>
-    <priority>0</priority>
+    <loc>http://emacsvi.com/categories/</loc>
   </url>
   
 </urlset>

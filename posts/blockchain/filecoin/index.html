@@ -4,15 +4,14 @@
     <meta charset="utf-8">
     <meta name="referrer" content="same-origin"/>
   
-    <title>About :: emacs vi — liwei, rust go blockchain</title>
+    <title>filecoin常用部署命令 :: emacs vi — liwei, rust go blockchain</title>
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="description" content="Hi there My name is Radek and I&amp;rsquo;m the author of this theme. I made it to help you present your ideas easier.
-We all know how hard is to start something on the web, especially these days. You need to prepare a bunch of stuff, configure them and when that’s done — create the content.
-This theme is pretty basic and covers all of the essentials. All you have to do is start typing!" />
+<meta name="description" content="有关filecoin的常用备忘。
+sudo apt install mesa-opencl-icd ocl-icd-opencl-dev gcc git bzr jq pkg-config curl clang build-essential libhwloc-dev -y &amp;amp;&amp;amp; sudo apt upgrade -y sudo apt install libhwloc-dev -y FFI_BUILD_FROM_SOURCE=1 RUSTFLAGS=&amp;#39;-C target-cpu=native&amp;#39; make clean deps all lotus-bench " />
 <meta name="keywords" content="" />
 <meta name="robots" content="noodp" />
-<link rel="canonical" href="http://emacsvi.com/about/" />
+<link rel="canonical" href="http://emacsvi.com/posts/blockchain/filecoin/" />
 
 
 
@@ -32,16 +31,15 @@ This theme is pretty basic and covers all of the essentials. All you have to do 
 
 <meta name="twitter:card" content="summary" />
 
-<meta name="twitter:creator" content="Radek" />
+<meta name="twitter:creator" content="" />
 
 
 <meta property="og:locale" content="en" />
 <meta property="og:type" content="article" />
-<meta property="og:title" content="About :: emacs vi">
-<meta property="og:description" content="Hi there My name is Radek and I&amp;rsquo;m the author of this theme. I made it to help you present your ideas easier.
-We all know how hard is to start something on the web, especially these days. You need to prepare a bunch of stuff, configure them and when that’s done — create the content.
-This theme is pretty basic and covers all of the essentials. All you have to do is start typing!" />
-<meta property="og:url" content="http://emacsvi.com/about/" />
+<meta property="og:title" content="filecoin常用部署命令 :: emacs vi">
+<meta property="og:description" content="有关filecoin的常用备忘。
+sudo apt install mesa-opencl-icd ocl-icd-opencl-dev gcc git bzr jq pkg-config curl clang build-essential libhwloc-dev -y &amp;amp;&amp;amp; sudo apt upgrade -y sudo apt install libhwloc-dev -y FFI_BUILD_FROM_SOURCE=1 RUSTFLAGS=&amp;#39;-C target-cpu=native&amp;#39; make clean deps all lotus-bench " />
+<meta property="og:url" content="http://emacsvi.com/posts/blockchain/filecoin/" />
 <meta property="og:site_name" content="emacs vi" />
 
   
@@ -52,7 +50,7 @@ This theme is pretty basic and covers all of the essentials. All you have to do 
 <meta property="og:image:height" content="1024">
 
 
-  <meta property="article:published_time" content="2019-01-25 00:00:00 &#43;0000 UTC" />
+  <meta property="article:published_time" content="2020-11-13 00:00:00 &#43;0000 UTC" />
 
 
 
@@ -144,17 +142,17 @@ background-size: cover;">
   <div class="content">
     
 <div class="post">
-  <h1 class="post-title">About</h1>
+  <h1 class="post-title">filecoin常用部署命令</h1>
   <div class="post-meta">
       
     <span class="post-date">
-      2019-01-25
+      2020-11-13
     </span>
     
 
     
     <span class="post-author">::
-      Radek
+      
     </span>
     
 
@@ -163,43 +161,66 @@ background-size: cover;">
   </div>
 
   
-
+  <span class="post-tags">
+    
+    #<a href="http://emacsvi.com/tags/filecoin/">filecoin</a>&nbsp;
+    
+  </span>
   
 
   
+
+  <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title"></h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#编译相关">编译相关</a></li>
+        <li><a href="#部署">部署</a></li>
+        <li><a href="#rust部分">rust部分</a></li>
+        <li><a href="#代码合并">代码合并</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
   <div class="post-content"><div>
-        <h1 id="hi-there">Hi there<a href="#hi-there" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
-<p>My name is Radek and I&rsquo;m the author of this theme. I made it to help you present your ideas easier.</p>
-<p>We all know how hard is to start something on the web, especially these days. You need to prepare a bunch of stuff, configure them and when that’s done — create the content.</p>
-<p>This theme is pretty basic and covers all of the essentials. All you have to do is start typing!</p>
-<p>The theme includes:</p>
-<ul>
-<li><strong>5 duotone themes</strong>, depending on your preferences (orange, red, blue, green, pink)</li>
-<li>
-
-
-
-
-
-
-
-
-<a href="https://github.com/tonsky/FiraCode" ><strong>Fira Code</strong></a> as default monospaced font. It&rsquo;s gorgeous!</li>
-<li><strong>really nice, custom duotone</strong> syntax highlighting based on 
-
-
-
-
-
-
-
-
-<a href="https://prismjs.com" ><strong>PrismJS</strong></a></li>
-<li>mobile friendly layout</li>
-</ul>
-<p>So, there you have it&hellip; enjoy!</p>
-
+        <p>有关filecoin的常用备忘。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt install mesa-opencl-icd ocl-icd-opencl-dev gcc git bzr jq pkg-config curl clang build-essential libhwloc-dev -y <span style="color:#f92672">&amp;&amp;</span> sudo apt upgrade -y
+sudo apt install libhwloc-dev -y
+FFI_BUILD_FROM_SOURCE<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> RUSTFLAGS<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;-C target-cpu=native&#39;</span> make clean deps all lotus-bench
+</code></pre></div><h3 id="编译相关">编译相关<a href="#编译相关" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt install mesa-opencl-icd ocl-icd-opencl-dev gcc git bzr jq pkg-config curl clang build-essential libhwloc-dev -y <span style="color:#f92672">&amp;&amp;</span> sudo apt upgrade -y
+sudo apt install libhwloc-dev -y
+FFI_BUILD_FROM_SOURCE<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> RUSTFLAGS<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;-C target-cpu=native&#39;</span> make clean deps all lotus-bench
+</code></pre></div><h3 id="部署">部署<a href="#部署" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<p>deploy</p>
+<h3 id="rust部分">rust部分<a href="#rust部分" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<h3 id="代码合并">代码合并<a href="#代码合并" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
       </div></div>
+
+  
+  
+<div class="pagination">
+    <div class="pagination__title">
+        <span class="pagination__title-h">Read other posts</span>
+        <hr />
+    </div>
+    <div class="pagination__buttons">
+        
+        
+        <span class="button next">
+            <a href="http://emacsvi.com/posts/git/git/">
+                <span class="button__text">git多账户切换</span>
+                <span class="button__icon">→</span>
+            </a>
+        </span>
+        
+    </div>
+</div>
 
   
 

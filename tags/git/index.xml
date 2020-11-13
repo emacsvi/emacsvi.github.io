@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>git on emacs vi</title>
+    <link>http://emacsvi.com/tags/git/</link>
+    <description>Recent content in git on emacs vi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 12 Nov 2020 21:28:00 +0800</lastBuildDate><atom:link href="http://emacsvi.com/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>git多账户切换</title>
+      <link>http://emacsvi.com/posts/git/git/</link>
+      <pubDate>Thu, 12 Nov 2020 21:28:00 +0800</pubDate>
+      
+      <guid>http://emacsvi.com/posts/git/git/</guid>
+      <description>github多账号 ssh-keygen -t rsa -C &amp;#34;email@work_mail.com&amp;#34; -f &amp;#34;id_rsa_work_user1&amp;#34; # ~/.ssh/id_rsa # ~/.ssh/id_rsa_work_user1 ssh-add ~/.ssh/id_rsa ssh-add ~/.ssh/id_rsa_work_user1 创建~/.ssh/config
+# Personal account, - the default config Host github.com HostName github.com User git IdentityFile ~/.ssh/id_rsa # Work account-1 Host github.com-work_user1 HostName github.com User git IdentityFile ~/.ssh/id_rsa_work_user1 参考   multiple-gihtub-accounts  </description>
+    </item>
+    
+  </channel>
+</rss>

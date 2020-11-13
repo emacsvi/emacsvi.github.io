@@ -4,15 +4,14 @@
     <meta charset="utf-8">
     <meta name="referrer" content="same-origin"/>
   
-    <title>About :: emacs vi — liwei, rust go blockchain</title>
+    <title>git多账户切换 :: emacs vi — liwei, rust go blockchain</title>
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="description" content="Hi there My name is Radek and I&amp;rsquo;m the author of this theme. I made it to help you present your ideas easier.
-We all know how hard is to start something on the web, especially these days. You need to prepare a bunch of stuff, configure them and when that’s done — create the content.
-This theme is pretty basic and covers all of the essentials. All you have to do is start typing!" />
+<meta name="description" content="github多账号 ssh-keygen -t rsa -C &amp;#34;email@work_mail.com&amp;#34; -f &amp;#34;id_rsa_work_user1&amp;#34; # ~/.ssh/id_rsa # ~/.ssh/id_rsa_work_user1 ssh-add ~/.ssh/id_rsa ssh-add ~/.ssh/id_rsa_work_user1 创建~/.ssh/config
+# Personal account, - the default config Host github.com HostName github.com User git IdentityFile ~/.ssh/id_rsa # Work account-1 Host github.com-work_user1 HostName github.com User git IdentityFile ~/.ssh/id_rsa_work_user1 参考   multiple-gihtub-accounts  " />
 <meta name="keywords" content="" />
 <meta name="robots" content="noodp" />
-<link rel="canonical" href="http://emacsvi.com/about/" />
+<link rel="canonical" href="http://emacsvi.com/posts/git/git/" />
 
 
 
@@ -32,16 +31,15 @@ This theme is pretty basic and covers all of the essentials. All you have to do 
 
 <meta name="twitter:card" content="summary" />
 
-<meta name="twitter:creator" content="Radek" />
+<meta name="twitter:creator" content="" />
 
 
 <meta property="og:locale" content="en" />
 <meta property="og:type" content="article" />
-<meta property="og:title" content="About :: emacs vi">
-<meta property="og:description" content="Hi there My name is Radek and I&amp;rsquo;m the author of this theme. I made it to help you present your ideas easier.
-We all know how hard is to start something on the web, especially these days. You need to prepare a bunch of stuff, configure them and when that’s done — create the content.
-This theme is pretty basic and covers all of the essentials. All you have to do is start typing!" />
-<meta property="og:url" content="http://emacsvi.com/about/" />
+<meta property="og:title" content="git多账户切换 :: emacs vi">
+<meta property="og:description" content="github多账号 ssh-keygen -t rsa -C &amp;#34;email@work_mail.com&amp;#34; -f &amp;#34;id_rsa_work_user1&amp;#34; # ~/.ssh/id_rsa # ~/.ssh/id_rsa_work_user1 ssh-add ~/.ssh/id_rsa ssh-add ~/.ssh/id_rsa_work_user1 创建~/.ssh/config
+# Personal account, - the default config Host github.com HostName github.com User git IdentityFile ~/.ssh/id_rsa # Work account-1 Host github.com-work_user1 HostName github.com User git IdentityFile ~/.ssh/id_rsa_work_user1 参考   multiple-gihtub-accounts  " />
+<meta property="og:url" content="http://emacsvi.com/posts/git/git/" />
 <meta property="og:site_name" content="emacs vi" />
 
   
@@ -52,7 +50,7 @@ This theme is pretty basic and covers all of the essentials. All you have to do 
 <meta property="og:image:height" content="1024">
 
 
-  <meta property="article:published_time" content="2019-01-25 00:00:00 &#43;0000 UTC" />
+  <meta property="article:published_time" content="2020-11-12 21:28:00 &#43;0800 CST" />
 
 
 
@@ -144,17 +142,17 @@ background-size: cover;">
   <div class="content">
     
 <div class="post">
-  <h1 class="post-title">About</h1>
+  <h1 class="post-title">git多账户切换</h1>
   <div class="post-meta">
       
     <span class="post-date">
-      2019-01-25
+      2020-11-12
     </span>
     
 
     
     <span class="post-author">::
-      Radek
+      
     </span>
     
 
@@ -163,18 +161,40 @@ background-size: cover;">
   </div>
 
   
+  <span class="post-tags">
+    
+    #<a href="http://emacsvi.com/tags/git/">git</a>&nbsp;
+    
+  </span>
+  
 
   
 
   
   <div class="post-content"><div>
-        <h1 id="hi-there">Hi there<a href="#hi-there" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
-<p>My name is Radek and I&rsquo;m the author of this theme. I made it to help you present your ideas easier.</p>
-<p>We all know how hard is to start something on the web, especially these days. You need to prepare a bunch of stuff, configure them and when that’s done — create the content.</p>
-<p>This theme is pretty basic and covers all of the essentials. All you have to do is start typing!</p>
-<p>The theme includes:</p>
+        <h1 id="github多账号">github多账号<a href="#github多账号" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh-keygen -t rsa -C <span style="color:#e6db74">&#34;email@work_mail.com&#34;</span> -f <span style="color:#e6db74">&#34;id_rsa_work_user1&#34;</span>
+<span style="color:#75715e"># ~/.ssh/id_rsa</span>
+<span style="color:#75715e"># ~/.ssh/id_rsa_work_user1</span>
+
+ssh-add ~/.ssh/id_rsa
+ssh-add ~/.ssh/id_rsa_work_user1
+
+
+</code></pre></div><p>创建<code>~/.ssh/config</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ini" data-lang="ini"><span style="color:#75715e"># Personal account, - the default config</span>
+<span style="color:#a6e22e">Host github.com</span>
+   <span style="color:#a6e22e">HostName github.com</span>
+   <span style="color:#a6e22e">User git</span>
+   <span style="color:#a6e22e">IdentityFile ~/.ssh/id_rsa</span>
+
+<span style="color:#75715e"># Work account-1</span>
+<span style="color:#a6e22e">Host github.com-work_user1</span>
+   <span style="color:#a6e22e">HostName github.com</span>
+   <span style="color:#a6e22e">User git</span>
+   <span style="color:#a6e22e">IdentityFile ~/.ssh/id_rsa_work_user1</span>
+</code></pre></div><h1 id="参考">参考<a href="#参考" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
 <ul>
-<li><strong>5 duotone themes</strong>, depending on your preferences (orange, red, blue, green, pink)</li>
 <li>
 
 
@@ -184,22 +204,30 @@ background-size: cover;">
 
 
 
-<a href="https://github.com/tonsky/FiraCode" ><strong>Fira Code</strong></a> as default monospaced font. It&rsquo;s gorgeous!</li>
-<li><strong>really nice, custom duotone</strong> syntax highlighting based on 
-
-
-
-
-
-
-
-
-<a href="https://prismjs.com" ><strong>PrismJS</strong></a></li>
-<li>mobile friendly layout</li>
+<a href="https://www.freecodecamp.org/news/manage-multiple-github-accounts-the-ssh-way-2dadc30ccaca/" >multiple-gihtub-accounts</a></li>
 </ul>
-<p>So, there you have it&hellip; enjoy!</p>
 
       </div></div>
+
+  
+  
+<div class="pagination">
+    <div class="pagination__title">
+        <span class="pagination__title-h">Read other posts</span>
+        <hr />
+    </div>
+    <div class="pagination__buttons">
+        
+        <span class="button previous">
+            <a href="http://emacsvi.com/posts/blockchain/filecoin/">
+                <span class="button__icon">←</span>
+                <span class="button__text">filecoin常用部署命令</span>
+            </a>
+        </span>
+        
+        
+    </div>
+</div>
 
   
 
